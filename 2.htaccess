@@ -1,7 +1,0 @@
-
-RewriteEngine on
-
-RewriteCond %{HTTP_HOST} ^testenet.nowakis.com$ [OR]
-RewriteCond %{HTTP_HOST} ^www.testenet.nowakis.com$
-RewriteRule ^(.*)$ http://www.nowakis.com/testenet/www/ [R=301,L]
-

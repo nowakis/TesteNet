@@ -1,0 +1,54 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<br />
+
+<div class="frm_cadastro">
+
+	<form name="frm_cadastro" id="frm_cadastro" action="{_DESCRICAO_PROGRAMA}" method="POST" >
+	<input name="comunicado" type="hidden" id="comunicado" value="{COMUNICADO}"/>
+	
+	<fieldset class="cadastro">
+		<legend>Informações do comunicado</legend>
+		
+		<table width="100%" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<td>
+				<label>Curso</label><br />
+				<select name="curso"  id="curso">
+				{CURSO}
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Título</label><br />
+				<input name="titulo" type="text" id="titulo" value="{TITULO_COMUNICADO}" maxlength="100" style='width:96%'/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Comentário</label><br />
+				<textarea name="comentario" id="comentario" rows="6" cols="" style='width:96%'>{COMENTARIO}</textarea>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Leitura Obrigatória (só permite o Aluno acessar o sistema se ler o comunicado)</label><br />
+					<input name="obrigatorio" type="radio" id="obrigatorio" value="1" {OBRIGATORIO}/>
+					Sim
+					<input name="obrigatorio" type="radio" id="obrigatorio" value="0" {NAO_OBRIGATORIO}/>
+					Não
+			</td>
+		</tr>
+		</table>
+
+		<hr>
+		<input type='hidden' name="btn_acao" value=''>
+		<button value="gravar" class="gravarBtn" style='float:right' onclick="javascript: if(this.form.btn_acao.value == '' ) {this.form.btn_acao.value='gravar'; this.form.submit() } else { alert ('Aguarde submissão') }"><span>{BTN_NOME}</span></button>
+		<button value="gravar" class="submitBtn"  onclick="javascript: history.go(-1)"><span>Cancelar</span></button>
+
+		</fieldset>
+
+		</form>
+</div>

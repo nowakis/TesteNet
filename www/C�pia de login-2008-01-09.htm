@@ -1,0 +1,50 @@
+
+<script language="JavaScript1.2">
+var highlightcolor="lightblue"
+var ns6=document.getElementById&&!document.all
+var previous=''
+var eventobj
+//Regular expression to highlight only form elements
+var intended=/INPUT|TEXTAREA|SELECT|OPTION/
+//Function to check whether element clicked is form element
+function checkel(which){
+	if (which.style&&intended.test(which.tagName)){
+		if (ns6&&eventobj.nodeType==3)
+			eventobj=eventobj.parentNode.parentNode
+		return true
+	}
+	else
+	return false
+}
+//Function to highlight form element
+function highlight(e){
+	eventobj=ns6? e.target : event.srcElement
+	if (previous!=''){
+		if (checkel(previous))
+			previous.style.backgroundColor=''
+		previous=eventobj
+		if (checkel(eventobj))
+			eventobj.style.backgroundColor=highlightcolor
+	}
+	else{
+		if (checkel(eventobj))
+			eventobj.style.backgroundColor=highlightcolor
+		previous=eventobj
+	}
+}
+</script>
+
+<div class="formLogin">
+<div class="formulario">
+ <span>{MSG}</span> <br />   
+  <form id="Logar" name="Logar" method="post" action="login.php"  onKeyUp="highlight(event)" onClick="highlight(event)" >
+      	<label for="txtlogin">Nome de usuário</label>  	    
+    	<input type="text" name="txtlogin" /><br />
+    	<label for="txtsenha">Senha</label>
+  		<input type="password" name="txtsenha" /><br />
+  		<input name="Logar" type="submit" id="Logar" value="Logar" class="botao"/>
+  </form>
+</div>
+</div>
+
+

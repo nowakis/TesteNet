@@ -1,0 +1,522 @@
+<?php
+/******************************************************************
+Script .........: Controle de Gado e Fazendas
+Por ............: Fabio Nowaki
+Data ...........: 30/08/2006
+********************************************************************************************/
+
+##############################################################################
+## INCLUDES E CONEXÔES BANCO
+##############################################################################
+
+session_start();
+include_once "class.Template.inc.php";
+require_once('banco.inc.php');
+require_once("autentica_usuario.php");
+include_once "funcoes.php";
+
+include_once "class.animal.php";
+
+##############################################################################
+##############                      PAGINA                  	##############
+##############################################################################	
+
+$msg_erro		= array();
+$msg_ok			= array();
+$msg			= array();
+$msg_codigo		= "";
+
+if (isset($_GET['msg_codigo']) AND strlen(trim($_GET['msg_codigo']))>0) {
+	$msg_codigo = trim($_GET['msg_codigo']);
+}
+
+
+##############################################################################
+##############            CADASTRAR / ALTERAR                	##############
+##############################################################################	
+
+if (isset($_POST['btn_acao']) AND strlen(trim($_POST['btn_acao']))>0) {
+	
+	$animal								= addslashes(trim($_POST['animal']));
+	$numero								= addslashes(trim($_POST['numero']));
+	$apelido							= addslashes(trim($_POST['apelido']));
+	$raca									= addslashes(trim($_POST['raca']));
+	$marca								= addslashes(trim($_POST['marca']));
+	$nascimento						= addslashes(trim($_POST['nascimento']));
+	$obito								= addslashes(trim($_POST['obito']));
+	$entrada							= addslashes(trim($_POST['entrada']));
+	$pai									= addslashes(trim($_POST['pai']));
+	$animal_pai						= addslashes(trim($_POST['animal_pai']));
+	$mae									= addslashes(trim($_POST['mae']));
+	$animal_mae						= addslashes(trim($_POST['animal_mae']));
+	$sexo									= addslashes(trim($_POST['sexo']));
+	$tipo_criacao					= addslashes(trim($_POST['tipo_criacao']));
+	$proprietario					= addslashes(trim($_POST['proprietario']));
+	$crias								= addslashes(trim($_POST['crias']));
+	$valor_compra					= addslashes(trim($_POST['valor_compra']));
+	$previsao_valor_venda	= addslashes(trim($_POST['previsao_valor_venda']));
+	$previsao_data_venda	= addslashes(trim($_POST['previsao_data_venda']));
+	$valor_venda					= addslashes(trim($_POST['valor_venda']));
+	$desmamado						= addslashes(trim($_POST['desmamado']));
+	$observacao						= addslashes(trim($_POST['observacao']));
+	$peso									= addslashes(trim($_POST['peso']));
+
+	$cabeca = new Animal($animal);
+	$cabeca->setBanco($link_id,$db);
+	$cabeca->setLogin($login_fazenda,$login_admin);
+
+	$cabeca->setNumero($numero);
+	$cabeca->setApelido($apelido);
+	$cabeca->setRaca($raca);
+	$cabeca->setMarca($marca);
+	$cabeca->setNascimento($nascimento);
+	$cabeca->setObito($obito);
+	$cabeca->setEntrada($entrada);
+	$cabeca->setPai($pai);
+	$cabeca->setAnimalPai($animal_pai);
+	$cabeca->setMae($mae);
+	$cabeca->setAnimalMae($animal_mae);
+	$cabeca->setSexo($sexo);
+	$cabeca->setTipoCriacao($tipo_criacao);
+	$cabeca->setProprietario($proprietario);
+	$cabeca->setCrias($crias);
+	$cabeca->setValorCompra($valor_compra);
+	$cabeca->setPrevisaoValorVenda($previsao_valor_venda);
+	$cabeca->setPrevisaoDataVenda($previsao_data_venda);
+	$cabeca->setValorVenda($valor_venda);
+	$cabeca->setDesmamado($desmamado);
+	$cabeca->setObservacao($observacao);
+	$cabeca->setPeso($peso);
+	$msg_erro = $cabeca->gravarAnimal();
+
+	/*
+	if (strlen($numero)==0){
+		array_push($msg_erro,'Informe o número do animal!');;
+	}else{
+		$Xnumero = $numero;
+	}
+
+	if (strlen($apelido)==0){
+		$Xapelido = " NULL ";
+	}else{
+		$Xapelido = "'".$apelido."'";
+	}
+
+	if (strlen($raca)==0){
+		array_push($msg_erro,'Informe a raça do animal!');
+	}else{
+		$Xraca = $raca;
+	}
+
+	if (strlen($marca)==0){
+		array_push($msg_erro,'Informe a marca do animal!');
+	}else{
+		$Xmarca = $marca;
+	}
+
+	if (strlen($nascimento)!=10){
+		array_push($msg_erro,'Data de nascimento do animal inválida!');
+	}else{
+		$Xnascimento = ConverteData($nascimento,"'");
+	}
+
+	if (strlen($obito)!=10){
+		$Xobito = ' NULL ';
+	}else{
+		$Xobito = ConverteData($obito,"'");
+	}
+
+	if (strlen($entrada)!=10){
+		array_push($msg_erro,'Data de entrada do animal inválida!');
+	}else{
+		$Xentrada = ConverteData($entrada,"'");
+	}
+
+	if (strlen($pai)==0){
+		$Xpai = " NULL ";
+	}else{
+		$Xpai = "'".$pai."'";
+	}
+
+	if (strlen($animal_pai)==0){
+		$Xanimal_pai = " NULL ";
+	}else{
+		$Xanimal_pai = $animal_pai;
+	}
+
+	if (strlen($mae)==0){
+		$Xmae = " NULL ";
+	}else{
+		$Xmae = "'".$mae."'";
+	}
+
+	if (strlen($animal_mae)==0){
+		$Xanimal_mae = " NULL ";
+	}else{
+		$Xanimal_mae = $animal_mae;
+	}
+
+	if (strlen($sexo)==0){
+		array_push($msg_erro,'Informe o sexo do animal!');
+	}else{
+		$Xsexo = "'".$sexo."'";
+	}
+
+	if (strlen($tipo_criacao)==0){
+		$Xtipo_criacao = " NULL ";
+	}else{
+		$Xtipo_criacao = $tipo_criacao;
+	}
+
+	if (strlen($proprietario)==0){
+		array_push($msg_erro,'Seleciona o proprietário do animal!');
+	}else{
+		$Xproprietario = $proprietario;
+	}
+
+	if (strlen($crias)==0){
+		$Xcrias = " NULL ";
+	}else{
+		$Xcrias = $crias;
+	}
+
+	if (strlen($valor_compra)==0){
+		$Xvalor_compra = " NULL ";
+	}else{
+		$Xvalor_compra = $valor_compra;
+	}
+
+	if (strlen($previsao_valor_venda)==0){
+		$Xprevisao_valor_venda = " NULL ";
+	}else{
+		$Xprevisao_valor_venda = $previsao_valor_venda;
+	}
+	
+	if (strlen($previsao_data_venda)==0){
+		$Xprevisao_data_venda = " NULL ";
+	}else{
+		$Xprevisao_data_venda = ConverteData($previsao_data_venda,"'");
+	}
+
+	if (strlen($valor_venda)==0){
+		$Xvalor_venda = " NULL ";
+	}else{
+		$Xvalor_venda = $valor_venda;
+	}
+
+	if (strlen($desmamado)==0){
+		$Xdesmamado = " NULL ";
+	}else{
+		$Xdesmamado = "'".$desmamado."'";
+	}
+	
+	if (strlen($observacao)==0){
+		$Xobservacao = " NULL ";
+	}else{
+		$Xobservacao = "'".$observacao."'";
+	}
+
+	if (strlen($peso)==0){
+		$Xpeso = " NULL ";
+	}else{
+		$Xpeso = $peso;
+	}
+	*//*
+	if (count($msg_erro)==0){
+				if (strlen($animal)>0){
+						$query = "UPDATE tbl_animal SET
+									numero               = $Xnumero,
+									apelido              = $Xapelido,
+									raca                 = $Xraca,
+									marca                = $Xmarca,
+									nascimento           = $Xnascimento,
+									obito                = $Xobito,
+									entrada              = $Xentrada,
+									pai                  = $Xpai,
+									animal_pai           = $Xanimal_pai,
+									mae                  = $Xmae,
+									animal_mae           = $Xanimal_mae,
+									sexo                 = $Xsexo,
+									tipo_criacao         = $Xtipo_criacao,
+									proprietario         = $Xproprietario,
+									crias                = $Xcrias,
+									valor_compra         = $Xvalor_compra,
+									previsao_valor_venda = $Xprevisao_valor_venda,
+									previsao_data_venda  = $Xprevisao_data_venda,
+									desmamado            = $Xdesmamado,
+									observacao           = $Xobservacao,
+									peso                 = $Xpeso
+								WHERE animal  = $animal
+								AND   fazenda = $login_fazenda ";
+				}else{
+						$query = "INSERT INTO tbl_animal (
+										fazenda,
+										numero,
+										apelido,
+										raca,
+										marca,
+										nascimento,
+										obito,
+										entrada,
+										pai,
+										animal_pai,
+										mae,
+										animal_mae,
+										sexo,
+										tipo_criacao,
+										proprietario,
+										crias,
+										valor_compra,
+										previsao_valor_venda,
+										previsao_data_venda,
+										desmamado,
+										observacao,
+										peso
+								) values (
+										$login_fazenda,
+										$Xnumero,
+										$Xapelido,
+										$Xraca, 
+										$Xmarca,
+										$Xnascimento, 
+										$Xobito, 
+										$Xentrada,
+										$Xpai,
+										$Xanimal_pai,
+										$Xmae,
+										$Xanimal_mae,
+										$Xsexo,
+										$Xtipo_criacao,
+										$Xproprietario,
+										$Xcrias, 
+										$Xvalor_compra,
+										$Xprevisao_valor_venda,
+										$Xprevisao_data_venda, 
+										$Xdesmamado
+										$Xobservacao, 
+										$Xpeso
+									)";
+				}
+				//echo nl2br($query);
+				$rSet = $db->Query($query);
+				array_push($msg,"Informações gravadas com sucesso!");
+				if (strlen($animal)==0){
+				}
+				header("Location: ".$PHP_SELF."?animal=$animal&msg_codigo=1");
+				exit;
+	}*/
+
+	if (count($msg_erro)==0){
+		array_push($msg,"Informações gravadas com sucesso!");
+		header("Location: ".$PHP_SELF."?animal=".$cabeca->getId()."&msg_codigo=1");
+		exit;
+	}
+}
+
+##############################################################################
+##############                INCLUDES : CABECALHO             	##############
+##############################################################################	
+
+$layout     = "movimenti";
+$titulo     = "Entrada de Nota Fiscal";
+$sub_titulo = "Movimento: Entrada de NF";
+
+include "cabecalho.php";
+
+##############################################################################
+##############                INDEXA O TEMPLATE             	##############
+##############################################################################	
+
+//$theme = ".";
+//$model = new Template($theme);
+$model->set_filenames(array('movimento.entrada.nf' => 'movimento.entrada.nf.htm'));
+
+
+##############################################################################
+##############                      ALTERAR                   	##############
+##############################################################################	
+	
+if (isset($_GET['animal']) AND strlen(trim($_GET['animal']))>0){
+
+	$animal = trim($_GET['animal']);
+	/*
+	$query ="SELECT tbl_animal.animal                      AS animal,
+					tbl_animal.numero                      AS numero ,
+					tbl_animal.apelido                     AS apelido,
+					tbl_animal.raca                        AS raca,
+					tbl_animal.marca                       AS marca,
+					tbl_animal.faixa                       AS faixa,
+					tbl_animal.fazenda                     AS fazenda,
+					DATE_FORMAT(tbl_animal.entrada , '%d/%m/%Y') AS entrada,
+					DATE_FORMAT(tbl_animal.saida , '%d/%m/%Y')   AS saida,
+					tbl_animal.pai                         AS pai,
+					tbl_animal.mae                         AS mae,
+					tbl_animal.sexo                        AS sexo,
+					DATE_FORMAT(tbl_animal.nascimento , '%d/%m/%Y') AS nascimento,
+					tbl_animal.tipo_criacao                AS tipo_criacao,
+					tbl_animal.proprietario                AS proprietario,
+					tbl_animal.valor_compra                AS valor_compra,
+					tbl_animal.previsao_valor_venda        AS previsao_valor_venda,
+					tbl_animal.valor_venda                 AS valor_venda,
+					DATE_FORMAT(tbl_animal.previsao_data_venda , '%d/%m/%Y') AS previsao_data_venda,
+					tbl_animal.crias                       AS crias,
+					tbl_animal.grupo                       AS grupo,
+					tbl_animal.local                       AS local,
+					tbl_animal.excluido                    AS excluido,
+					tbl_animal.observacao                  AS observacao,
+					DATE_FORMAT(tbl_animal.data_digitacao , '%d/%m/%Y') AS data_digitacao,
+					tbl_animal.star                        AS star,
+					tbl_animal.status                      AS status,
+					tbl_animal.peso                        AS peso
+			FROM tbl_animal
+			WHERE tbl_animal.fazenda = $login_fazenda
+			AND   tbl_animal.animal  = $animal";
+	$rSet = $db->Query($query);
+	
+	if ($db->NumRows($rSet)==1){
+	*/
+		//$linha = $db->FetchArray($rSet);
+
+	$cabeca = new Animal($animal);
+	$cabeca->setBanco($link_id,$db);
+	$cabeca->setLogin($login_fazenda,$login_admin);
+	$cabeca->getAnimal();
+
+	if ( $cabeca->getId() > 0){
+		$animal					=	$cabeca->getId();
+		$entrada				=	$cabeca->getEntrada();
+		$numero					=	$cabeca->getNumero();
+		$marca					=	$cabeca->getMarca();
+		$raca					=	$cabeca->getRaca();
+		$nascimento				=	$cabeca->getNascimento();
+		$obito					=	$cabeca->getObito();
+		$apelido				=	$cabeca->getApelido();
+		$pai					=	$cabeca->getPai();
+		$mae					=	$cabeca->getMae();
+		$animal_pai				=	$cabeca->getAnimalPai();
+		$animal_mae				=	$cabeca->getAnimalMae();
+		$sexo					=	$cabeca->getSexo();
+		$crias					=	$cabeca->getCrias();
+		$tipo_criacao			=	$cabeca->getTipoCriacao();
+		$proprietario			=	$cabeca->getProprietario();
+		$valor_compra			=	$cabeca->getValorCompra();
+		$previsao_valor_venda	=	$cabeca->getPrevisaoValorVenda();
+		$previsao_data_venda	=	$cabeca->getPrevisaoDataVenda();
+		$desmamado				=	$cabeca->getDesmamado();
+		$observacao				=	$cabeca->getObservacao();
+		$peso					=	$cabeca->getPeso();
+	}else{
+		array_push($msg_erro,"Animal não encontrado!");
+	}
+}
+
+if (strlen($msg_codigo)>0){
+	if ($msg_codigo == 1){
+		array_push($msg_ok,"Informações salvas com sucesso!");
+	}
+}
+
+
+fn_mostra_mensagens($model,$msg_ok,$msg_erro);
+
+
+	/*        TIPO DE CRIAÇÃO        */
+	$query = "	SELECT tipo_criacao,
+						descricao,
+						codigo
+				FROM tbl_tipo_criacao
+				WHERE fazenda = $login_fazenda";
+	$rSet = $db->Query($query);
+	$temp="";
+	$tipo_criacaoOption  = "";
+	$tipo_criacaoOption .= "<option value=''></option>";
+	while ($linha = $db->FetchArray($rSet)){
+		if ($tipo_criacao==$linha['tipo_criacao']) {
+			$temp = "selected";
+		}
+		$tipo_criacaoOption .= "<option value='".$linha['tipo_criacao']."' $temp>".$linha['descricao']."</option>";
+		$temp = "";
+	}
+
+	/*        PROPRIETÁRIO        */
+	$query = "	SELECT proprietario,
+						nome
+				FROM tbl_proprietario
+				WHERE fazenda = $login_fazenda";
+	$rSet = $db->Query($query);
+	$temp="";
+	$proprietarioOption  = "";
+	$proprietarioOption .= "<option value=''></option>";
+	while ($linha = $db->FetchArray($rSet)){
+		if ($proprietario==$linha['proprietario']) {
+			$temp = "selected";
+		}
+		$proprietarioOption .= "<option value='".$linha['proprietario']."' $temp>".$linha['nome']."</option>";
+		$temp="";
+	}
+		
+	/*        RAÇAS        */
+	$query = "SELECT	raca,
+						codigo,
+						nome,
+						descricao
+			  FROM tbl_raca
+			  WHERE fazenda = $login_fazenda ";
+	$rSet = $db->Query($query);
+	$temp="";
+	$racaOption  = "";
+	$racaOption .= "<option value='' ></option>";
+	while ($linha = $db->FetchArray($rSet)){
+		if ($raca==$linha['raca']) {
+			$temp="selected";
+		}
+		$racaOption .= "<option value='".$linha['raca']."' $temp>".$linha['nome']."</option>";
+		$temp="";
+	}
+		
+	/*        MARCAS        */
+	$query = "SELECT * FROM tbl_marca";
+	$rSet = $db->Query($query);
+	$temp = "";
+	$marcaOption  = "";
+	$marcaOption .= "<option value='' $temp></option>";	
+	while ($linha = $db->FetchArray($rSet)){
+		if ($marca==$linha['marca']) {
+			$temp="selected";
+		}
+		$marcaOption .= "<option value='".$linha['marca']."' $temp>".$linha['codigo']."</option>";
+		$temp="";
+	}
+
+	
+	$model->assign_vars(array(		'animal'			=>	$animal,
+									'entrada'			=>	$entrada,
+									'numero'			=>	$numero,
+									'nascimento'		=>	$nascimento,
+									'apelido'			=>	$apelido,
+									'pai'				=>	$pai,
+									'mae'				=>	$mae,
+									'sexoM'				=>	($sexo=="M")?' CHECKED ':'',
+									'sexoF'				=>	($sexo=="F")?' CHECKED ':'',
+									'crias'				=>	$crias,
+									'raca'				=>	$racaOption,
+									'marca'				=>	$marcaOption,
+									'tipo_criacao'		=>	$tipo_criacaoOption,
+									'proprietario'		=>	$proprietarioOption,
+									'valor_compra'		=>	$valor_compra,
+									'previsao_valor_venda'	=>	$previsao_valor_venda,
+									'previsao_data_venda'	=>	$previsao_data_venda,
+									'observacao'		=>	$observacao,
+									'peso'				=>	$peso
+									));	
+				
+$model->pparse('movimento.entrada.nf');
+
+##############################################################################
+##############                INCLUDES : RODAPE             	##############
+##############################################################################	
+
+include "rodape.php";
+
+
+?>

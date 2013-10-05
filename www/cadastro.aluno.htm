@@ -1,0 +1,210 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<br />
+
+<script language='JavaScript'>
+
+	function popupDisciplina(){
+		var url = "disciplina.aluno.adicionar.php";
+		popup = window.open(url, "janela", "toolbar=no, location=no, status=yes, scrollbars=yes, directories=no,menubar=no, width=350, height=450, top=18, left=0");
+	}
+
+	function criaCelula(texto) {
+		var celula = document.createElement('td');
+		celula.appendChild(document.createTextNode(texto));
+		return celula;
+	}
+
+	function removerDisciplina(iidd){
+		var tbl =document.getElementById('tbl_disciplina');
+		var oRow = iidd.parentElement.parentElement;
+		tbl.deleteRow(oRow.rowIndex);
+	}
+
+	function adicionarDisciplina(disciplina,curso_nome,disciplina_nome) {
+
+		brecar = 0;
+
+		$("input[@rel='disciplina']").each(function() {
+			if ($(this).val() == disciplina){
+				brecar++;
+			}
+		});
+
+		if (brecar>0){
+			return true;
+		}
+
+		var tbl = document.getElementById('tbl_disciplina');
+		var lastRow = tbl.rows.length;
+		var iteration = lastRow;
+
+		var linha = document.createElement('tr');
+		linha.style.cssText = 'color: #000000; text-align: left; font-size:12px';
+		if (iteration%2==0){
+			linha.className="";
+		}else{
+			linha.className="odd";
+		}
+
+		/* COLUNA 1 ------------------------------------------------------------*/
+		var celula = criaCelula(curso_nome);
+		celula.style.cssText = 'text-align: left; color: #000000;font-size:12px';
+
+		var el = document.createElement('input');
+		el.setAttribute('type', 'hidden');
+		el.setAttribute('rel', 'disciplina');
+		el.setAttribute('name', 'disciplina_' + iteration);
+		el.setAttribute('value',disciplina);
+		celula.appendChild(el);
+
+		linha.appendChild(celula);
+
+		/* COLUNA 2 ------------------------------------------------------------*/
+		var celula = criaCelula(disciplina_nome);
+		celula.style.cssText = 'text-align: left; color: #000000;font-size:12px';
+		linha.appendChild(celula);
+
+		/* COLUNA 3 ------------------------------------------------------------*/
+		var celula = document.createElement('td');
+		celula.style.cssText = 'text-align: left; color: #000000;font-size:10px';
+
+		var el = document.createElement('input');
+		el.setAttribute('type', 'image');
+		el.setAttribute('value','Remover');
+		el.setAttribute('src','imagens/excluir.gif');
+		el.onclick = function(){removerDisciplina(this);};
+		celula.appendChild(el);
+		linha.appendChild(celula);
+
+		/* Finaliza linha da tabela */
+		var tbody = document.createElement('TBODY');
+		tbody.appendChild(linha);
+		/*linha.style.cssText = 'color: #404e2a;';*/
+		tbl.appendChild(tbody);
+
+	}
+</script>
+
+<div class="frm_cadastro">
+
+	<form name="frm_cadastro" id="frm_cadastro" action="{_NOME_PROGRAMA}" method="POST" >
+	<input name="aluno" type="hidden" id="aluno" value="{ALUNO}"/>
+	
+	<fieldset class="cadastro">
+		<legend><img src="imagens/id_card2.png" align='absmiddle' alt="Informações do Aluno"> Informações do Aluno</legend>
+		
+		<table width="100%" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<td colspan='2'>
+				<img src="imagens/user1_16.png" align='absmiddle' alt="Nome do Aluno"> 
+				<label>Nome</label><br />
+				<input name="nome" type="text" id="nome" value="{NOME}" maxlength="100" style='width:96%' />
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<label>RA</label><br />
+				<input name="ra" type="text" id="ra" value="{RA}" size="20" maxlength="50" />
+			</td>
+			<td>
+				<img src="imagens/key-yellow.png" align='absmiddle' alt="Senha">
+				<label>Senha (p/ acessar o sistema)</label><br />
+				<input name="senha" type="text" id="senha" value="{SENHA}" maxlength="50" size="20" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan='2'>
+				<img src="imagens/maileee.gif" align='absmiddle' alt="E-Mail"> 
+				<label>E-mail</label><br />
+				<input name="email" type="text" id="email" value="{EMAIL}" maxlength="50" style='width:96%' />
+			</td>
+		</tr>
+		<tr>
+			<td colspan='2'><label>Ativo / Inativo</label><br />
+					<input name="ativo" type="radio" id="ativo" value="1" {ATIVO}/>
+					Ativo
+					<input name="ativo" type="radio" id="ativo" value="0" {INATIVO}/>
+					Inativo
+			</td>
+		</tr>
+		</table>
+
+		<div id="formCadastroText">
+				<fieldset class="cadastro">
+					<legend><img src="imagens/information.png" align='absmiddle' alt="Informações Gerais">  Informações Gerais (CAMPOS OPCIONAIS)</legend>
+					<table width="100%" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="5" align="center">
+					<tr>
+						<td>
+							<label>Endereço</label><br />
+							<input name="endereco" type="text" id="endereco" value="{ENDERECO}" size="50" maxlength="100" />
+						</td>
+						<td>
+							<label>Número</label><br />
+							<input name="numero" type="text" id="numero" value="{NUMERO}" size="5" maxlength="7" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Bairro</label><br />
+							<input name="bairro" type="text" id="bairro" value="{BAIRRO}" size="30" maxlength="100" />
+						</td>
+						<td>
+							<label>Complemento</label><br />
+							<input name="complemento" type="text" id="complemento" value="{COMPLEMENTO}" size="30" maxlength="100" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Cidade</label><br />
+							<input name="cidade" type="text" id="cidade" value="{CIDADE}" size="40" maxlength="100" />
+						</td>
+						<td>
+							<label>Estado</label><br />
+							<input name="estado" type="text" id="estado" value="{ESTADO}" size="2" maxlength="2" />
+						</td>
+					</tr>
+					</table>
+				</fieldset>
+		</div>
+
+		<div id="formCadastroText">
+				<fieldset class="cadastro">
+					<legend>Disciplinas do Aluno</legend>
+					<table width="100%" class="tabela" border="0" cellspacing="0" cellpadding="0" align="center" id='tbl_disciplina'>
+						<thead>
+								<tr>
+									<td>Curso</td>
+									<td>Disciplina</td>
+									<td>Ações</td>
+								</tr>
+						</thead>
+						<tbody>
+							<!-- BEGIN disciplina --> 
+							<tr {disciplina.CLASSE}>
+								<td align='left'><input name="disciplina_{disciplina.I}" type="hidden" id="disciplina_{disciplina.I}" rel='disciplina' value="{disciplina.DISCIPLINA}"/>{disciplina.CURSO_NOME}</td>
+								<td align='left'>{disciplina.DISCIPLINA_NOME}</td>
+								<td align='left'><input type='image' value='Remover' src='imagens/excluir.gif' onClick='removerDisciplina(this)'></td>
+							</tr>
+							<!-- END disciplina --> 
+						</tbody>
+					</table>
+					<p></p>
+					<p style='margin:0 auto; text-align:center'><a href='javascript: popupDisciplina()'> <img src='imagens/imagesMais.gif' align='absmiddle'> Adicionar Disciplina ao Aluno</a></p>
+					<p></p>
+				</fieldset>
+		</div>
+
+		<hr>
+		<input type='hidden' name="btn_acao" value=''>
+		<button value="gravar" class="gravarBtn" style='float:right' onclick="javascript: if(this.form.btn_acao.value == '' ) {this.form.btn_acao.value='gravar'; this.form.submit() } else { alert ('Aguarde submissão') }"><span>{BTN_NOME}</span></button>
+		<button value="gravar" class="submitBtn"  onclick="javascript: history.go(-1)"><span>Cancelar</span></button>
+
+
+		</fieldset>
+
+		</form>
+</div>

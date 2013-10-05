@@ -1,0 +1,157 @@
+SELECT-JUMP MENU
+by pixeline 
+http://www.pixeline.be, 
+release date 11 August 2005
+Version 1.0
+
+For all i care, you may do whatever you like with this script, sell it, eat it, print t-shirts, w-h-a-t-e-v-e-r. 
+BUT : if it helped you at some point, return the favour and share it with the community !
+
+
+++++++++++++++
+INTRODUCTION
+++++++++++++++
+
+This document explains how to create a "Select - Jump menu" with html,css and a slight touch of javascript
+The result is (potentially) prettier than the classical html box + it is search-engine friendly !!
+
+I tested it successfully with 
+
+IE 6 on PC
+firefox 1.0.6 on PC
+
+++++++++++++++
+INSTALLATION
+++++++++++++++
+
+
+0. the javascript 
+
+A bit of javascript is needed for Internet explorer, because IE does not recognize the  :hover state for something other than a <a> tag).
+This i found on AlistApart, i think. But i'm not sure and can't find it anymore.
+If you do recognize it is your script, please mail me and i 'll add your due credits. Sorry for my light-headedness.
+
+Oh, if you change the html div ids, below, make the change in the javascript too !!
+For instance, i used 'rollovermenu'. If you do change it, make it consistent in the js, the html, and the css.
+
+----------------------------------------------------------------
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+sfHover = function() {
+	var sfEls = document.getElementById("rollovermenu").getElementsByTagName("li");
+	for (var i=0; i<sfEls.length; i++) {
+		sfEls[i].onmouseover=function() {
+			this.className+=" sfhover";
+		}
+		sfEls[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+		}
+	}
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+
+//--><!]]></script>
+
+----------------------------------------------------------------
+
+
+1. the html code
+----------------------------------------------------------------
+<div id="rollovermenucontainer">
+	<ul id="rollovermenu"><a name="menu"></a>
+		<li id="invite"> Pick a category >>
+			<ul style="margin-top:0px;padding-top:1px;">
+				<li ><a href="index.php?action=links&amp;cat_ID=1" title="web development">web development</a></li>
+				<li ><a href="index.php?action=links&amp;cat_ID=2" title="web design">web design</a></li>
+				<li id="current"><a href="index.php?action=links&amp;cat_ID=3" title="info.art">info.art</a></li>
+				<li ><a href="index.php?action=links&amp;cat_ID=4" title="Software">Software</a></li>
+				<li ><a href="index.php?action=links&amp;cat_ID=5" title="Miscellaneous">Miscellaneous</a></li>
+				<li ><a href="index.php?action=links&amp;cat_ID=6" title="Design portals">Design portals</a></li>
+				<li ><a href="index.php?action=links&amp;cat_ID=7" title="Search Engine Optimization">Search Engine Optimization</a></li>
+				<li ><a href="index.php?action=links&amp;cat_ID=8" title="web design companies">web design companies</a></li>
+			</ul>		
+			<br style="clear:both"/>
+		</li>
+	</ul>
+</div>
+----------------------------------------------------------------
+
+2. The CSS 
+
+Note : 
+Should you choose to change the id name in the html above, make sure you make the same changes in the css file !
+
+----------------------------------------------------------------
+#rollovermenu{
+	padding:0px;
+	width:291px;
+	border:1px solid #333333;
+	border-color: #FFFFFF #FFFFFF #CCCCCC #CCCCCC;
+	background-color:#f7f3f3;
+}
+
+#rollovermenu, #rollovermenu ul { /* all lists */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+#rollovermenu ul{
+	border:1px solid #333333;
+	border-color: #FFFFFF #FFFFFF #CCCCCC #CCCCCC;
+	background-color:#f7f3f3;
+	width:270px;
+	padding-bottom:10px;
+}
+
+#rollovermenu ul a:link, #rollovermenu a:visited {
+	display: block;
+	border:none;
+	text-decoration:none;
+	padding:0px 10px;
+	height:18px;
+}
+#rollovermenu ul a:hover, #current a{
+	background:#FF9900;
+	color:white;
+
+}
+#rollovermenu li { /* all list items */
+	position: relative;
+	text-align: right;
+	cursor: default;
+	padding:0px 5px;
+	margin:0px;
+	color:#999999;
+}
+
+#rollovermenu li ul { /* second-level lists */
+	position: absolute;
+	border:1px solid #333333;
+	border-color: #f7f3f3 #FFFFFF #CCCCCC #CCCCCC;
+	background-color:#f7f3f3;
+	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+
+#rollovermenu li:hover ul, #rollovermenu li.sfhover ul { /* lists nested under hovered list items */
+	left:0px;
+	top:18px;
+}
+
+li#invite {
+	text-align:left;
+	text-transform:uppercase;
+	font-size:9px;
+	margin: 0 0 0px 20px;
+	padding:4px 0 0 0;
+	color:black;
+}
+
+
+----------------------------------------------------------------
+
+
+Hope this helps anyone whatsoever. For any help, check the forum : http://www.pixeline.be/forum
+
+See ya,
+
+Alexandre

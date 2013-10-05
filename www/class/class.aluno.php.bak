@@ -1,0 +1,102 @@
+<?
+require_once('banco.inc.php');
+include_once "funcoes.php";
+
+class Aluno {
+
+	private $aluno					= "";
+	private $instituicao			= "";
+	private $nome					= "";
+	private $ra						= "";
+	private $email					= "";
+	private $senha					= "";
+	private $disciplinas			= array();
+
+	public $Xaluno					= "";
+	public $Xinstituicao			= "";
+	public $Xnome					= "";
+	public $Xra						= "";
+	public $Xemail					= "";
+	public $Xsenha					= "";
+	public $Xdisciplinas			= array();
+
+	private $msg_erro				= array();
+	private $msg_ok					= array();
+	private $msg					= "";
+
+	public $_login_instituicao		= "";
+	public $_login_professor		= "";
+	public $_login_aluno			= "";
+
+	function Aluno(){
+		global $_login_instituicao;
+		global $_login_professor;
+		global $_login_aluno;
+
+		$this->_login_instituicao	= $_login_instituicao;
+		$this->_login_professor		= $_login_professor;
+		$this->_login_aluno			= $_login_aluno;
+	}
+
+	function getId(){
+		return $this->aluno;
+	}
+
+	function setId($aluno){
+		$this->aluno = $aluno;
+	}
+
+	function getInstituicao(){
+		return $this->instituicao;
+	}
+
+	function setInstituicao($instituicao){
+		$this->instituicao = $instituicao;
+	}
+
+	function getNome(){
+		return $this->nome;
+	}
+
+	function setNome($nome){
+		$this->nome = $nome;
+	}
+
+	function getRa(){
+		return $this->ra;
+	}
+
+	function setRa($ra){
+		$this->ra = $ra;
+	}
+
+	function getEmail(){
+		return $this->email;
+	}
+
+	function setEmail($email){
+		$this->email = $email;
+	}
+
+	function getSenha(){
+		return $this->senha;
+	}
+
+	function setSenha($senha){
+		$this->senha = $senha;
+	}
+
+	/* ALUNO - DISCIPLINA */
+	function addDisciplina($disciplina){
+		array_push($this->disciplinas,$disciplina);
+	}
+
+	function getQtdeDisciplina(){
+		return sizeof($this->disciplinas);
+	}
+
+	function getDisciplina($index){
+		return $this->disciplinas[$index];
+	}
+}
+?>

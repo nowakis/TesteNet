@@ -1,0 +1,72 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<div class="frm_cadastro">
+
+	<form name="frm_cadastro" id="frm_cadastro" action="cadastro.especie.php" method="POST" >
+	<input name="especie" type="hidden" id="especie" value="{ESPECIE}"/>
+	
+	<fieldset class="cadastro">
+		<legend>Dados da Raça</legend>
+
+		<table width="100%" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<td>
+				<label>Nome</label><br />
+				<input name="nome" type="text" id="nome" value="{NOME}" maxlength="30" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<label>Descrição</label><br />
+				<input name="descricao" type="text" id="descricao"  value="{DESCRICAO}" size="100" maxlength="50"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<!--<img src="imagens/btn_cancelar2.gif" id="bnt" width="134" height="25" onclick="javascript:window.location='cadastro.php'" style="cursor:pointer" />-->
+				<button value="gravar" class="submitBtn"  onclick="javascript:window.location='cadastro.php'"><span>Cancelar</span></button>
+			</td>
+			<td>
+				<input type='hidden' name="btn_acao" value=''>
+				<button value="gravar" class="submitBtn"  onclick="javascript: if(this.form.btn_acao.value == '' ) {this.form.btn_acao.value='gravar'; this.form.submit() } else { alert ('Aguarde submissão') }"><span>Gravar</span></button>
+				<!--<input type="image" name="Cadastrar" src="imagens/btn_gravar3.gif" id="Cadastrar" value="" onclick="javascript: if(this.value == '' ) {this.value='Cadastrar'; this.form.submit() } else { alert ('Aguarde submissão') }"/>-->
+			</td>
+		</tr>
+		</table>
+	</fieldset>
+	</form>
+</div>
+
+<br>
+		<table width="90%" border="0" cellspacing="0" cellpadding="0" class="tabela">
+		<caption>
+			<b>LISTA DAS ESPÉCIES CADASTRADAS</b>
+		</caption>
+		<thead> 
+			<tr>
+				<td>Nome</td>
+				<td>Descricao</td>
+				<td>A&ccedil;&otilde;es</td>
+			</tr>
+		</thead> 
+		<tbody>
+		<!-- BEGIN especie --> 
+			<tr {especie.CLASSE}>
+				<td> {especie.NOME}</td>
+				<td> {especie.DESCRICAO}</td>
+				<td> <a href="cadastro.especie.php?especie={especie.ESPECIE}"><img src="imagens/alterar.gif" width="18" height="18" border="0" /></a>
+					<a href="cadastro.especie.php?especie={especie.ESPECIE}"><img src="imagens/excluir.gif" width="16" height="16" border="0" onclick="if (perguntar('Deseja excluir?')) return true; else return false" /></a>
+					</td>
+			</tr>
+		</tbody>
+		<!-- END especie --> 
+		<tfoot>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+		</tfoot>
+		</table>

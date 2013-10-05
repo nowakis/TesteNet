@@ -1,0 +1,229 @@
+
+
+
+
+/* MENU REDONDO */
+
+/* contenedor */
+div#menwrap {
+	width: 220px;
+	height: 220px;
+	margin: 5em auto;
+	padding: 0;
+	background: #fff url('menu/background.jpg') no-repeat center 0;
+}
+
+div#ie_height_fix {
+	width: 1px;
+	height: 220px;
+	margin: 0;
+	padding: 0;
+}
+
+/* Dando estilo al header */
+
+div#menwrap h2 {
+	position: absolute;
+	width: 150px;
+	height: 35px;
+	margin: 60px 0 0 45px;
+	padding: 10px 0 0 0;
+	text-align: left;
+	font-size: 1.5em;
+	z-index: 0;
+	text-indent: 45px;
+}
+
+div#menwrap h2 span {
+	display: block;
+	text-indent: 0;
+	font-size: .8em;
+	width: 90px;
+	border-top: 2px solid #abe9ab;
+	margin: 5px 0 0 25px;
+	padding: 5px 0 0 0;
+	color: #666;
+	text-align: center;
+}
+
+/* Headers */
+
+div#menwrap h2.home {
+	background: url('menu/home.gif') no-repeat left -45px;
+}
+
+div#menwrap h2.tutos {
+	background: url('menu/tutos.gif') no-repeat left -45px;
+}
+
+div#menwrap h2.files {
+	background: url('menu/files.gif') no-repeat left -45px;
+}
+
+div#menwrap h2.search {
+	background: url('menu/search.gif') no-repeat left -45px;
+}
+
+div#menwrap h2.mail {
+	background: url('menu/mail.gif') no-repeat left -45px;
+}
+
+div#menwrap h2.id {
+	background: url('menu/id.gif') no-repeat left -45px;
+}
+
+div#menwrap h2.write {
+	background: url('menu/write.gif') no-repeat left -45px;
+}
+
+div#menwrap h2.logout {
+	background: url('menu/logout.gif') no-repeat left -45px;
+}
+
+/* Dando estilo a la lista */
+
+ul#menu {
+	margin: 50px auto;
+	height: 220px;
+	padding: 0;
+	width: 220px;
+	height: 220px;
+	list-style: none;
+	list-style-type: none;
+	position: relative;
+}
+
+ul#menu li {
+	width: 45px;
+	height: 45px;
+	margin: 0;
+	padding: 0;
+	display: block;
+	list-style: none;
+	list-style-type: none;
+	position: absolute;
+	z-index: 2;
+	font-size: 8pt;
+	font-family: verdana, arial, tahoma, serif;
+}
+
+/* Fondo en :active y :hover */
+
+	/* Items del menu no activos */
+	
+	ul#menu a.menitem:link, ul#menu a.menitem:visited {
+		background-position: left bottom;
+		opacity: .7;
+	}
+	
+	ul#menu a.menitem:hover, ul#menu a.menitem:active {
+		background-position: left top;
+		background-color: transparent;
+		opacity: .9;
+	}
+	
+	/* Items del menu activos */
+	
+	ul#menu li a.menactive {
+		background-position: left top;
+		background-color: transparent;
+		opacity: 1;
+	}
+
+	ul#menu li a.menactive:hover {
+		opacity: 1;
+	}
+
+/* Esconder información */
+
+ul#menu li a.menitem span, ul#menu li a.menitem strong, ul#menu li a.menactive span, ul#menu li a.menactive strong {
+	display: none;
+}
+
+/* Mostrar información en :hover */
+
+ul#menu li a.menitem:hover strong {
+	display: block;
+	text-align: left;
+	position: absolute;
+	width: 100px;
+	border-bottom: 1px solid #ffdb5e;
+	padding: 2px 0 2px 0;
+	margin: 0 0 0 5px;
+	color: #333;
+	left: 50px;
+	top: 0;
+	z-index: 2;
+}
+
+ul#menu li a.menitem:hover span {
+	display: block;
+	position: absolute;
+	width: 120px;
+	text-align: left;
+	border: 1px solid #ffe897;
+	background-color: #ffefb7;
+	padding: 20px 2px 2px 2px;
+	color: #333;
+	left: 50px;
+	top: 0;
+	z-index: 1;
+	opacity: .9;
+}
+
+/* Dando estilo a los anchors */
+
+ul#menu a {
+	border: 0;
+	position: absolute;
+	width: 45px;
+	height: 45px;
+}
+
+#home {
+	top: -20px;
+	left: 95px;
+	background-image: url('menu/home.gif');
+}
+
+#tutos {
+	top: 20px;
+	left: 170px;
+	background-image: url('menu/tutos.gif');
+}
+
+#files {
+	top: 90px;
+	left: 200px;
+	background-image: url('menu/files.gif');
+}
+
+#search {
+	top: 155px;
+	left: 170px;
+	background-image: url('menu/search.gif');
+}
+
+#mail {
+	top: 195px;
+	left: 95px;
+	background-image: url('menu/mail.gif');
+}
+
+#id {
+	top: 155px;
+	left: 10px;
+	background-image: url('menu/id.gif');
+}
+
+#write {
+	top: 90px;
+	left: -20px;
+	background-image: url('menu/write.gif');
+}
+
+#logout {
+	top: 20px;
+	left: 10px;
+	background-image: url('menu/logout.gif');
+}	

@@ -1,0 +1,53 @@
+{MSG}
+{MSG_ERRO}
+
+<p><br><a href='comunicado.php'><img src="imagens/note_add.png" alt="" align='absmiddle'> Cadastrar um novo Comunicado</a></p>
+
+<table border="0" cellspacing="0" cellpadding="0" class="tabela" align="center">
+	<thead> 
+		<tr>
+			<td>#</td>
+			<td>Título</td>
+			<td>Curso</td>
+			<td><img src="imagens/calendar.png" alt="Data do comunicado" align='absmiddle'> Data</td>
+			<td>Obrigatório</td>
+			<td>Ações</td>
+		</tr>
+	</thead> 
+
+	<tbody>
+	<!-- BEGIN comunicado --> 
+	<tr {comunicado.CLASSE} >
+		<td>{comunicado.COMUNICADO}</td>
+		<td><a href='javascript: abreComunicado({comunicado.COMUNICADO})'>{comunicado.TITULO_COMUNICADO}</a></td>
+		<td>{comunicado.CURSO}</td>
+		<td>{comunicado.DATA}</td>
+		<td>{comunicado.OBRIGATORIO}</td>
+		<td>
+			<a href="comunicado.php?comunicado={comunicado.COMUNICADO}">
+			<img src="imagens/alterar.gif" width="18" height="18" border="0"  />
+			</a>
+			<a href="comunicado.lista.php?Excluir={topico.COMUNICADO}">
+			<img src="imagens/excluir.gif" width="16" height="16" border="0" onclick="if (perguntar('Deseja excluir?')) return true; else return false" />
+			</a>
+		</td>
+	</tr>
+	<!-- END comunicado --> 
+	</tbody>		   
+	<!-- BEGIN naoencontrado --> 		   
+	<tbody>		
+	<tr >
+		<td colspan="6" class='naoencontrado'>
+		{naoencontrado.MSG}</td>
+	</tr>	
+	</tbody>		
+	<!-- END naoencontrado --> 	
+</table>
+<!-- BEGIN paginacao -->
+<hr>
+<p>{paginacao.CONTADOR}</p>
+<!-- END paginacao --> 
+<br />
+
+<br>
+<br>

@@ -1,0 +1,45 @@
+{MSG}
+<form action="?" method="post" name="envia_animais">
+		<table width="750px" border="0" cellspacing="0" cellpadding="0" class="tabela" align="center">
+			<thead> 
+				<tr>
+					<td widtd="50"  >#</td>
+					<td widtd="70" >Nota Fiscal</td>
+					<td widtd="40" >Emissão</td>
+					<td widtd="70" >Proprietario</td>			 
+					<td widtd="100">Fornecedor</td>
+					<td widtd="85" >Saida</td>
+					<td widtd="40" >Conferida</td>
+					<td widtd="50" >Exportada</td>
+					<td widtd="50" >Total</td>
+					<td widtd="115" >Ações</td>
+				</tr>
+			</thead> 
+			<tbody>
+			<!-- BEGIN faturamento --> 
+			<tr {faturamento.CLASSE} id='linha_id_{faturamento.FATURAMENTO}' onclick="javascript:selecionarLinha('linha_id_{faturamento.FATURAMENTO}','check_{faturamento.FATURAMENTO}')">
+				<td>{faturamento.FATURAMENTO}</td>
+				<td>&nbsp;<a href='faturamento.press.php?faturamento={faturamento.FATURAMENTO}' target='_blank'>{faturamento.NOTA_FISCAL}</a></td>
+				<td>&nbsp;{faturamento.EMISSAO}</td>
+				<td>&nbsp;{faturamento.PROPRIETARIO}</td>
+				<td>&nbsp;{faturamento.FORNECEDOR}</td>
+				<td>&nbsp;{faturamento.SAIDA}</td>
+				<td>&nbsp;{faturamento.CONFERIDA}</td>
+				<td>&nbsp;{faturamento.EXPORTADA}</td>
+				<td>&nbsp;{faturamento.TOTAL}</td>
+				<td>
+					<a href="movimento.entrada.nf.conferencia.php?faturamento={faturamento.FATURAMENTO}">
+					<img src="imagens/alterar.gif" width="18" height="18" border="0" onclick="if (perguntar('Deseja alterar as informações deste faturamento?')) return true; else return false"  />
+					</a>
+				</td>
+			</tr>
+			<!-- END faturamento --> 
+			</tbody>
+		</table>
+</form>
+	<br />
+	<div class="pages">
+	{PAGINACAO}
+	</div>
+<br />
+<br>

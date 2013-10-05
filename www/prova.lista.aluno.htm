@@ -1,0 +1,46 @@
+{MSG}
+{MSG_ERRO}
+
+<table border="0" cellspacing="0" cellpadding="0" class="tabela" align="center">
+	<thead> 
+		<tr>
+			<td>#</td>
+			<td>Título</td>
+			<td>Curso / Disciplina</td>
+			<td><img src="imagens/stopwatch_run.png" align='absmiddle' alt="Horário de início da prova"> Início</td>
+			<td><img src="imagens/stopwatch_stop.png" align='absmiddle' alt="Horário de início da prova"> Término</td>
+			<td></td>
+		</tr>
+	</thead> 
+
+	<tbody>
+	<!-- BEGIN prova --> 
+	<tr {prova.CLASSE} >
+		<td>{prova.PROVA}</td>
+		<td>{prova.TITULO}</td>
+		<td>{prova.CURSO} / {prova.DISCIPLINA}</td>
+		<td title='Prova cadastrada em {prova.DATA}'>{prova.DATA_INICIO}</td>
+		<td title='Prova cadastrada em {prova.DATA}'>{prova.DATA_TERMINO}</td>
+		<td>
+			<a href="prova.aluno.php?prova={prova.PROVA}">ABRIR PROVA</a>
+		</td>
+	</tr>
+	<!-- END prova --> 
+	</tbody>		   
+	<!-- BEGIN naoencontrado --> 		   
+	<tbody>		
+	<tr >
+		<td colspan="6" class='naoencontrado'>
+		{naoencontrado.MSG}</td>
+	</tr>	
+	</tbody>		
+	<!-- END naoencontrado --> 	
+</table>
+<br />
+<div class="pages">
+{PAGINACAO}
+</div>
+<br />
+
+<br>
+<br>

@@ -1,0 +1,95 @@
+{MSG}
+<br />
+	   <div class="postcomment">
+	   	  <form action="cadastro.lote.php" id="cadastrarLote" method="post" name="cadastrarLote" >	  
+		  <input name="txtlote" type="hidden" id="txtlote" value="{LOTE}" maxlength="10" />
+		  		   <b>Informações do Lote </b>
+	               <table width="750" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="0" >
+             <tr>
+               <td colspan="2" ><label>Lote <i>(C&oacute;digo ou Nome)</i> </label>
+                 <br />
+                 <input name="txtnome" type="text" id="txtnome" value="{NOME}" size="30" maxlength="30" /></td>
+               <td width="33%"><label>Ativo</label>
+               / Inativo<br />
+                 <input name="txtativo" type="radio" id="txtativo" value="1" checked="checked" />
+                 Ativo
+                 <input name="txtativo" type="radio" id="txtativo" value="0" />
+                 Inativo</td>
+             </tr>
+             <tr>
+               <td><label>Data de In&iacute;cio </label>
+                 <br />
+                 <input name="txtinicio" type="text" id="txtinicio" value="{INICIO}" size="20" maxlength="10"  onclick="showCalendarControl(this);"/>
+                 <br />
+			<i>(Data da criação do lote)</i>
+			   </td>
+               <td><label>At&eacute;...</label><br />
+                 <input name="txtfim" type="text" id="txtfim" value="{FIM}" size="20" maxlength="10"  onclick="showCalendarControl(this);"/>
+               <br /><i>(em branco nao tem validade)</i></td>
+               <td><label>Categoria</label>
+               <br />
+                 <select name="txtcategoria">
+					  <option value="" selected="selected">Selecione a Categoria...</option>		  
+					  <option value="Piqueti">Piqueti</option>
+					  <option value="Vacinação">Vacinação</option>
+					  <option value="Vender">Vender</option>
+					  <option value="Comprados">Comprados</option>			  			  			  
+					  <option value="Observados">Observados</option>	
+					  <option value="Bons">Bons</option>			  			  			  
+					  <option value="Ruins">Ruins</option>	
+					  <option value="Doentes">Doentes</option>						  
+               </select></td>
+             </tr>
+             <tr>
+               <td colspan="3"><label>Observa&ccedil;&otilde;es Gerais
+                 </label><br />
+               <textarea name="txtobservacao" cols="80" rows="4" id="txtobservacao">{OBSERVACAO}</textarea></td>
+             </tr>
+             <tr>
+               <td width="34%">&nbsp;</td>
+               <td width="33%"><img src="imagens/btn_cancelar2.gif" id="bnt" width="134" height="25" onclick="javascript:window.location='cadastro.php'" style="cursor:pointer" /></td>
+               <td>
+               <input type="image" name="Cadastrar" src="imagens/btn_gravar3.gif" id="Cadastrar" value=""
+			   onclick="javascript: if(this.value == '' ) {this.value='Cadastrar'; this.form.submit() } else { alert ('Aguarde submissão') }"/></td>
+             </tr>
+           </table>
+	     </form>
+	  </div>
+<br>
+	     <table width="740px" border="0" cellspacing="0" cellpadding="0">
+           <tr align="left">
+             <td  style='color: #2B69FD;' colspan="6"><b>LISTA DOS LOTES CADASTRADOS</b></td>
+           </tr>		 
+           <tr class="tabela_titulo">
+             <td width="159" class="tabela_titulo">Lote</td>
+             <td width="124" class="tabela_titulo">Data de In&iacute;cio </td>
+             <td width="108" class="tabela_titulo">Data do Fim </td>
+             <td width="178" class="tabela_titulo">Categoria</td>
+             <td width="112" class="tabela_titulo">N&ordm; Animais </td>
+             <td width="59" class="tabela_titulo">A&ccedil;&otilde;es</td>
+           </tr>
+		   <!-- BEGIN lote --> 
+           <tr >
+             <td  class="{lote.CLASSE}"  id="id_{lote.LOTE}_td"><a href="javascript:MostraEsconde('id_{lote.LOTE}','{lote.CLASSE}','id_{lote.LOTE}_td')">{lote.NOME}</a></td>
+             <td  class="{lote.CLASSE}"><b>{lote.INICIO}&nbsp;</b></td>
+             <td  class="{lote.CLASSE}">{lote.FIM}&nbsp;</td>
+             <td  class="{lote.CLASSE}">{lote.CATEGORIA}&nbsp;</td>
+             <td  class="{lote.CLASSE}">{lote.ANIMAIS}&nbsp;</td>
+             <td  class="{lote.CLASSE}"><a href="cadastro.lote.php?alterar={lote.LOTE}"><img src="imagens/alterar.gif" width="18" height="18" border="0" /></a> <a href="cadastro.lote.php?excluir={lote.LOTE}"><img src="imagens/excluir.gif" width="16" height="16" border="0" onclick="if (perguntar('Deseja excluir?')) return true; else return false" /></a></td>
+           </tr>
+		   <tr >
+		   	<td colspan="6" align="left" >
+			  <div id="id_{lote.LOTE}"  class="div_detalhes">
+					Ativo: {lote.ATIVO} <br>
+					Observa&ccedil;&otilde;es:    {lote.OBSERVACAO}<br />
+			  <a href="javascript:pesquisa_animal('lote','{lote.LOTE}','true')">Clique aqui para ver os animais deste lote</a>			  </div>			</td>
+		   </tr>
+		   <!-- END lote --> 
+		   <!-- BEGIN naoecnontrado --> 		   
+		   <tr >
+		   	<td colspan="6" align="center" style='padding:5px 10px;background-color:#FAED8F'>
+				{naoecnontrado.MSG}</td>
+		   </tr>	
+		   <!-- END naoecnontrado --> 		
+         </table>
+<br />

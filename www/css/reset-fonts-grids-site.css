@@ -1,0 +1,445 @@
+#ft {
+	CLEAR: both
+}
+#doc {
+	MIN-WIDTH: 730px; MARGIN: auto; WIDTH: 56.3em; TEXT-ALIGN: left
+}
+#doc2 {
+	MIN-WIDTH: 730px; MARGIN: auto; WIDTH: 56.3em; TEXT-ALIGN: left
+}
+#doc3 {
+	MIN-WIDTH: 730px; MARGIN: auto; WIDTH: 56.3em; TEXT-ALIGN: left
+}
+#doc4 {
+	MIN-WIDTH: 730px; MARGIN: auto; WIDTH: 56.3em; TEXT-ALIGN: left
+}
+.yui-t1 {
+	MIN-WIDTH: 730px; MARGIN: auto; WIDTH: 56.3em; TEXT-ALIGN: left
+}
+.yui-t2 {
+	MIN-WIDTH: 730px; MARGIN: auto; WIDTH: 56.3em; TEXT-ALIGN: left
+}
+.yui-t3 {
+	MIN-WIDTH: 730px; MARGIN: auto; WIDTH: 56.3em; TEXT-ALIGN: left
+}
+.yui-t4 {
+	MIN-WIDTH: 730px; MARGIN: auto; WIDTH: 56.3em; TEXT-ALIGN: left
+}
+.yui-t5 {
+	MIN-WIDTH: 730px; MARGIN: auto; WIDTH: 56.3em; TEXT-ALIGN: left
+}
+.yui-t6 {
+	MIN-WIDTH: 730px; MARGIN: auto; WIDTH: 56.3em; TEXT-ALIGN: left
+}
+.yui-t7 {
+	MIN-WIDTH: 730px; MARGIN: auto; WIDTH: 56.3em; TEXT-ALIGN: left
+}
+#doc2 {
+	WIDTH: 71.31em
+}
+#doc3 {
+/*	MARGIN: auto 10px; WIDTH: auto*/
+	MARGIN: auto 0px; WIDTH: auto
+}
+#doc4 {
+	WIDTH: 73.11em
+}
+.yui-b {
+	POSITION: relative
+}
+.yui-b {
+	_position: static
+}
+#yui-main .yui-b {
+	POSITION: static
+}
+#yui-main {
+	WIDTH: 100%
+}
+.yui-t1 #yui-main {
+	FLOAT: right; MARGIN-LEFT: -25em
+}
+.yui-t2 #yui-main {
+	FLOAT: right; MARGIN-LEFT: -25em
+}
+.yui-t3 #yui-main {
+	FLOAT: right; MARGIN-LEFT: -25em
+}
+.yui-t4 #yui-main {
+	FLOAT: left; MARGIN-RIGHT: -25em
+}
+.yui-t5 #yui-main {
+	FLOAT: left; MARGIN-RIGHT: -25em
+}
+.yui-t6 #yui-main {
+	FLOAT: left; MARGIN-RIGHT: -25em
+}
+.yui-t1 .yui-b {
+	FLOAT: left; WIDTH: 12.01em
+}
+.yui-t1 #yui-main .yui-b {
+	MARGIN-LEFT: 13.01em
+}
+.yui-t2 .yui-b {
+	FLOAT: left; WIDTH: 20.51em
+}
+.yui-t2 #yui-main .yui-b {
+	MARGIN-LEFT: 20.51em /* tava 19 */
+}
+.yui-t3 .yui-b {
+	FLOAT: left; WIDTH: 22.52em
+}
+.yui-t3 #yui-main .yui-b {
+	MARGIN-LEFT: 23.52em
+}
+.yui-t4 .yui-b {
+	FLOAT: right; WIDTH: 13.51em
+}
+.yui-t4 #yui-main .yui-b {
+	MARGIN-RIGHT: 14.51em
+}
+.yui-t5 .yui-b {
+	FLOAT: right; WIDTH: 18.01em
+}
+.yui-t5 #yui-main .yui-b {
+	MARGIN-RIGHT: 19.01em
+}
+.yui-t6 .yui-b {
+	FLOAT: right; WIDTH: 22.52em
+}
+.yui-t6 #yui-main .yui-b {
+	MARGIN-RIGHT: 23.52em
+}
+.yui-t7 #yui-main .yui-b {
+	DISPLAY: block; MARGIN: 0px 0px 1em
+}
+#yui-main .yui-b {
+	FLOAT: none; WIDTH: auto
+}
+.yui-g .yui-gb .yui-u {
+	FLOAT: left; MARGIN-LEFT: 2%; WIDTH: 32%
+}
+.yui-gb .yui-g {
+	FLOAT: left; MARGIN-LEFT: 2%; WIDTH: 32%
+}
+.yui-gb .yui-gb {
+	FLOAT: left; MARGIN-LEFT: 2%; WIDTH: 32%
+}
+.yui-gb .yui-gc {
+	FLOAT: left; MARGIN-LEFT: 2%; WIDTH: 32%
+}
+.yui-gb .yui-gd {
+	FLOAT: left; MARGIN-LEFT: 2%; WIDTH: 32%
+}
+.yui-gb .yui-ge {
+	FLOAT: left; MARGIN-LEFT: 2%; WIDTH: 32%
+}
+.yui-gb .yui-gf {
+	FLOAT: left; MARGIN-LEFT: 2%; WIDTH: 32%
+}
+.yui-gb .yui-u {
+	FLOAT: left; MARGIN-LEFT: 2%; WIDTH: 32%
+}
+.yui-gc .yui-u {
+	FLOAT: left; MARGIN-LEFT: 2%; WIDTH: 32%
+}
+.yui-gc .yui-g {
+	FLOAT: left; MARGIN-LEFT: 2%; WIDTH: 32%
+}
+.yui-gd .yui-u {
+	FLOAT: left; MARGIN-LEFT: 2%; WIDTH: 32%
+}
+.yui-gb .yui-gb .yui-u {
+	MARGIN-LEFT: 1.8%; _margin-left: 4%
+}
+.yui-gb .yui-gc .yui-u {
+	MARGIN-LEFT: 1.8%; _margin-left: 4%
+}
+.yui-g .yui-gb .yui-u {
+	_margin-left: .8%
+}
+.yui-gb .yui-u {
+	FLOAT: right
+}
+.yui-gb DIV.first {
+	FLOAT: left; MARGIN-LEFT: 0px
+}
+.yui-g .yui-gb DIV.first {
+	WIDTH: 32%; MARGIN-RIGHT: 0px; _width: 31.7%
+}
+.yui-gb .yui-gb DIV.first {
+	WIDTH: 32%; MARGIN-RIGHT: 0px; _width: 31.7%
+}
+.yui-gb .yui-gc DIV.first {
+	MARGIN-RIGHT: 0px
+}
+.yui-gb .yui-gd DIV.first {
+	MARGIN-RIGHT: 0px
+}
+.yui-gb .yui-gd .yui-u {
+	WIDTH: 66%; _width: 61.2%
+}
+.yui-gb .yui-gd DIV.first {
+	WIDTH: 31%; _width: 29.5%
+}
+.yui-g .yui-gc .yui-u {
+	WIDTH: 32%; MARGIN-RIGHT: 0px; _margin-left: 0; _float: right
+}
+.yui-gb .yui-gc .yui-u {
+	WIDTH: 32%; MARGIN-RIGHT: 0px; _margin-left: 0; _float: right
+}
+.yui-gb .yui-gc DIV.first {
+	FLOAT: left; MARGIN-LEFT: 0px; WIDTH: 66%
+}
+.yui-gb .yui-ge .yui-u {
+	MARGIN: 0px
+}
+.yui-gb .yui-gf .yui-u {
+	MARGIN: 0px
+}
+.yui-g .yui-u {
+	FLOAT: right
+}
+.yui-g .yui-g {
+	FLOAT: right
+}
+.yui-g .yui-gb {
+	FLOAT: right
+}
+.yui-g .yui-gc {
+	FLOAT: right
+}
+.yui-g .yui-gd {
+	FLOAT: right
+}
+.yui-g .yui-ge {
+	FLOAT: right
+}
+.yui-g .yui-gf {
+	FLOAT: right
+}
+.yui-gc .yui-u {
+	FLOAT: right
+}
+.yui-gd .yui-g {
+	FLOAT: right
+}
+.yui-g .yui-gc .yui-u {
+	FLOAT: right
+}
+.yui-ge .yui-u {
+	FLOAT: right
+}
+.yui-ge .yui-g {
+	FLOAT: right
+}
+.yui-gf .yui-g {
+	FLOAT: right
+}
+.yui-gf .yui-u {
+	FLOAT: right
+}
+.yui-g .yui-gc DIV.first {
+	FLOAT: left
+}
+.yui-g .yui-ge DIV.first {
+	FLOAT: left
+}
+.yui-g DIV.first {
+	FLOAT: left
+}
+.yui-gc DIV.first {
+	FLOAT: left
+}
+.yui-gc DIV.first DIV.first {
+	FLOAT: left
+}
+.yui-gd DIV.first {
+	FLOAT: left
+}
+.yui-ge DIV.first {
+	FLOAT: left
+}
+.yui-gf DIV.first {
+	FLOAT: left
+}
+.yui-g .yui-g .yui-u {
+	MARGIN-LEFT: 0px; WIDTH: 48.1%
+}
+.yui-gb .yui-g .yui-u {
+	MARGIN-LEFT: 0px; WIDTH: 48.1%
+}
+.yui-gc .yui-g .yui-u {
+	MARGIN-LEFT: 0px; WIDTH: 48.1%
+}
+.yui-gd .yui-g .yui-u {
+	MARGIN-LEFT: 0px; WIDTH: 48.1%
+}
+.yui-ge .yui-g .yui-u {
+	MARGIN-LEFT: 0px; WIDTH: 48.1%
+}
+.yui-gf .yui-g .yui-u {
+	MARGIN-LEFT: 0px; WIDTH: 48.1%
+}
+.yui-g .yui-g DIV.first {
+	MARGIN: 0px
+}
+.yui-gb .yui-g DIV.first {
+	MARGIN-RIGHT: 4%; _margin-right: 1.3%
+}
+.yui-gb .yui-gb .yui-u {
+	_margin-left: .7%
+}
+.yui-gb .yui-g DIV.first {
+	MARGIN-LEFT: 0px
+}
+.yui-gb .yui-gb DIV.first {
+	MARGIN-LEFT: 0px
+}
+.yui-gc .yui-g .yui-u {
+	MARGIN-LEFT: 0px; WIDTH: 48.1%
+}
+.yui-gd .yui-g .yui-u {
+	MARGIN-LEFT: 0px; WIDTH: 48.1%
+}
+.yui-g .yui-u {
+	WIDTH: 49.1%
+}
+.yui-g .yui-g {
+	WIDTH: 49.1%
+}
+.yui-g .yui-gb {
+	WIDTH: 49.1%
+}
+.yui-g .yui-gc {
+	WIDTH: 49.1%
+}
+.yui-g .yui-gd {
+	WIDTH: 49.1%
+}
+.yui-g .yui-ge {
+	WIDTH: 49.1%
+}
+.yui-g .yui-gf {
+	WIDTH: 49.1%
+}
+.yui-g .yui-gb DIV.first {
+	MARGIN-LEFT: 0px
+}
+.yui-gb DIV.first {
+	MARGIN-LEFT: 0px
+}
+.yui-gc DIV.first {
+	MARGIN-LEFT: 0px
+}
+.yui-gd DIV.first {
+	MARGIN-LEFT: 0px
+}
+.yui-g .yui-gc DIV.first {
+	WIDTH: 66%
+}
+.yui-gc DIV.first {
+	WIDTH: 66%
+}
+.yui-gd .yui-g {
+	WIDTH: 66%
+}
+.yui-gd .yui-u {
+	WIDTH: 66%
+}
+.yui-gd DIV.first {
+	WIDTH: 32%
+}
+.yui-gb .yui-gd DIV.first {
+	WIDTH: 32%
+}
+.yui-g .yui-gd DIV.first {
+	_width: 29.9%
+}
+.yui-ge .yui-u {
+	WIDTH: 24%
+}
+.yui-ge .yui-g {
+	WIDTH: 24%
+}
+.yui-gf DIV.first {
+	WIDTH: 24%
+}
+.yui-gb .yui-ge DIV.yui-u {
+	FLOAT: right
+}
+.yui-gb .yui-gf DIV.yui-u {
+	FLOAT: right
+}
+.yui-gb .yui-ge DIV.first {
+	FLOAT: left
+}
+.yui-gb .yui-gf DIV.first {
+	FLOAT: left
+}
+.yui-ge DIV.first {
+	WIDTH: 74.2%
+}
+.yui-gf .yui-g {
+	WIDTH: 74.2%
+}
+.yui-gf .yui-u {
+	WIDTH: 74.2%
+}
+.yui-gb .yui-ge .yui-u {
+	WIDTH: 24%; _width: 20%
+}
+.yui-gb .yui-gf DIV.first {
+	WIDTH: 24%; _width: 20%
+}
+.yui-gb .yui-ge DIV.first {
+	WIDTH: 73.5%; _width: 65.5%
+}
+.yui-gb .yui-gf .yui-u {
+	WIDTH: 73.5%; _width: 65.5%
+}
+#bd:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; HEIGHT: 0px; content: "."
+}
+.yui-g:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; HEIGHT: 0px; content: "."
+}
+.yui-gb:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; HEIGHT: 0px; content: "."
+}
+.yui-gc:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; HEIGHT: 0px; content: "."
+}
+.yui-gd:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; HEIGHT: 0px; content: "."
+}
+.yui-ge:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; HEIGHT: 0px; content: "."
+}
+.yui-gf:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; HEIGHT: 0px; content: "."
+}
+#bd {
+	ZOOM: 1
+}
+.yui-g {
+	ZOOM: 1
+}
+.yui-gb {
+	ZOOM: 1
+}
+.yui-gc {
+	ZOOM: 1
+}
+.yui-gd {
+	ZOOM: 1
+}
+.yui-ge {
+	ZOOM: 1
+}
+.yui-gf {
+	ZOOM: 1
+}
+.yui-gb .yui-u {
+	FLOAT: left
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Prova! - {TITULO}</title>
+
+	<link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="estilo_popup.css" media="screen" />
+
+	<SCRIPT language=javascript src="funcoes.js"></SCRIPT>
+	<script src="js/jquery-1.2.1.pack.js" type="text/javascript"></script>
+	<!-- CHECKBOX -->
+	<link rel="stylesheet" href="js/jquery.checkbox.css" />
+	<link rel="stylesheet" href="js/jquery.safari-checkbox.css" />
+	<script type="text/javascript" src="js/jquery.checkbox.js"></script>
+	<script type="text/javascript" src="js/jquery.checkboxes.pack.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('input[rel=resposta]:checkbox').checkbox();
+			$('input[safari]:checkbox').checkbox({cls:'jquery-safari-checkbox'});
+			$('input[rel=resposta]:radio').checkbox();
+		});
+	</script>
+	<!-- FIMs CHECKBOX -->
+</head>
+
+<body>
+
+
+<script language='javascript'>
+
+	function verificarTipo(campo){
+		$('#multipla_escolha').hide('fast');
+		$('#verdadeiro_falso').hide('fast');
+		$('#complete').hide('fast');
+		$('#lacuna').hide('fast');
+		$('#dissertativa').hide('fast');
+
+		if (campo == '1'){$('#dissertativa').show('slow');}
+		if (campo == '2'){$('#multipla_escolha').show('slow');}
+		if (campo == '3'){$('#verdadeiro_falso').show('slow');}
+		if (campo == '4'){$('#complete').show('slow');}
+		if (campo == '5'){$('#lacuna').show('slow');}
+	}
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		verificarTipo({TIPO_PERGUNTA_ID});
+	});
+</script>
+
+<div>
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<br />
+
+<div class="frm_cadastro">
+
+	<fieldset class="cadastro">
+		<legend>Consulta de Prova</legend>
+
+		<table width="100%" class="tabela_press" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<th colspan='2'>Título da Prova</th>
+		</tr>
+		<tr>
+			<td colspan='2'>{TITULO_PROVA}</td>
+		</tr>
+		<tr>
+			<th>Curso</th>
+			<th>Disciplina</th>
+		</tr>
+		<tr>
+			<td>{CURSO}</td>
+			<td>{DISCIPLINA}</td>
+		</tr>
+		<tr>
+			<th><img src="imagens/stopwatch_run.png" align='absmiddle' alt="Horário de início da prova"> Início</th>
+			<th><img src="imagens/stopwatch_stop.png" align='absmiddle' alt="Horário de início da prova"> Término</th>
+		</tr>
+		<tr>
+			<td>{DATA_INICIO}</td>
+			<td>{DATA_TERMINO}</td>
+		</tr>
+		</table>
+
+		<div id="formCadastroText">
+				<fieldset class="cadastro">
+					<legend>Perguntas</legend>
+						<table width="100%" class="tabela_press" border="0" cellspacing="0" cellpadding="5" align="center">
+						<thead>
+								<tr>
+									<th>#</th>
+									<th>Título</th>
+									<th>Tópico</th>
+									<th>Tipo</th>
+									<th>Dificuldade</th>
+									<th>Peso</th>
+								</tr>
+						</thead>
+						<tbody>
+							<!-- BEGIN pergunta --> 
+							<tr {pergunta.CLASSE}>
+								<td align='left'><input name="pergunta_{pergunta.I}" type="hidden" id="pergunta_{pergunta.I}" rel='pergunta' value="{pergunta.PERGUNTA}"/>{pergunta.PERGUNTA}</td>
+								<td align='left'><a href='javascript: abreProvaPergunta({pergunta.PERGUNTA})'>{pergunta.TITULO_PERGUNTA}</a></td>
+								<td align='left'>{pergunta.TOPICO}</td>
+								<td align='left'>{pergunta.TIPO}</td>
+								<td align='left'>{pergunta.DIFICULDADE}</td>
+								<td align='left'>{pergunta.PESO}</td>
+							</tr>
+							<!-- END pergunta --> 
+						</tbody>
+					</table>
+				</fieldset>
+				<p></p>
+		</div>
+		</fieldset>
+</div>
+<br>
+<br>

@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>MariliaOnLine.com</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<SCRIPT LANGUAGE="JavaScript">
+function abreimagem(chemin)
+	{
+	i1 = new Image;
+	i1.src = chemin;
+	html = '<HTML><HEAD><TITLE>Marilia OnLine</TITLE></HEAD><BODY LEFTMARGIN=0 MARGINWIDTH=0 TOPMARGIN=0 MARGINHEIGHT=0><CENTER><IMG SRC="'+chemin+'" BORDER=0 NAME=imageTest onLoad="window.resizeTo(document.imageTest.width+35,document.imageTest.height+55)"></CENTER></BODY></HTML>';
+	popupImage = window.open('','_blank','toolbar=0,location=0,directories=0,menuBar=0,scrollbars=1,resizable=1');
+	popupImage.document.open();
+	popupImage.document.write(html);
+	popupImage.document.close();
+	}
+	
+	
+function testaCidade()
+{
+	if (document.formCadastrarCidade.txtnome.value =="")
+	{
+		alert ("Dados incompletos! Por favor, verifique!");
+		return false;
+	}
+	return true;
+
+}
+function testaBairro()
+{
+	if (document.formBairro.txtcodcidade.value == ""  || document.formBairro.txtnome.value == "" )
+	{
+		alert ("Dados incompletos! Por favor, verifique!");
+		return false;
+	}
+	return true;
+
+}
+function testaCategoria()
+{
+	if (document.formCadastroCategoria.txtnome.value == "" )
+	{
+		alert ("Dados incompletos! Por favor, verifique!");
+		return false;
+	}
+	return true;
+
+}
+
+
+
+function testaform()
+{
+	if (document.form_enviar.txtnome.value =="" || document.form_enviar.txtdescricao.value == "" || document.form_enviar.txtlink.value == "")
+	{
+		alert ("Dados incompletos! Por favor, verifique!");
+		return false;
+	}
+	return true;
+
+}
+
+function habilitaAlterar()
+{
+	document.formEdit.txtnome.readOnly = false;
+	document.formEdit.txtdescricao.readOnly = false;
+	document.formEdit.txtcategoria.disabled = false;
+	document.formEdit.txtcidade.disabled = false;
+	document.formEdit.txtbairro.disabled = false;
+	document.formEdit.txtrua.readOnly = false;
+	document.formEdit.txttelefone.readOnly = false;						
+	document.formEdit.txtfonte.disabled = false;	
+	document.formEdit.txtstatus.disabled = false;
+	document.formEdit.txttipo.disabled = false;	
+	document.formEdit.txtlink.readOnly = false;		
+	document.formEdit.btnSalvar.disabled = false;		
+
+}
+function habilitaAlterarCidade()
+{
+	document.formCidadeEdit.txtnome.readOnly = false;
+	document.formCidadeEdit.txtdescricao.readOnly = false;
+	document.formCidadeEdit.txtfoto.readOnly = false;
+	document.formCidadeEdit.bntsaslvarCidade.disabled = false;
+}
+
+
+function confirmarExcluir()
+{
+	var teste = confirm ("Tem certeza que deseja excluir?");
+	
+		if (teste)
+			window.location = "?modulo=configurar&menu=cidade&a=excluir&codigo="+document.formaListaCidade.select_cidade.value;
+		else 
+			return false;
+}
+function confirmarEditar()
+{
+	var teste = confirm ("Deseja editar os dados desta cidade?");
+	
+		if (teste)
+			return true;
+		else 
+			return false;
+}
+
+function confirmarExcluirAnuncio(url)
+{
+	var teste = confirm ("Tem certeza que deseja excluir?");
+	
+		if (teste){
+			window.location = url;
+		}
+		else 
+			return false;
+}
+	
+	
+</SCRIPT>
+<style type="text/css"> 
+<!--
+#geral {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	width: 780px;
+	font-size: 12px;
+	color: #000000;
+}
+
+#geral a {
+	color: #000000;
+	text-decoration:none;
+}
+#geral a:hover {
+	color: #000000;
+	text-decoration:underline;
+}
+
+table {
+font-size:10px;
+}
+
+#header {
+	display:inline;
+	font-size: 9px;
+	text-align: right;
+	height:47px;
+	width:100%;
+	background-image:url(imagens/header_fundo.gif);
+	background-repeat:repeat;
+	padding-top:10px;
+	vertical-align: middle;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	clear: both;
+}
+#header li {
+	display:inline;
+	padding-left:5px;
+	padding-right:5px;	
+}
+#header a {
+	color: #666666;
+	text-decoration: none;
+}
+#header a:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+
+#logo {
+	font-size: 10px;
+	background-color: #FFFFFF;
+	font-weight: bold;
+	text-transform: capitalize;
+	text-align: left;
+	font-style: italic;
+	clear: both;
+}
+#barra_header {
+	height:10px;
+	background-color: #9AC4F7;
+	border-top: 1px #42A0FF solid;
+	clear: both;	
+	border-left: 1px solid #799ECD;		
+	border-right: 1px solid #799ECD;		
+}
+#menu_esquerda {
+	float:left;
+	width: 171px;
+	background-color:#D4E5FB;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 3px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: dashed;
+	border-left-style: solid;
+	border-top-color: #799ECD;
+	border-right-color: #799ECD;
+	border-bottom-color: #799ECD;
+	border-left-color: #799ECD;
+}
+
+#menu_esquerda #banners, #menu_direita #publicidades{
+	text-align:center;
+	padding-bottom:10px;
+}
+#menu_esquerda #banners img, #menu_direita #publicidades img{
+	margin-top:5px;
+	border: 1px solid #666666;
+}
+
+#menu_direita {
+	float:right;
+	width: 155px;
+	background-color:#D4E5FB;
+	clear: both;
+	border-left: 1px solid #799ECD;		
+	border-top: 1px solid #799ECD;	
+	border-right: 1px solid #799ECD;	
+	border-bottom: 6px dashed #E3EEFD;				
+}
+#menu_esquerda p,#menu_direita p,#menu_meio p,#lista_tel_uteis{
+	font-size: 10px;
+	padding-left:4px;
+	padding-right:4px;
+	padding-bottom:0px;
+}
+
+#menu_meio {
+	margin-left:172px;
+	margin-right:156px;
+	padding-top:2px;
+	background-color:#FFFFFF;
+	background-image: url(imagens/barrinha_fundo_destaque.gif);
+	background-repeat: repeat-x;
+}
+
+#menu_meio p img{
+	text-align:center;
+}
+
+input,select,text{
+	background-color: #FFFFFF;
+	border: 1px solid #CBDFFA;
+}
+
+
+.formEdit textarea, .formEdit select, .formEdit input{
+	background-color: #E6F0FB;
+	border: 0px none #E6F0FB;
+}
+
+#lista_imagens {
+	font-size: 9px;
+	color: #333333;
+	padding-left: 3px;
+	padding-right: 3px;
+	width:280px;
+	height:85px;
+	z-index:1;
+	overflow: auto;
+	visibility: visible;
+	border: 1px solid #D7D7D7;
+	float: left;
+}
+#mostra_imagem {
+	font-size: 9px;
+	color: #333333;
+	padding-left: 3px;
+	padding-right: 3px;
+	width:150px;
+	height:85px;
+	z-index:1;
+	overflow: auto;
+	visibility: visible;
+	border: 1px solid #D7D7D7;
+}
+
+#footer {
+	font-size: 10px;
+	height:71px;
+	background-image:url(imagens/barra_inferior.gif);
+	color: #666666;
+	text-align: center;
+	width: 100%;
+	clear: both;
+	padding-top:25px;
+}
+#footer a{
+	padding-top:10px;	
+	color:#666666;
+}
+#footer a:hover{
+	color:#000000;
+}
+
+body {
+	background-color: #C8C8C8;
+	margin-top:0px;
+}
+.style1 {color: #2E82D6}
+.style3 {color: #2E82D6; font-weight: bold; }
+
+-->
+</style>
+
+
+</head>
+
+<body>
+<div id="geral">
+<div id="header">
+<ul>
+<li><a href="index.php">HOME</a></li>
+<li><a href="index.php?menu=quemsomos">QUEM SOMOS</a></li>
+<li><a href="index.php?menu=classificados">CLASSIFICADOS</a></li>
+<li><a href="index.php?menu=visita">TURISMO</a></li>
+<li><a href="index.php?menu=contato">CONTATE-NOS</a></li>
+</ul>
+
+</div>
+<div id="logo"><img src="imagens/logo2.gif" width="150" height="100" /></div>
+<div id="barra_header"></div>
+
+<div id="menu_esquerda">
+      <img src="imagens/btnlogin.gif" width="171" height="33" />
+<p>
+  	Olá <strong>{NOME}</strong>,<br />
+seja bem vindo!<br /><br />
+
+Seus dados:<br /><br />
+
+<strong>Nome:</strong> {NOME}<br />
+<strong>Login:</strong> {LOGIN}<br />
+<strong>email:</strong> {EMAIL}<br />
+<strong>Nivel:</strong> {NIVEL}</p>
+
+<p>
+    <br />
+  
+  <a href="logout.php">Logout</a> <br />
+      <br />
+</p>
+</div>
+<div id="menu_direita">
+
+    <img src="imagens/btnsistema.gif" width="155" height="33" />
+    <br />
+	<p><img src="imagens/icones/06Configuracoes.gif" width="42" height="42" /><a href="?modulo=anuncio&amp;acao=adicionar"></a></p>
+
+  
+    <p>
+       <strong>Anuncios</strong><br />
+      <br />
+      <a href="?modulo=anuncio&amp;acao=adicionar">Adicionar</a><br />
+      <a href="?modulo=anuncio&amp;acao=visualizar">Visualizar</a> <br />
+      <br />
+      <strong>Configura&ccedil;&otilde;es</strong><br />
+      <br />
+      <a href="?modulo=configurar&amp;menu=cidade">Cidades</a><br />
+      <a href="?modulo=configurar&amp;menu=bairro">Bairros</a><br />
+      <a href="?modulo=configurar&amp;menu=categoria">Categorias</a><br /><br />
+
+      <a href="?modulo=configurar&amp;menu=destaques">Destaques</a><br />
+      <a href="?modulo=configurar&amp;menu=publicidades">Publicidades</a><br />
+      <a href="?modulo=configurar&amp;menu=parceiros">Parceiros</a><br />
+      <a href="?modulo=configurar&amp;menu=anuncios">Anuncios</a><br />
+      <a href="?modulo=configurar&amp;menu=banners">Banners</a><br />
+<br />
+      <br />
+      <strong>Classificados</strong><br />
+      <br />
+  <a href="?modulo=classificados&amp;acao=todos">Todos</a><br />
+  <a href="?modulo=classificados&amp;acao=liberar">Pendentes</a><br />
+  <br />
+  <br />
+      <br />
+    </p>
+  </div>
+<div id="menu_meio">
+  <!-- BEGIN inicio -->
+  <img src="imagens/bntgerenciador.gif" width="179" height="31" /> <br />
+	<p>
+  Bem vindo ao gerenciador do site!.<br />
+
+  {inicio.MSG}<br />
+  <br />
+  Utilize o menu ao lado para gerenciar o site! <br />
+<br />
+	</p>
+  <!-- END inicio --> 	
+  <!-- BEGIN anuncios -->
+  <img src="imagens/bntanuncios.jpg" width="131" height="31" /> <br />
+		<p>
+  {anuncios.MSG}
+
+	  <!-- BEGIN adicionar -->
+      <span class="style1">{anuncios.adicionar.MSG}</span>
+    <form action="?modulo=anuncio&acao=adicionar&ok=1" method="post" name="form1" id="form_enviar">
+	      <strong>Nome</strong><br />
+	      <input name="txtnome" type="text" id="txtnome" size="60" maxlength="100" />
+	      <br />
+	      <br /> 
+	      <strong>Descrição</strong><br />
+						<textarea name="txtdescricao" cols="40" rows="10" id="txtdescricao"></textarea>
+                        <br />
+                        <br />
+      <strong>Breve Descri&ccedil;&atilde;o (M&aacute;ximo de 50 caracteres) </strong><br />
+                        <input name="txttrecho" type="text" id="txttrecho" size="60" maxlength="50" />
+                        <br />
+                        <br />
+                        <strong>Categoria</strong><br />
+          <select name="txtcategoria" id="txtcategoria" >
+{BUSCACATEGORIA}						  
+          </select>
+	                    <br />
+	                    <br />
+<strong>Cidade</strong><br />
+          <select name="txtcidade" id="txtcidade">
+{BUSCACIDADE}						  		  
+          </select>
+	                    <br />	
+						<br />
+
+	      <strong>Rua</strong><br />
+	      <input name="txtrua" type="text" id="txttelefone" size="60" maxlength="60" />																		
+	                    <br />						
+	                    <br />
+<strong>Bairro</strong><br />
+          <select name="txtbairro" id="txtbairro">
+{BUSCABAIRRO}						  		  
+          </select>
+	                    <br />
+						<br />
+
+	      <strong>Telefone</strong><br />
+	      <input name="txttelefone" type="text" id="txttelefone" size="20" maxlength="15" />																		
+	                    <br />
+						<br />
+
+<strong>Tipo</strong><br />
+          <select name="txttipo" id="txttipo">
+            <option value="Parceiro">Parceiro</option>
+            <option value="Publicidade">Publicidade</option>
+            <option value="Anuncio" selected="selected">Anuncio</option>
+          </select>
+	                    <br />
+	                    <br />
+<strong>Tamanho da Fonte</strong><br />
+          <select name="txtfonte" id="txtfonte">
+            <option value="12"  selected="selected">Normal</option>
+            <option value="16">Anuncio</option>
+            <option value="18">Grande</option>			
+          </select>
+	                    <br />
+												
+	                    <br />
+<strong>Status</strong><br />
+          <select name="txtstatus" id="txtstatus">
+            <option value="Ativo">Ativo</option>
+            <option value="Inativo" selected="selected">Inativo</option>
+          </select>
+	                    <br />
+	                    <br />
+	                    <strong>Link</strong>
+                        <br />
+                        <input name="txtlink" type="text" value="#" size="50" maxlength="50" />
+	                    <br />
+	                    <br />
+	                    <input name="btnadicionar" type="submit" id="btnadicionar" value=" Adiconar Anuncio " onclick="return testaform()" />
+	</form>		
+	  <br />
+	
+	  <!-- END adicionar --> 
+	  <!-- BEGIN editar -->
+		
+	  editar anuncios
+	  {anuncios.editar.MSG}<br />
+	  <br />
+
+	    <!-- END editar --> 
+
+	    <!-- BEGIN visualizar -->
+	  <span class="style1">{anuncios.visualizar.MSG}<br /></span>
+	  <table width="428" border="0">
+	    <!-- BEGIN detalhes -->		
+        <tr>
+          <td width="103"><strong>Codigo</strong></td>
+          <td bgcolor="#D5E6F7">{anuncios.visualizar.detalhes.CODIGO}</td>
+        </tr>
+        <tr>
+          <td><strong>Anunciante</strong></td>
+          <td bgcolor="#D5E6F7">{anuncios.visualizar.detalhes.NOME}</td>
+        </tr>
+        <tr>
+          <td><strong>Categoria</strong></td>
+          <td bgcolor="#D5E6F7">{anuncios.visualizar.detalhes.CATEGORIA}</td>
+        </tr>
+        <tr>
+          <td><strong>Tipo</strong></td>
+          <td bgcolor="#D5E6F7">{anuncios.visualizar.detalhes.TIPO}</td>
+        </tr>			
+        <tr>
+          <td><strong>Status</strong></td>
+          <td bgcolor="#D5E6F7">{anuncios.visualizar.detalhes.STATUS}</td>
+        </tr>
+        <tr>
+          <td width="103">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>		
+	    <!-- END detalhes -->			
+      </table>
+ 
+	  <br />
+	    <!-- END visualizar --> 				
+	    <!-- BEGIN visualizar_anuncio -->
+    <span class="style1">{anuncios.visualizar_anuncio.MSG}</span>
+	  
+	  <table width="428" border="0" cellspacing="4">
+	  <form action="?modulo=anuncio&acao=visualizar&id={anuncios.visualizar_anuncio.CODIGO}&update={anuncios.visualizar_anuncio.CODIGO}" id="formEdit" method="post" name="formEdit" class="formEdit" >	  
+        <tr>
+          <td width="65">&nbsp;</td>
+          <td width="344">&nbsp;</td>
+        </tr>
+        <tr>
+          <td><strong>Codigo</strong></td>
+          <td bgcolor="#E6F0FB"><input name="txtcodigo" type="text" id="txtcodigo" value="{anuncios.visualizar_anuncio.CODIGO}" size="40" maxlength="40" readonly="true" />		  </td>
+        </tr>
+        <tr>
+          <td><strong>Anunciante</strong></td>
+          <td bgcolor="#E6F0FB"><input name="txtnome" type="text" id="txtnome" value="{anuncios.visualizar_anuncio.NOME}" size="40" maxlength="40" readonly="true" /></td>
+        </tr>
+        <tr>
+          <td><strong>Descri&ccedil;&atilde;o</strong></td>
+          <td bgcolor="#E6F0FB">
+            <textarea name="txtdescricao" cols="40" rows="6" readonly="true" id="txtdescricao">{anuncios.visualizar_anuncio.DESCRICAO}</textarea></td>
+        </tr>
+        <tr>
+          <td><strong>Brave Descrição</strong></td>
+          <td bgcolor="#E6F0FB">
+          <input name="txttrecho" type="text" id="txttrecho" value="{anuncios.visualizar_anuncio.TRECHO}" size="40" maxlength="50" readonly="true" /></td>
+        </tr>		
+        <tr>
+          <td><strong>Categoria</strong></td>
+          <td bgcolor="#E6F0FB">
+          <select name="txtcategoria" disabled="disabled" id="txtcategoria"  >
+		  {anuncios.visualizar_anuncio.CATEGORIA}
+          </select>          </td>
+        </tr>
+        <tr>
+          <td><strong>Cidade</strong></td>
+          <td bgcolor="#E6F0FB">
+           <select name="txtcidade" disabled="disabled" id="txtcidade">
+		  {anuncios.visualizar_anuncio.CIDADE}
+          </select>		  </td>
+        </tr>
+        <tr>
+          <td><strong>Bairro</strong></td>
+          <td bgcolor="#E6F0FB">
+          <select name="txtbairro" disabled="disabled" id="txtbairro">
+ 		  {anuncios.visualizar_anuncio.BAIRRO}
+          </select>          </td>
+        </tr>
+        <tr>
+          <td><strong>Rua</strong></td>
+          <td bgcolor="#E6F0FB">
+          <input name="txtrua" type="text" id="txtrua" value="{anuncios.visualizar_anuncio.RUA}" size="40" readonly="true" /></td>
+        </tr>
+        <tr>
+          <td><strong>Telefone</strong></td>
+          <td bgcolor="#E6F0FB">
+          <input name="txttelefone" type="text" id="txttelefone" value="{anuncios.visualizar_anuncio.TELEFONE}" size="40" readonly="true" /></td>
+        </tr>
+        <tr>
+          <td><strong>Fonte</strong></td>
+          <td bgcolor="#E6F0FB">
+          <select name="txtfonte" disabled="disabled" id="txtfonte" >
+            <option value="12" {anuncios.visualizar_anuncio.FONTE12}>Normal</option>
+            <option value="16" {anuncios.visualizar_anuncio.FONTE16}>Anuncio</option>
+            <option value="18" {anuncios.visualizar_anuncio.FONTE18}>Grande</option>			
+          </select></td>
+        </tr>
+        <tr>
+          <td><strong>Status</strong></td>
+          <td bgcolor="#E6F0FB">
+          <select name="txtstatus" disabled="disabled" id="txtstatus"  readonly="true">
+            <option value="Inativo" {anuncios.visualizar_anuncio.STATUSInativo}>Inativo</option>
+            <option value="Ativo"  {anuncios.visualizar_anuncio.STATUSAtivo}>Ativo</option>
+          </select>          </td>
+        </tr>
+        <tr>
+          <td><strong>Tipo</strong></td>
+          <td bgcolor="#E6F0FB">
+          <select name="txttipo" disabled="disabled" id="txttipo"  readonly="true">
+            <option value="Anuncio" {anuncios.visualizar_anuncio.TIPOAnuncio}>Anuncio</option>
+            <option value="Publicidade" {anuncios.visualizar_anuncio.TIPOPublicidade}>Publicidade</option>
+            <option value="Parceiro" {anuncios.visualizar_anuncio.TIPOParceiro}>Parceiro</option>			
+          </select>          </td>
+        </tr>		
+        <tr>
+          <td><strong>Link</strong></td>
+          <td bgcolor="#E6F0FB">
+          <input name="txtlink" type="text" id="txtlink" value="{anuncios.visualizar_anuncio.LINK}" size="40" readonly="true" /></td>
+        </tr>
+        <tr>
+          <td><strong>Hits</strong></td>
+          <td bgcolor="#E6F0FB">
+          <input name="txthits" type="text" id="txthits" value="{anuncios.visualizar_anuncio.HITS}" size="40" readonly="true" /></td>
+        </tr>
+        <tr>
+          <td><strong>Destaque?<br />
+            <br />
+            <br />
+            <br />
+          </strong></td>
+          <td bgcolor="#E6F0FB">{anuncios.visualizar_anuncio.DESTAQUE}<br />
+            <br />
+          * Anuncios em destaque devem ter imagens cadastradas como destaque para se v&aacute;lido. </td>
+        </tr>
+        <tr>
+          <td colspan="2" bgcolor="#AFCFEF">
+          <input name="btnExcluir" type="button" value="Excluir" onclick="javascript: confirmarExcluirAnuncio('?modulo=anuncio&acao=visualizar&excluir={anuncios.visualizar_anuncio.CODIGO}')"/>
+          <input name="btnAlterar" type="button" value="Alterar" onclick="javascript: habilitaAlterar();"/>
+          <input name="btnSalvar" type="submit" disabled="disabled" value="Salvar" /></td>
+        </tr>	
+		</form>					
+        <tr>
+          <td><strong>Imagens</strong></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="2" bordercolor="#000000" bgcolor="#EDF4FC">
+          <form action="?modulo=anuncio&amp;acao=visualizar&amp;id={anuncios.visualizar_anuncio.CODIGO}&amp;addimg=1" method="post" enctype="multipart/form-data" name="form2" id="form2">
+            Selecione a imagem: <br />
+            <input name="file" type="file" size="50"/>
+      <br />
+      <label>
+      Legenda (opcional) <br />
+      <input name="txtdescricao" type="text" size="50" />
+      </label>
+      <br />
+      <label>
+      Tipo        
+          <select name="txttipo">
+        <option value="destaque" selected="selected">Destaque (Home)</option>
+        <option value="foto">Foto (Adicionais)</option>
+        <option value="publicidade">Publicidade</option>
+        <option value="parceiro">Parceiro</option>		
+            </select>
+      </label>
+      <input type="hidden" name="MAX_FILE_SIZE" value="500000" />
+      <input type="submit" name="Submit" value="Enviar Imagem" />
+            </form></td>
+        </tr>
+        <tr>
+          <td colspan="2" bgcolor="#E6F0FB">{anuncios.visualizar_anuncio.IMAGENS} <br />
+  <br />          </td></tr>					
+    </table>
+	  
+	  <br />
+	  <br />
+	    <!-- END visualizar_anuncio --> 				
+		
+		</p>
+  <!-- END anuncios --> 
+
+
+
+  <!-- BEGIN configurar -->
+        <img src="imagens/bntconfiguracoes.jpg" width="204" height="31" /> 
+	<p>
+	<!-- BEGIN cidade -->
+	<h3>Cidades</h3>
+
+		<span class="style1">{configurar.cidade.MSG}</span><br />
+
+<table width="417" border="1" cellpadding="10" bordercolor="#FFFFFF" bgcolor="#FFFFFF">
+        <tr>
+          <td width="198" height="166">Cidades Cadastradas
+            <form id="formaListaCidade" name="form4" method="post" action="?modulo=configurar&menu=cidade&a=editar">
+              <select name="select_cidade" size="10">
+                
+              {configurar.cidade.listaNomes}			  
+            
+              
+              </select>
+              <input type="submit" name="Submit2" value="Editar Cidade" onclick="return confirmarEditar()"/><input type="Button" name="Button2" value="Apagar" onclick="return confirmarExcluir()"/>            
+	      </form>		  </td>
+          <td width="167" bordercolor="#CCCCCC"><strong>
+		  Cadastrar Cidades<br />
+
+		  
+		  </strong>
+            <form id="formCadastrarCidade" name="form3" method="post" action="?modulo=configurar&amp;menu=cidade&a=cadastrar">
+            <strong>Nome da Cidade            </strong>
+            <input name="txtnome" type="text" id="txtnome" maxlength="60" />
+            <strong>Descrição</strong>
+            (opcional)
+            <input name="txtdescricao" type="text" id="txtdescricao" maxlength="100" />
+                              <br />
+                              <br />
+                              <input type="submit" name="Submit3" value="Cadastrar Cidade"  onclick="return testaCidade()" />
+          </form>          </td>
+      </tr>
+    </table>
+		<br />
+		
+      <!-- END cidade -->
+	  
+       <!-- BEGIN cidadeDados -->
+	   	<h3>Cidade: Edição</h3>
+		<span class="style1">{configurar.cidadeDados.MSG}</span><br />		
+      <table width="428" border="0" cellspacing="4">
+        <form action="?modulo=configurar&menu=cidade&a=editar&salvar={configurar.cidadeDados.CODIGO}" method="post" enctype="multipart/form-data" name="formEdit" class="formEdit" id="formCidadeEdit" >
+          <tr>
+            <td width="65">&nbsp;</td>
+            <td width="344">&nbsp;</td>
+          </tr>
+          <tr>
+            <td><strong>Codigo</strong></td>
+            <td bgcolor="#E6F0FB"><input name="txtcodigo" type="text" id="txtcodigo" value="{configurar.cidadeDados.CODIGO}" size="40" maxlength="40" readonly="true" />            </td>
+          </tr>
+          <tr>
+            <td><strong>Nome</strong></td>
+            <td bgcolor="#E6F0FB"><input name="txtnome" type="text" id="txtnome" value="{configurar.cidadeDados.NOME}" size="40" maxlength="40" readonly="true" /></td>
+          </tr>
+          <tr>
+            <td><strong>Descri&ccedil;&atilde;o</strong></td>
+            <td bgcolor="#E6F0FB"><textarea name="txtdescricao" cols="40" rows="6" readonly="true" id="txtdescricao">{configurar.cidadeDados.DESCRICAO}</textarea></td>
+          </tr>
+          <tr>
+            <td><strong>Foto</strong></td>
+            <td bgcolor="#E6F0FB"><input name="txtfoto" readonly="true" type="file" id="txtfoto" />{configurar.cidadeDados.FOTO}</td>
+          </tr>
+
+          <tr>
+            <td colspan="2" bgcolor="#AFCFEF"><input name="btnAlterar2" type="button" value="Alterar" onclick="javascript: habilitaAlterarCidade();"/>
+                <input name="bntsaslvarCidade" type="submit" disabled="disabled" value="Salvar" /></td>
+          </tr>
+        </form>
+      </table>
+       <!-- END cidadeDados -->	  
+      <!-- BEGIN bairro -->
+	<h3>Bairros</h3>
+
+		<span class="style3">{configurar.bairro.MSG}</span> <br /><br />
+		
+		<strong>
+		Bairros Cadastrados:
+		</strong>
+		<form id="formaListaBairro" name="form4" method="post" action="?modulo=configurar&amp;menu=bairro&amp;a=deletar">
+		  <select name="select_bairro" size="10">
+            
+                
+              {configurar.bairro.listaNomes}			  
+            
+              
+              
+          </select>
+          <br />
+          <input type="submit" name="Submit22" value="Apagar Bairro" onclick="return confirmarExcluir()"/>
+        </form>
+		<strong><br />
+		<br />
+		Cadastrar Bairro		</strong>
+		<form action="?modulo=configurar&amp;menu=bairro&amp;a=cadastrar" method="post" name="formBairro" id="formCadastrarBairro">
+          Nome da Cidade <br />
+
+                    <select name="txtcodcidade">
+              {configurar.bairro.listaCidades}			  
+                              </select>
+          <br />
+          <br />
+          Nome da Bairro<br />
+          
+          <input name="txtnome" type="text" id="txtnome" maxlength="60" />
+          <br />
+Descri&ccedil;&atilde;o (opcional) <br />
+          
+          <input name="txtdescricao" type="text" id="txtdescricao" maxlength="100" />
+          <br />
+          <br />
+          <input type="submit" name="Submit32" value="Cadastrar Bairro"  onclick="return testaBairro()" />
+    </form>
+		<br />
+      <!-- END bairro --> 
+	 
+      <!-- BEGIN categoria -->
+	<h3>Categorias</h3>
+
+		<span class="style1">{configurar.categoria.MSG}</span><br />
+
+<table width="417" border="1" cellpadding="10" bordercolor="#FFFFFF" bgcolor="#FFFFFF">
+        <tr>
+          <td width="198" height="166">Categorias Cadastradas
+            <form id="formaListaCategoria" name="formaListaCategoria" method="post" action="?modulo=configurar&amp;menu=categoria&a=deletar">
+              <select name="select_categoria" size="10">
+                
+              {configurar.categoria.listaNomes}			  
+            
+              
+              </select>
+              <input type="submit" name="Submit2" value="Apagar Categoria" onclick="return confirmarExcluir()"/>          
+	      </form>		  </td>
+          <td width="167" bordercolor="#CCCCCC"><strong>
+		  Cadastrar Categoria<br />
+
+		  
+		  </strong>
+            <form id="formCadastroCategoria" name="form3" method="post" action="?modulo=configurar&amp;menu=categoria&a=cadastrar">
+            <strong>Nome da Categoria            </strong>
+            <input name="txtnome" type="text" id="txtnome" maxlength="60" />
+            <strong>Descrição</strong>
+            (opcional)
+            <input name="txtdescricao" type="text" id="txtdescricao" maxlength="100" />
+            <br />
+                              <br />
+                              <input type="submit" name="Submit3" value="Cadastrar Categoria"  onclick="return testaCategoria()" />
+          </form>          </td>
+      </tr>
+    </table>
+		<br />
+      <!-- END categoria -->
+	   
+    <!-- BEGIN destaques -->
+		<h3>Destaques</h3>	
+		<span class="style3">{configurar.destaques.MSG}</span> 		
+		<p>
+		Relação dos clientes que estão com o seu anuncio em DESTAQUE.<br />
+		<br />
+		<br />
+			 <!-- BEGIN detalhes -->	
+			 Código: <strong>{configurar.destaques.detalhes.CODIGO}</strong><br />
+			 Nome do Cliente: <strong><a href="?modulo=anuncio&acao=visualizar&id={configurar.destaques.detalhes.CODIGO}">{configurar.destaques.detalhes.NOME}</a></strong><br />
+			 Ações: <a href="?modulo=configurar&amp;menu=destaques&amp;retirar={configurar.destaques.detalhes.CODIGO}">Retirar de 'Destaques?'</a><br />
+			 <br />
+		 	 <!-- END detalhes -->		
+    <hr />
+	*IMPORTANTE: Todo anuncio que est&aacute; em destaque tem que ter uma FOTO cadastrada como destaque. Caso contrario, o an&uacute;ncio n&atilde;o ser&aacute; mostrado.
+	<p>
+	 <!-- END destaques -->	
+	 
+    <!-- BEGIN publicidades -->
+	<h3>Publicidades</h3>	
+		<span class="style3">{configurar.publicidades.MSG}</span> 		
+		<p>
+		Relação dos clientes que tem anuncios na seção Publicidade.<br />
+		<br />
+		<br />
+			 <!-- BEGIN detalhes -->	
+			 Código: <strong>{configurar.publicidades.detalhes.CODIGO}</strong><br />
+			 Nome do Cliente: <strong><a href="?modulo=anuncio&acao=visualizar&id={configurar.publicidades.detalhes.CODIGO}">{configurar.publicidades.detalhes.NOME}</a></strong><br />
+			 Telefone: <strong>{configurar.publicidades.detalhes.TELEFONE}</strong><br />
+			 <br />
+			 <br />
+		 	 <!-- END detalhes -->		
+    <hr />
+    <p>
+	 <!-- END publicidades -->	
+	 
+    <!-- BEGIN banners -->
+	<h3>Banners</h3>	
+		<span class="style3">{configurar.banners.MSG}</span> 		
+		<p>
+		Lista de Banners (em construção)<br />
+		<br />
+		<br />
+			 <!-- BEGIN detalhes -->	
+			 Código: <strong>{configurar.banners.detalhes.CODIGO}</strong><br />
+			 Nome do Cliente: <strong><a href="?modulo=anuncio&acao=visualizar&id={configurar.banners.detalhes.CODIGO}">{configurar.banners.detalhes.NOME}</a></strong><br />
+			 Telefone: <strong>{configurar.banners.detalhes.TELEFONE}</strong><br />
+			 <br />
+			 <br />
+		 	 <!-- END detalhes -->		
+    <hr />
+    <p>
+	 <!-- END banners -->		 
+    <!-- BEGIN parceiros -->
+	<h3>Parceiros</h3>	
+		<span class="style3">{configurar.parceiros.MSG}</span> 		
+		<p>
+		Relação dos clientes que tem anuncios na seção Publicidade.<br />
+		<br />
+		<br />
+			 <!-- BEGIN detalhes -->	
+			 Código: <strong>{configurar.parceiros.detalhes.CODIGO}</strong><br />
+			 Nome do Cliente: <strong><a href="?modulo=anuncio&acao=visualizar&id={configurar.parceiros.detalhes.CODIGO}">{configurar.parceiros.detalhes.NOME}</a></strong><br />
+			 Telefone: <strong>{configurar.parceiros.detalhes.TELEFONE}</strong><br />
+			 <br />
+			 <br />
+		 	 <!-- END detalhes -->		
+    <hr />
+    <p>
+	 <!-- END parceiros -->		 
+    <!-- BEGIN anuncios -->
+	<h3>Anunciantes</h3>	
+		<span class="style3">{configurar.anuncios.MSG}</span> 		
+		<p>
+		Relação dos clientes que tem anuncios na seção Anuncio.<br />
+		<br />
+		<br />
+			 <!-- BEGIN detalhes -->	
+			 Código: <strong>{configurar.anuncios.detalhes.CODIGO}</strong><br />
+			 Nome do Cliente: <strong><a href="?modulo=anuncio&acao=visualizar&id={configurar.anuncios.detalhes.CODIGO}">{configurar.anuncios.detalhes.NOME}</a></strong><br />
+			 Telefone: <strong>{configurar.anuncios.detalhes.TELEFONE}</strong><br />
+			 <br />
+			 <br />
+		 	 <!-- END detalhes -->		
+    <hr />
+    <p>
+	 <!-- END anuncios -->		  	 
+	</p>
+    <!-- END configurar --> 
+	
+	
+    <!-- BEGIN classificados -->	
+        <img src="imagens/bntclassificados.jpg" width="204" height="31" /> 
+	<p>
+	<h3>Classificados</h3>
+	<h5>{classificados.MENU}</h5>	
+	<span class="style3">{classificados.MSG}</span> <br />
+
+    <!-- BEGIN detalhes -->	
+<table width="435" border="0">
+  <tr>
+    <td width="260"><strong>Codigo</strong>: {classificados.detalhes.codigo} </td>
+    <td width="159"><a href="5"> {classificados.detalhes.status} </a></td>
+    </tr>
+  <tr>
+    <td colspan="2"><strong>Nome:</strong> {classificados.detalhes.nome} </td>
+    </tr>
+  <tr>
+    <td><strong>Endere&ccedil;o: </strong>{classificados.detalhes.endereco} </td>
+    <td><strong>Telefone: </strong>{classificados.detalhes.telefone} </td>
+  </tr>
+  <tr>
+    <td><strong>Cidade: </strong>{classificados.detalhes.cidade} </td>
+    <td><strong>Data:</strong> {classificados.detalhes.data} </td>
+    </tr>
+  <tr>
+    <td colspan="2"><strong>e-mail:</strong> {classificados.detalhes.email} </td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>T&iacute;tulo do Anuncio: </strong>{classificados.detalhes.titulo} </td>
+    </tr>
+  <tr>
+    <td colspan="2"><strong>Descri&ccedil;&atilde;o:  </strong>{classificados.detalhes.descricao}</td>
+  </tr>
+</table>
+<hr /><br />
+ <!-- END detalhes -->	
+
+	
+	</p>
+    <!-- END classificados -->	
+
+	
+	
+  </div>
+
+<div id="footer">
+© 2005-2006 MariliaOnLine.com. Todos os direitos reservados.<br />
+<a href="index.php">Home</a> | <a href="index.php?menu=quemsomos">Quem Somos</a> | <a href="index.php?menu=agendarvisita">Agende Uma Visita</a> | <a href="index.php?menu=contato">Contato</a> </div>
+</div>
+
+</body>
+
+</html>
+

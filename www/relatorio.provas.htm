@@ -1,0 +1,44 @@
+{MSG}
+{MSG_ERRO}
+
+<table border="0" cellspacing="0" cellpadding="0" class="tabela" align="center">
+	<thead> 
+		<tr>
+			<td>Prova</td>
+			<td>Curso/Disciplina</td>
+			<td><img src="imagens/stopwatch_run.png" align='absmiddle' alt="Horário de início da prova"> Data</td>
+			<td>Aluno</td>
+			<td>Nota</td>
+			<td>Status</td>
+		</tr>
+	</thead> 
+
+	<tbody>
+	<!-- BEGIN relatorio --> 
+	<tr {relatorio.CLASSE} >
+		<td><a href='javascript: abreProva({relatorio.PROVA})'>{relatorio.PROVA}</a></td>
+		<td><span style='font-size:12px'>{relatorio.CURSO}</span><br><span style='font-size:10px'>{relatorio.DISCIPLINA}</span></td>
+		<td>{relatorio.DATA}</td>
+		<td><a href='cadastro.aluno.php?aluno={relatorio.ALUNO}' target='_blank'>{relatorio.NOME_ALUNO}</a></td>
+		<td>{relatorio.NOTA}</td>
+		<td>{relatorio.STATUS}</td>
+	</tr>
+	<!-- END relatorio --> 
+	</tbody>		   
+	<!-- BEGIN naoencontrado --> 		   
+	<tbody>		
+	<tr >
+		<td colspan="6" class='naoencontrado'>
+		{naoencontrado.MSG}</td>
+	</tr>	
+	</tbody>		
+	<!-- END naoencontrado --> 	
+</table>
+<!-- BEGIN paginacao -->
+<hr>
+<p>{paginacao.CONTADOR}</p>
+<!-- END paginacao --> 
+<br />
+
+<br>
+<br>

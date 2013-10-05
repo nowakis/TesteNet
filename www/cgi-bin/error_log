@@ -1,0 +1,52 @@
+[03-Oct-2008 21:30:03] PHP Warning:  fopen(emails/divulgacao.html) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/nowakis/public_html/testenet/www/class/class.phpmailer.php on line 1859
+[03-Oct-2008 21:30:03] PHP Warning:  fopen(emails/divulgacao.html) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/nowakis/public_html/testenet/www/class/class.phpmailer.php on line 1859
+[03-Oct-2008 21:30:03] PHP Warning:  fopen(emails/divulgacao.html) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/nowakis/public_html/testenet/www/class/class.phpmailer.php on line 1859
+[03-Oct-2008 21:30:03] PHP Warning:  fopen(emails/divulgacao.html) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/nowakis/public_html/testenet/www/class/class.phpmailer.php on line 1859
+[03-Oct-2008 21:30:03] PHP Warning:  fopen(emails/divulgacao.html) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/nowakis/public_html/testenet/www/class/class.phpmailer.php on line 1859
+[03-Oct-2008 21:30:03] PHP Warning:  fopen(emails/divulgacao.html) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/nowakis/public_html/testenet/www/class/class.phpmailer.php on line 1859
+[03-Oct-2008 21:30:04] PHP Warning:  fopen(emails/divulgacao.html) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/nowakis/public_html/testenet/www/class/class.phpmailer.php on line 1859
+[03-Oct-2008 21:30:04] PHP Warning:  fopen(emails/divulgacao.html) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/nowakis/public_html/testenet/www/class/class.phpmailer.php on line 1859
+[03-Oct-2008 21:30:04] PHP Warning:  fopen(emails/divulgacao.html) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/nowakis/public_html/testenet/www/class/class.phpmailer.php on line 1859
+[03-Oct-2008 21:30:04] PHP Warning:  fopen(emails/divulgacao.html) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/nowakis/public_html/testenet/www/class/class.phpmailer.php on line 1859
+[06-Oct-2008 21:30:20] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Excesso de conexões in /home/nowakis/public_html/testenet/www/class/class.banco.php on line 26
+[06-Oct-2008 21:30:20] PHP Warning:  mysql_select_db(): supplied argument is not a valid MySQL-Link resource in /home/nowakis/public_html/testenet/www/class/class.banco.php on line 27
+[06-Oct-2008 21:30:20] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/nowakis/public_html/testenet/www/class/class.banco.php on line 45
+[06-Oct-2008 21:30:20] PHP Fatal error:  Uncaught exception 'Exception' with message 'Erro ao recuperar Relatório de Acessos (	SELECT tbl_divulgacao.divulgacao, tbl_divulgacao.professor, tbl_divulgacao.aluno, tbl_divulgacao.nome, tbl_divulgacao.email
+					FROM tbl_divulgacao
+					WHERE ultimo_email IS NULL
+					ORDER BY tbl_divulgacao.ultimo_email ASC 
+					LIMIT 10)' in /home/nowakis/public_html/testenet/www/class/class.divulgacao.DAO.php:50
+Stack trace:
+#0 /home/nowakis/public_html/testenet/www/class/class.SessionFacade.php(1534): DivulgacaoDAO->enviarEmailDAO(Object(Divulgacao))
+#1 /home/nowakis/public_html/testenet/www/class/class.divulgacao.php(72): SessionFacade->enviarEmail(Object(Divulgacao))
+#2 /home/nowakis/public_html/testenet/www/cgi-bin/envia_email_divulgacao.php(16): Divulgacao->enviarEmail(Object(SessionFacade))
+#3 {main}
+  thrown in /home/nowakis/public_html/testenet/www/class/class.divulgacao.DAO.php on line 50
+[08-Oct-2008 20:30:02] PHP Warning:  require_once(../class/class.SessionFacade.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/nowakis/public_html/testenet/www/cgi-bin/envia_email_divulgacao.php on line 7
+[08-Oct-2008 20:30:02] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../class/class.SessionFacade.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/nowakis/public_html/testenet/www/cgi-bin/envia_email_divulgacao.php on line 7
+[22-Oct-2008 20:34:51] PHP Fatal error:  Call to undefined method Divulgacao::divulgacaoPesquisa() in /home/nowakis/public_html/testenet/www/cgi-bin/envia_email_pesquisa.php on line 16
+[22-Jan-2009 15:05:45] PHP Fatal error:  Uncaught exception 'Exception' with message 'Erro ao recuperar Relatório de Acessos (	SELECT tbl_divulgacao.divulgacao, tbl_divulgacao.professor, tbl_divulgacao.aluno, tbl_divulgacao.nome, tbl_divulgacao.email
+					FROM tbl_divulgacao
+					WHERE ultimo_email IS NULL
+					ORDER BY tbl_divulgacao.ultimo_email ASC 
+					LIMIT 30)' in /home/nowakis/public_html/testenet/www/class/class.divulgacao.DAO.php:106
+Stack trace:
+#0 /home/nowakis/public_html/testenet/www/class/class.SessionFacade.php(1549): DivulgacaoDAO->enviarEmailDAO(Object(Divulgacao))
+#1 /home/nowakis/public_html/testenet/www/class/class.divulgacao.php(72): SessionFacade->enviarEmail(Object(Divulgacao))
+#2 /home/nowakis/public_html/testenet/www/cgi-bin/envia_email_divulgacao.php(16): Divulgacao->enviarEmail(Object(SessionFacade))
+#3 {main}
+  thrown in /home/nowakis/public_html/testenet/www/class/class.divulgacao.DAO.php on line 106
+[27-Jan-2009 16:30:46] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (11) in /home/nowakis/public_html/testenet/www/class/class.banco.php on line 26
+[27-Jan-2009 16:30:47] PHP Warning:  mysql_select_db(): supplied argument is not a valid MySQL-Link resource in /home/nowakis/public_html/testenet/www/class/class.banco.php on line 27
+[27-Jan-2009 16:30:47] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/nowakis/public_html/testenet/www/class/class.banco.php on line 45
+[27-Jan-2009 16:30:47] PHP Fatal error:  Uncaught exception 'Exception' with message 'Erro ao recuperar Relatório de Acessos (	SELECT tbl_divulgacao.divulgacao, tbl_divulgacao.professor, tbl_divulgacao.aluno, tbl_divulgacao.nome, tbl_divulgacao.email
+					FROM tbl_divulgacao
+					WHERE ultimo_email IS NULL
+					ORDER BY tbl_divulgacao.ultimo_email ASC 
+					LIMIT 30)' in /home/nowakis/public_html/testenet/www/class/class.divulgacao.DAO.php:106
+Stack trace:
+#0 /home/nowakis/public_html/testenet/www/class/class.SessionFacade.php(1549): DivulgacaoDAO->enviarEmailDAO(Object(Divulgacao))
+#1 /home/nowakis/public_html/testenet/www/class/class.divulgacao.php(72): SessionFacade->enviarEmail(Object(Divulgacao))
+#2 /home/nowakis/public_html/testenet/www/cgi-bin/envia_email_divulgacao.php(16): Divulgacao->enviarEmail(Object(SessionFacade))
+#3 {main}
+  thrown in /home/nowakis/public_html/testenet/www/class/class.divulgacao.DAO.php on line 106

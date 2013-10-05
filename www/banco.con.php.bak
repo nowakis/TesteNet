@@ -1,0 +1,10 @@
+<?
+
+require_once('banco.config.php');
+require_once('class/class.banco.php');
+
+global $banco;
+$banco = new BancodeDados();
+$banco->conecta();
+$sessionFacade = new SessionFacade($banco); 
+?>

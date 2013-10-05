@@ -1,0 +1,71 @@
+<?php
+	include_once "class.Template.inc.php";
+	include_once "funcoes.php";
+
+	$_nome_programa = basename($_SERVER['PHP_SELF'],'.php');
+
+	#include_once "class.Erro.php"; 
+		
+	$theme = ".";
+	$model = new Template($theme);
+	$model->set_filenames(array('cabecalho' => 'cabecalho.htm'));
+
+	$model->assign_block_vars('sub_titulo', array());  
+	if (isset($layout)){
+		switch ($layout){
+				case "inicio": 
+						$model->assign_vars(array('SUB_MENU_ATIVO' => "1"));		
+//						$model->assign_vars(array('MENU_1' => "current"));								
+//						$model->assign_block_vars('sub_titulo.sub_cadastro', array());  
+						break;
+				case "cadastro": 
+						$model->assign_vars(array('SUB_MENU_ATIVO' => "2"));		
+//						$model->assign_vars(array('MENU_1' => "current"));								
+//						$model->assign_block_vars('sub_titulo.sub_cadastro', array());  
+						break;						
+				case "movimento": 
+						$model->assign_vars(array('SUB_MENU_ATIVO' => "3"));		
+//						$model->assign_vars(array('MENU_1' => "current"));								
+//						$model->assign_block_vars('sub_titulo.sub_cadastro', array());  				
+						break;
+				case "gerencia": 
+						$model->assign_vars(array('SUB_MENU_ATIVO' => "4"));		
+//						$model->assign_vars(array('MENU_1' => "current"));								
+//						$model->assign_block_vars('sub_titulo.sub_cadastro', array());  					
+						break;
+				case "relatorio": 
+						$model->assign_vars(array('SUB_MENU_ATIVO' => "5"));		
+//						$model->assign_vars(array('MENU_1' => "current"));								
+//						$model->assign_block_vars('sub_titulo.sub_cadastro', array());  					
+						break;
+				case "financeiro": 
+						$model->assign_vars(array('SUB_MENU_ATIVO' => "6"));		
+//						$model->assign_vars(array('MENU_1' => "current"));								
+//						$model->assign_block_vars('sub_titulo.sub_cadastro', array());  					
+						break;
+				default: $model->assign_vars(array('SUB_MENU_ATIVO' => "0"));		
+		}
+		
+	}
+				
+	$model->assign_vars(array('TITULO'		=> $titulo));
+	$model->assign_vars(array('SUBTITULO'	=> $sub_titulo));
+	$model->assign_vars(array('LOGIN_NOME'	=> $_login_nome));
+	$model->assign_vars(array('LOGIN_EMAIL'	=> $_login_email));
+	$model->assign_vars(array('DATA'		=> $_login_data_logado));
+	
+	try {
+		$instituicoes = $sessionFacade->recurarInstituicaoTodosDAO();
+		for($i= 0; $i < sizeof($instituicoes); $i++) { 
+			$model->assign_block_vars('instituicao_professor', array(	'INSTITUICAO'	=>	$instituicoes[$i]->getId(),
+																		'NOME'			=>	$instituicoes[$i]->getNome(),
+																		'SELECTED'		=>	($instituicoes[$i]->getId() == $_login_instituicao)?"SELECTED":""
+																	));
+		}
+	}catch(Exception $e) {
+		array_push($msg_erro,$e->getMessage());
+	}
+
+	$model->pparse('cabecalho');
+	
+?>

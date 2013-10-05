@@ -1,0 +1,44 @@
+{MSG}
+{MSG_ERRO}
+
+<p><br><a href='cadastro.instituicao.php'><img src="imagens/element_new_after.png" alt="" align='absmiddle'> Cadastrar uma nova Instituição</a></p>
+
+
+<table border="0" cellspacing="0" cellpadding="0" class="tabela" align="center">
+	<thead> 
+		<tr>
+			<td>#</td>
+			<td>Nome</td>
+			<td>Ações</td>
+		</tr>
+	</thead> 
+
+	<tbody>
+	<!-- BEGIN instituicao --> 
+	<tr {instituicao.CLASSE} >
+		<td>{instituicao.INSTITUICAO}</td>
+		<td>{instituicao.NOME}</td>
+		<td>
+			<a href="cadastro.instituicao.php?instituicao={instituicao.INSTITUICAO}">
+			<img src="imagens/alterar.gif" width="18" height="18" border="0" />
+			</a>
+			<a href="cadastro.instituicao.lista.php?Excluir={instituicao.INSTITUICAO}">
+			<img src="imagens/excluir.gif" width="16" height="16" border="0" onclick="if (perguntar('Deseja excluir?')) return true; else return false" />
+			</a>
+		</td>
+	</tr>
+	<!-- END instituicao --> 
+	<!-- BEGIN naoencontrado -->
+	<tr>
+		<td colspan="3" class='naoencontrado'>{naoencontrado.MSG}</td>
+	</tr>	
+	<!-- END naoencontrado --> 	
+	</tbody>
+</table>
+<!-- BEGIN paginacao -->
+<hr>
+<p>{paginacao.CONTADOR}</p>
+<!-- END paginacao --> 
+<br />
+<br />
+<br />

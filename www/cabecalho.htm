@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>TesteNet! - {TITULO}</title>
+
+<SCRIPT language=javascript src="funcoes.js"></SCRIPT>
+
+<!-- INICIO - CABECALHO DO JQUERY -->
+<!--<script src="jquery-1.1.2.pack.js" type="text/javascript"></script>-->
+<!--<script src="js/jquery-1.2.1.pack.js" type="text/javascript"></script>-->
+<script src="js/jquery-1.2.6.min.js" type="text/javascript"></script>
+
+<script src="js/jquery.maskedinput-1.1.2.pack.js" type="text/javascript"></script>
+<script src="js/jquery.MultiFile.js" type="text/javascript"></script>
+<script src="js/jquery-ui-personalized-1.6b.packed.js" type="text/javascript"></script>
+<script src="js/jquery.numeric.pack.js" type="text/javascript"></script>
+
+
+<!-- CHECKBOX -->
+<link rel="stylesheet" href="js/jquery.checkbox.css" />
+<link rel="stylesheet" href="js/jquery.safari-checkbox.css" />
+<script type="text/javascript" src="js/jquery.checkbox.js"></script>
+<script type="text/javascript" src="js/jquery.checkboxes.pack.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('input[rel=resposta]:checkbox').checkbox();
+		$('input[safari]:checkbox').checkbox({cls:'jquery-safari-checkbox'});
+		$('input[rel=resposta]:radio').checkbox();
+		$("input[rel=numero]").numeric(".")
+	});
+</script>
+<!-- FIMs CHECKBOX -->
+
+<link rel="stylesheet" type="text/css" href="css/reset-fonts-grids-site.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#data").mask("99/99/9999");
+	$("input[@rel='data']").mask("99/99/9999");
+	$("input[@rel='data_hora']").mask("99/99/9999 99:99");
+	$("input[@rel='hora']").mask("99:99");
+
+	 $('.multi-pt').MultiFile({
+		accept:'gif|jpg', max:5, STRING: {
+			remove:'Remover',
+			selected:'Selecionado: $file',
+			denied:'Inválido arquivo de tipo $ext!',
+			duplicate:'Arquivo já selecionado:\n$file!'
+		}
+	 });
+
+});
+</script>
+
+<link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/menu.css" />
+<link rel="stylesheet" type="text/css" href="chrometheme/chromestyle.css" />
+
+<script type="text/javascript" src="chromejs/chrome.js" > </script>
+
+<!-- FIM - CABECALHO DO JQUERY -->
+{HEADCAL}
+
+</head>
+
+<body>
+
+<div id="box">
+
+<div id="head"></div>
+
+<div id="content">
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td  width="9" valign="top" background="imagens/fundo_esquerda_aux.jpg">
+			<img src="imagens/fundo_lado_inteira_esquerdo.jpg" />
+		</td>
+		<td valign="top" width="762">
+
+			<div class='logo_id'>
+				<div class='logo_sub'>
+					<b>Usuário:</b> {LOGIN_NOME} ({LOGIN_EMAIL}) - <a href='logout.php'>Sair</a><br>
+					<b>Você está na Instituição: </b>
+						{INSTITUICAO_NOME}
+						<!-- BEGIN nome_instituicao --> 
+							<select class='instituicao' onChange="javascript: window.location = 'index.php?instituicao='+this.value">
+								<!-- BEGIN instituicao --> 
+									<option value="{nome_instituicao.instituicao.INSTITUICAO}" {nome_instituicao.instituicao.SELECTED}>{nome_instituicao.instituicao.NOME}</option>
+								<!-- END instituicao --> 
+							</select>
+						<!-- END nome_instituicao --> 
+				</div>
+				<p><img src="imagens/logo.jpg" /></p>
+			</div>
+
+			<!-- BEGIN menu -->
+			<div class="chromestyle" id="chromemenu">
+				<ul>
+					<li><a href="index.php"><img src='imagens/home.png' align='absmiddle'/> Início</a></li>
+					<!-- BEGIN menu_professor --> 
+					<li><a href="#" rel="dropmenuIns"><img src='imagens/cubes.png' align='absmiddle'/> Instituição</a></li>
+					<li><a href="#" rel="dropmenuAlu"><img src='imagens/users3.png' align='absmiddle' /> Aluno</a></li>
+					<li><a href="#" rel="dropmenuCad"><img src='imagens/scroll_ok.png' align='absmiddle'/> Pergunta</a></li>
+					<li><a href="#" rel="dropmenuPro"><img src='imagens/document_edit.png' align='absmiddle' /> Prova</a></li>
+					<li><a href="#" rel="dropmenuCom"><img src='imagens/note_edit.png' align='absmiddle' /> Comunicado</a></li>
+					<li><a href="#" rel="dropmenuRel"><img src='imagens/column-chart.png' align='absmiddle' /> Relatório</a></li>
+					<li><a href="logout.php"><img src='imagens/door_next_32.png' align='absmiddle'/> Sair</a></li>					
+					<!-- END menu_professor --> 
+
+					<!-- BEGIN menu_aluno --> 
+					<li><a href="#" rel="dropmenuAluProva"><img src='imagens/index.png' align='absmiddle'/> Provas</a></li>
+					<li><a href="#" rel="dropmenuAluComun"><img src='imagens/note_edit.png' align='absmiddle' /> Comunicados</a></li>
+					<li><a href="logout.php"><img src='imagens/door_next_32.png' align='absmiddle'/> Sair</a></li>
+					<!-- END menu_aluno --> 
+				</ul>
+			</div>
+			<!-- END menu --> 
+
+			<!--1st drop down menu -->                                                   
+			<div id="dropmenuIns" class="dropmenudiv" style="width: 220px;">
+				<a href="cadastro.instituicao.php?instituicao={INSTITUICAO}"><img src='imagens/cube_yellow_preferences.png' align='absmiddle'/> Alterar Dados</a>
+				<a href="cadastro.instituicao.php"><img src='imagens/cube_yellow_add.png' align='absmiddle'/> Adicionar Nova Instituição</a>
+				<a href="cadastro.curso.lista.php"><img src='imagens/server_into.png' align='absmiddle'/> Curso</a>
+				<a href="cadastro.disciplina.lista.php"><img src='imagens/data_into.png' align='absmiddle'/> Discilina</a>
+				<a href="cadastro.professor.lista.php"><img src='imagens/businessmen.png' align='absmiddle'/> Professor</a>
+			</div>
+			
+			<!--2nd drop down menu -->                                                   
+			<div id="dropmenuCad" class="dropmenudiv">
+				<a href="cadastro.pergunta.php"><img src='imagens/scroll_add.png' align='absmiddle'/> Cadastrar Pergunta</a>
+				<a href="cadastro.pergunta.lista.php"><img src='imagens/scroll.png' align='absmiddle'/> Todas Perguntas</a>
+			</div>
+
+			<!--3rd drop down menu -->                                                
+			<div id="dropmenuAlu" class="dropmenudiv" style="width: 200px;">
+				<a href="cadastro.aluno.php"><img src='imagens/user1_add.png' align='absmiddle'/> Cadastrar</a>
+				<a href="cadastro.aluno.lista.php"><img src='imagens/users_into.png' align='absmiddle'/> Alunos Cadastrados</a>
+			</div>
+
+			<!--4rd drop down menu -->                                                   
+			<div id="dropmenuPro" class="dropmenudiv" style="width: 250px;">
+				<a href="prova.criar.php"><img src='imagens/document_add.png' align='absmiddle'/> Agendar Prova</a>
+				<a href="prova.lista.php?filtro=agendada"><img src='imagens/document_time.png' align='absmiddle'/> Provas Agendadas</a>
+				<a href="prova.lista.php?filtro=realizada"><img src='imagens/document_preferences.png' align='absmiddle'/> Provas Realizadas</a>
+				<a href="prova.lista.php?filtro=correcao"><img src='imagens/document_error.png' align='absmiddle'/> Provas Pendentes de Correção</a>
+				<!--<a href="#"><img src='imagens/document_ok.png' align='absmiddle'/> Provas Corrigidas</a>-->
+			</div>
+			
+			<!--5rd drop down menu -->                                                   
+			<div id="dropmenuCom" class="dropmenudiv" style="width: 180px;">
+				<a href="comunicado.php"><img src='imagens/note_add.png' align='absmiddle'/> Novo Comunicado</a>
+				<a href="comunicado.lista.php"><img src='imagens/note_pinned.png' align='absmiddle'/> Todos Comunicados</a>
+			</div>
+						
+			<!--6rd drop down menu -->                                                   
+			<div id="dropmenuRel" class="dropmenudiv" style="width: 200px;">
+				<a href="relatorio.frequencia.php"><img src='imagens/scroll_replace.png' align='absmiddle'/> Frequência de Acessos</a>
+				<a href="relatorio.provas.php"><img src='imagens/document_chart.png' align='absmiddle'/> Provas</a>
+			</div>
+
+			<!-- Menu Alunos -->
+			<div id="dropmenuAluProva" class="dropmenudiv" style="width: 200px;">
+				<a href="prova.lista.aluno.php?filtro=agendada"><img src='imagens/document_time.png' align='absmiddle'/> Provas Agendadas</a>
+				<a href="prova.lista.aluno.php?filtro=realizada"><img src='imagens/document_preferences.png' align='absmiddle'/> Provas Realizadas</a>
+			</div>
+			<div id="dropmenuAluComun" class="dropmenudiv" style="width: 200px;">
+				<a href="comunicado.lista.aluno.php?filtro=novos"><img src='imagens/note_new.png' align='absmiddle'/> Não Lidos</a>
+				<a href="comunicado.lista.aluno.php"><img src='imagens/note_pinned.png' align='absmiddle'/> Todos</a>
+			</div>
+
+			<script type="text/javascript">
+				cssdropdown.startchrome("chromemenu")
+			</script>
+
+			<div id='conteudo'>
+
+
+				<div id="em_foco">{SUBTITULO}</div>

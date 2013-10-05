@@ -1,0 +1,54 @@
+{MSG}
+{MSG_ERRO}
+
+<table border="0" cellspacing="0" cellpadding="0" class="tabela" align="center">
+	<thead> 
+		<tr>
+			<td>#</td>
+			<td>Título</td>
+			<td>Curso / Disciplina</td>
+			<td><img src="imagens/stopwatch_run.png" align='absmiddle' alt="Horário de início da prova"> Início</td>
+			<td><img src="imagens/stopwatch_stop.png" align='absmiddle' alt="Horário de início da prova">  Término</td>
+			<td>Ações</td>
+		</tr>
+	</thead> 
+
+	<tbody>
+	<!-- BEGIN prova --> 
+	<tr {prova.CLASSE} >
+		<td>{prova.PROVA}</td>
+		<td><a href='javascript: abreProva({prova.PROVA})'>{prova.TITULO}</a></td>
+		<td>{prova.CURSO} / {prova.DISCIPLINA}</td>
+		<td title='Prova cadastrada em {prova.DATA}'>{prova.DATA_INICIO}</td>
+		<td title='Prova cadastrada em {prova.DATA}'>{prova.DATA_TERMINO}</td>
+		<td>
+			<a href="prova.criar.manual.php?prova={prova.PROVA}">
+			<img src="imagens/alterar.gif" width="18" height="18" border="0" />
+			</a>
+			<a href="prova.excluir.php?prova={prova.PROVA}">
+			<img src="imagens/excluir.gif" width="16" height="16" border="0" onclick="if (perguntar('Deseja excluir?')) return true; else return false" />
+			</a>
+			<a href="prova.resolvida.php?prova={prova.PROVA}" target='_blank'>
+			<img src="imagens/document_into_16.png" border="0"  />
+			</a>
+		</td>
+	</tr>
+	<!-- END prova --> 
+	</tbody>		   
+	<!-- BEGIN naoencontrado --> 		   
+	<tbody>		
+	<tr >
+		<td colspan="6" class='naoencontrado'>
+		{naoencontrado.MSG}</td>
+	</tr>	
+	</tbody>		
+	<!-- END naoencontrado --> 	
+</table>
+<!-- BEGIN paginacao -->
+<hr>
+<p>{paginacao.CONTADOR}</p>
+<!-- END paginacao --> 
+<br />
+
+<br>
+<br>

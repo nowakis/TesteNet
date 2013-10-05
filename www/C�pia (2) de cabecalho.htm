@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>TeleMediaBR - {TITULO}</title>
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <link href="CalendarControl.css" rel=stylesheet type=text/css>
+    <link href="style.css" rel="stylesheet" type="text/css" />    
+	<SCRIPT language=javascript src="CalendarControl.js"></SCRIPT>
+    <SCRIPT language=javascript src="funcoes.js"></SCRIPT>
+    <SCRIPT language=javascript src="ajax.js"></SCRIPT>
+    <SCRIPT language=javascript src="ajax2.js"></SCRIPT>
+    
+    <!-- INICIO - CABECALHO DO JQUERY -->
+        <script src="jquery-1.1.2.pack.js" type="text/javascript"></script>
+        <script src="jquery.history_remote.pack.js" type="text/javascript"></script>
+        <script src="jquery.tabs.pack.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('#container-7').tabs({  fxFade: true, fxShow: { height: 'show', opacity: 'show' }, fxAutoHeight: true });
+             });
+        </script>
+        <link rel="stylesheet" href="jquery.tabs.css" type="text/css" media="print, projection, screen">    
+    <!-- FIM - CABECALHO DO JQUERY -->
+            
+    {HEADCAL}    
+  </head>
+  <body>
+    <div xmlns="" id="mastwrap">
+      <div id="masthead">
+      
+      <div class="article" lang="en" xml:lang="en">
+           {DATA} <b>{LOGIN}</b>
+      </div>
+      
+        <div id="sisternav">
+          <ul>
+            <li id="{MENU_1}">
+              <a href="cadastro.php">Cadastro</a>
+            </li>
+            <li id="{MENU_2}">
+              <a href="movimento.php">Movimento</a>
+            </li>
+            <li id="{MENU_3}">
+              <a href="gerencia.php">Ger&ecirc;ncia</a>
+            </li>
+            <li id="{MENU_4}">
+              <a href="financeiro.php">Financeiro</a>
+            </li>
+            <li id="{MENU_5}">
+              <a href="relatorio.php">Relatorio</a>
+            </li>
+                     
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+<div id="sub_titulo">
+<!-- BEGIN sub_titulo -->
+	<!-- BEGIN sub_cadastro -->
+							<b><a href="cadastro.animal.php">Cadastrar Animal</a></b>|							
+                            <b><a href="cadastro.animal.lista.php">Animais Cadastrados</a></b>|
+                            <b><a href="cadastro.funcionario.php">Funcion&aacute;rios</a></b>|
+                            <b><a href="cadastro.usuario.php">Usu&aacute;rios</a></b>|
+                            <b><a href="cadastro.marca.php">Marcas</a></b>							
+	<!-- END sub_cadastro -->
+	<!-- BEGIN sub_gerencia -->
+							<b><a href="link1.php">Gerencia</a></b>|
+							<b><a href="link1.php">Gerencia</a></b>
+	<!-- END sub_gerencia -->
+	<!-- BEGIN sub_financeiro -->
+							<b><a href="link1.php">Financeiro</a></b>|
+							<b><a href="link1.php">Financeiro</a></b>
+	<!-- END sub_financeiro -->
+	<!-- BEGIN sub_relatorio -->
+							<b><a href="link1.php">Relatorio</a></b>|
+							<b><a href="link1.php">Relatorio</a></b>
+	<!-- END sub_relatorio -->
+	<!-- BEGIN sub_movimento -->
+							<b><a href="movimento.vacina.vacinados.php">Vacinados</a></b>|
+                            <b><a href="movimento.vacina.pendentes.php">Pendentes</a></b>|
+							<b><a href="movimento.vacina.vacinar_lote.php">Vacinar Lotes</a></b>							
+	<!-- END sub_movimento -->
+
+<!-- END sub_titulo -->
+</div>
+
+
+
+
+<br />
+
+<div id="em_foco">{SUBTITULO}</div>

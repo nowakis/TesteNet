@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<script src="../js/jquery-1.2.6.min.js" type="text/javascript"></script>
+<title>TesteNet! - Questionário</title>
+
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+
+<form name="frm_prova" id="frm_prova" action="{_NOME_PROGRAMA}" method="POST" >
+<input name="professor" type="hidden" id="professor" value="{PROFESSOR}"/>
+<input name="email"     type="hidden" id="email"     value="{EMAIL}"/>
+
+<table width="100%" bgcolor="#cccccc" cellpadding="10" cellspacing="0">
+	<tr valign="top" align="center">
+		<td>
+			<table width="500" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+				<tr>
+					<td>
+						<img src="logo.jpg" />
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 15px;text-align:left">
+						{MSG}
+						{MSG_OK}
+						{MSG_ERRO}
+						{DATA1}
+
+						<h2 style="color:#27221F; font-size: 20px; letter-spacing:-1px; font-family:Helvetica,Arial,sans-serif;">{NOME_PROFESSOR}, conte sua experiência</h2>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">Após utilizar o TesteNET, conte para nós como foi sua experiência. Responda as perguntas abaixo.</p>
+
+						<h2 style="color:#27221F; font-size: 15px; letter-spacing:0px; font-family:Helvetica,Arial,sans-serif;">1) Qual sua Experiência com a Internet?</h2>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">
+						<input type='hidden' name='pergunta_1' value='Experiência com Internet?'>
+						<OL>
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_1' value='-1'> Menos de 1 Ano
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_1' value='1'> 1 Ano
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_1' value='+1'> Mais de 1 Ano
+						</OL>
+						</p>
+
+						<h2 style="color:#27221F; font-size: 15px; letter-spacing:0px; font-family:Helvetica,Arial,sans-serif;">2) Você já utiliza um sistema informatizado para realizações de provas?</h2>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">
+						<input type='hidden' name='pergunta_2' value='Você já utiliza um sistema informatizado para realizações de provas?'>
+						<OL>
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_2' value='Sim'> Sim
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_2' value='Não'> Não
+						</OL>
+						</p>
+
+						<h2 style="color:#27221F; font-size: 15px; letter-spacing:0px; font-family:Helvetica,Arial,sans-serif;">3) O que você achou da Interface do sistema?</h2>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">
+						<input type='hidden' name='pergunta_3' value='O que você achou da Interface do sistema?'>
+						<OL>
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_3' value='Exelente'> Excelente
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_3' value='Muito bom'> Muito bom
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_3' value='Bom'> Bom
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_3' value='Regular'> Regular
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_3' value='Ruim'> Ruim
+						</OL>
+						</p>
+
+						<h2 style="color:#27221F; font-size: 15px; letter-spacing:0px; font-family:Helvetica,Arial,sans-serif;">4) O que você achou da facilidade de uso?</h2>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">
+						<input type='hidden' name='pergunta_4' value='O que você achou da facilidade de uso?'>
+						<OL>
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_4' value='Exelente'> Excelente
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_4' value='Muito bom'> Muito bom
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_4' value='Bom'> Bom
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_4' value='Regular'> Regular
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_4' value='Ruim'> Ruim
+						</OL>
+						</p>
+						
+						<h2 style="color:#27221F; font-size: 15px; letter-spacing:0px; font-family:Helvetica,Arial,sans-serif;">5) Você teve dificuldades na utilização do TesteNet?</h2>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">
+						<input type='hidden' name='pergunta_5' value='Você teve dificuldades na utilização do TesteNet?'>
+						<OL>
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_5' value='Muita'> Muita
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_5' value='Pouca'> Pouca
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_5' value='Nenhuma'> Nenhuma
+						</OL>
+						</p>
+
+						<h2 style="color:#27221F; font-size: 15px; letter-spacing:0px; font-family:Helvetica,Arial,sans-serif;">6) O TesteNet ajudaria na aplicação, avaliação e organização das provas?</h2>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">
+						<input type='hidden' name='pergunta_6' value='Este Sistema ajudaria na aplicação, avaliação e organização nas provas?'>
+						<OL>
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_6' value='Sim'> Sim
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_6' value='Não'> Não
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_6' value='Talvez'> Talvez
+						</OL>
+						</p>
+
+						<h2 style="color:#27221F; font-size: 15px; letter-spacing:0px; font-family:Helvetica,Arial,sans-serif;">7) Você acha que o TesteNet pode facilitar seu trabalho?</h2>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">
+						<input type='hidden' name='pergunta_7' value='Você acha que o TesteNet pode facilitar seu trabalho?'>
+						<OL>
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_7' value='Sim'> Sim
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_7' value='Não'> Não
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_7' value='Talvez'> Talvez
+						</OL>
+						</p>
+
+						
+						<h2 style="color:#27221F; font-size: 15px; letter-spacing:0px; font-family:Helvetica,Arial,sans-serif;">8) Você adotaria esta ferramenta como complemento no seu método de avaliação?</h2>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">
+						<input type='hidden' name='pergunta_8' value='Você adotaria esta ferramenta como complemento no seu método de avaliação?'>
+						<OL>
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_8' value='Sim'> Sim
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_8' value='Não'> Não
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_8' value='Talvez'> Talvez
+						</OL>
+						</p>
+
+						<h2 style="color:#27221F; font-size: 15px; letter-spacing:0px; font-family:Helvetica,Arial,sans-serif;">9) Você acha que o uso do Testenet pode ser recomendado para cursos de EAD (Educação a Distância)?</h2>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">
+						<input type='hidden' name='pergunta_9' value='Você acha que o uso do Testenet pode ser recomendado para cursos de EAD (Educação a Distância)?'>
+						<OL>
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_9' value='Sim'> Sim
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_9' value='Não'> Não
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_9' value='Talvez'> Talvez
+						</OL>
+						</p>
+						
+						<h2 style="color:#27221F; font-size: 15px; letter-spacing:0px; font-family:Helvetica,Arial,sans-serif;">10) Você recomendaria este sistema para outros professores?</h2>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">
+						<input type='hidden' name='pergunta_10' value='Gerenciamento de Perguntas'>
+						<OL>
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_10' value='Sim'> Sim
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_10' value='Não'> Não
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_10' value='Talvez'> Talvez
+						</OL>
+						</p>
+						
+						<h2 style="color:#27221F; font-size: 15px; letter-spacing:0px; font-family:Helvetica,Arial,sans-serif;">11) Dê uma nota geral para o Sistema TesteNet</h2>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">
+						<input type='hidden' name='pergunta_11' value='Dê uma nota geral para o Sistema TesteNet'>
+						<OL>
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_11' value='Exelente'> Excelente
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_11' value='Muito bom'> Muito bom
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_11' value='Bom'> Bom
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_11' value='Regular'> Regular
+							<LI STYLE="list-style-type: none"> <input type='radio' name='resposta_11' value='Ruim'> Ruim
+						</OL>
+						</p>
+												
+						<h2 style="color:#27221F; font-size: 15px; letter-spacing:0px; font-family:Helvetica,Arial,sans-serif;">Comentários, Críticas e Sugestões!</h2>
+						<input type='hidden' name='pergunta_comentario' value='Comentários, Críticas e Sugestões'>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">Dê seus comentários, críticas e sugestões sobre o TesteNet!
+							<textarea  name='comentario' rows="5" cols="60"></textarea>
+						</p>
+
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 15px">
+						<h2 style="color:#27221F; font-size: 20px; letter-spacing:-1px; font-family:Helvetica,Arial,sans-serif;">Obrigado</h2>
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;">Obrigado por responder as perguntas</p>
+						
+
+						<input type='hidden' name="btn_acao" value=''>
+						<input type='button' value="GRAVAR" onclick="javascript: 
+							var qtde_perguntas   = 11;
+							var qtde_respondidas = 0;
+							$('input:radio').each(function() {
+								if ( $(this).is(':checked') ) {
+									qtde_respondidas++;
+								}
+							});
+							if (qtde_respondidas < qtde_perguntas){
+								alert('Responda todas as perguntas!');
+								return false;
+							}
+
+
+							if(this.form.btn_acao.value == '' ) {
+								this.form.btn_acao.value='gravar'; 
+								this.form.submit() 
+							} else { 
+								alert ('Aguarde submissão') 
+							}">
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 15px; background: #999;" >
+						<p style="font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif; line-height: 15px; font-size: 11px;"><a href="#" style="color: white;"><a href='http://testenet.nowakis.com'>TesteNET 2008</a></p>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+</form>
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	var pageTracker = _gat._getTracker("UA-5848095-2");
+	pageTracker._trackPageview();
+</script>
+</body>
+</html>

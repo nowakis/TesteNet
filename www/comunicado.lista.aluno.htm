@@ -1,0 +1,37 @@
+{MSG}
+{MSG_ERRO}
+
+<table border="0" cellspacing="0" cellpadding="0" class="tabela" align="center">
+	<thead> 
+		<tr>
+			<td>#</td>
+			<td>Título</td>
+			<td><img src="imagens/calendar.png" alt="Data do comunicado" align='absmiddle'> Data</td>
+			<td><img src="imagens/lupa.png" alt="Visualizar o Comunicado" align='absmiddle'> Ver</td>
+		</tr>
+	</thead> 
+
+	<tbody>
+	<!-- BEGIN comunicado --> 
+	<tr {topico.CLASSE} >
+		<td>{comunicado.COMUNICADO}</td>
+		<!-- javascript: abreComunicado({comunicado.COMUNICADO}) -->
+		<td><a href='comunicado.aluno.php?comunicado={comunicado.COMUNICADO}'>{comunicado.TITULO_COMUNICADO}</a></td>
+		<td>{comunicado.DATA}</td>
+		<td><a href="comunicado.aluno.php?comunicado={comunicado.COMUNICADO}"><img src="imagens/note_view.png" border="0"  /></a></td>
+	</tr>
+	<!-- END comunicado --> 
+	</tbody>		   
+	<!-- BEGIN naoencontrado --> 		   
+	<tbody>		
+	<tr >
+		<td colspan="6" class='naoencontrado'>
+		{naoencontrado.MSG}</td>
+	</tr>	
+	</tbody>		
+	<!-- END naoencontrado --> 	
+</table>
+<br />
+
+<br>
+<br>

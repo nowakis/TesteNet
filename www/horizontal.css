@@ -1,0 +1,64 @@
+#rollovermenu{
+	padding:0px;
+	width:420px;
+	border:1px solid #333333;
+	border-color: #FFFFFF #FFFFFF #FFFFFF #FFFFFF;
+	background-color:#FFF;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+#rollovermenu, #rollovermenu ul { /* all lists */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+#rollovermenu ul{
+	border:1px solid #333333;
+	border-color: #FFFFFF #FFFFFF #CCCCCC #CCCCCC;
+	background-color:#f7f3f3;
+	width:120px;
+	padding-bottom:4px;
+	padding-top:4px;
+}
+
+#rollovermenu ul a:link, #rollovermenu a:visited {
+	display: block;
+	border:none;
+	text-decoration:none;
+	padding:0px 10px;
+	height:18px;
+}
+#rollovermenu ul a:hover, #current a{
+	background-color:#0066CC;
+	color:white;
+
+}
+#rollovermenu li { /* all list items */
+	position: relative;
+	display: inline;
+	cursor: default;
+	margin:0px;
+	color:#FF9900;
+	padding-left:5px;
+}
+
+#rollovermenu li ul { /* second-level lists */
+	position: absolute;
+	border:1px solid #333333;
+	border-color: #f7f3f3 #FFFFFF #CCCCCC #CCCCCC;
+	background-color:#f7f3f3;
+	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+
+#rollovermenu li:hover ul, #rollovermenu li.sfhover ul { /* lists nested under hovered list items */
+	left:0px;
+	top:23px;
+}
+
+li#invite {
+	text-align:left;
+	font-size:9px;
+	margin: 0 0 0px 20px;
+	padding:4px 0 0 0;
+	color:black;
+}

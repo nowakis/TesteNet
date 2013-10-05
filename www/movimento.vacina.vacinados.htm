@@ -1,0 +1,50 @@
+<br />
+	     <table width="750px" border="0" cellspacing="0" cellpadding="0">
+           <tr>
+             <td width="50"  class="tabela_titulo">&nbsp;</td>
+             <td width="70" class="tabela_titulo">Número</td>
+             <td width="40" class="tabela_titulo">Marca</a></td>
+             <td width="70" class="tabela_titulo">Faixa</td>			 
+             <td width="90" class="tabela_titulo">Nascimento</td>			 
+             <td width="40" class="tabela_titulo">Idade</td>			 
+             <td width="85" class="tabela_titulo">Raça</td>
+             <td width="50" class="tabela_titulo">Peso</td>
+             <td width="90" class="tabela_titulo">Aplicado em </td>
+             <td width="95" class="tabela_titulo">Nome Vacina</td>			 
+           </tr>
+		   <!-- BEGIN animal --> 
+           <tr >
+             <td  class="{animal.CLASSE}">
+			 <img src="imagens/velhos/star_{animal.STAR}_2.gif" title="" id="image_star{animal.ANIMAL}" alt= "{animal.STAR}" align='absmiddle'/>
+			 </td>
+             <td  class="{animal.CLASSE}" id="id_{animal.ANIMAL}_td"><a href="javascript:MostraEsconde('id_{animal.ANIMAL}','{animal.CLASSE}','id_{animal.ANIMAL}_td');getInfo('{animal.ANIMAL}','id_{animal.ANIMAL}')">{animal.NUMERO}</a></td>
+             <td  class="{animal.CLASSE}">&nbsp;{animal.MARCA}</td>
+             <td  class="{animal.CLASSE}">&nbsp;{animal.FAIXA}</td>
+             <td  class="{animal.CLASSE}">&nbsp;{animal.NASCIMENTO}</td>
+             <td  class="{animal.CLASSE}">&nbsp;{animal.IDADE}</td>
+             <td  class="{animal.CLASSE}">&nbsp;{animal.RACA}</td>
+             <td  class="{animal.CLASSE}">&nbsp;{animal.PESO}</td>			 
+             <td  class="{animal.CLASSE}">&nbsp;{animal.DATAVACINA}</td>
+             <td  class="{animal.CLASSE}">&nbsp;{animal.NOMEVACINA}</td>
+           </tr>
+		   <tr >
+		   	<td colspan="10" align="left" >
+				<div id="id_{animal.ANIMAL}"  class="div_detalhes">
+			  </div>
+			</td>
+		   </tr>		   
+		   <!-- END animal --> 
+		   <!-- BEGIN naoecnontrado --> 		   
+		   <tr >
+		   	<td colspan="9" align="center" style='padding:5px 10px;background-color:#FAED8F'>
+				{naoecnontrado.MSG}</td>
+		   </tr>	
+		   <!-- END naoecnontrado --> 			   
+         </table>
+		 <br /><br />
+		 <div class="pages">
+		 {PAGINACAO}
+		 </div>
+<br />
+<br>
+<br>

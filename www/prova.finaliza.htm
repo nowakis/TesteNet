@@ -1,0 +1,195 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<br />
+
+
+<div class="frm_cadastro">
+
+	<form name="frm_prova" id="frm_prova" action="{_NOME_PROGRAMA}" method="POST" >
+	<input name="prova" type="hidden" id="prova" value="{PROVA}"/>
+	
+	<fieldset class="cadastro">
+		<table width="100%" class="tabela_press" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<th>Título da Prova</th>
+			<th>Nota</th>
+		</tr>
+		<tr>
+			<td>{TITULO_PROVA}</td>
+			<td>{NOTA}</td>
+		</tr>
+		<tr>
+			<th>Curso</th>
+			<th>Disciplina</th>
+		</tr>
+		<tr>
+			<td>{CURSO}</td>
+			<td>{DISCIPLINA}</td>
+		</tr>
+		<tr>
+			<th><img src="imagens/stopwatch_run.png" align='absmiddle' alt="Horário de início da prova"> Início</th>
+			<th><img src="imagens/stopwatch_stop.png" align='absmiddle' alt="Horário de início da prova"> Término</th>
+		</tr>
+		<tr>
+			<td>{DATA_INICIO}</td>
+			<td>{DATA_TERMINO}</td>
+		</tr>
+		<tr>
+			<td colspan='2'><span style='color:#800205; font-size:12px;'><b>Atenção:</b> O início e o término da prova devem ser respeitados. Só será considerado PROVA ENTREGUE se for confirmado até a data de término indicado acima.</span></td>
+		</tr>
+		</table>
+
+		<div id="formCadastroText">
+				<fieldset class="cadastro">
+					<legend>Perguntas</legend>
+
+					<!-- BEGIN pergunta --> 
+					<input name="prova_pergunta_{pergunta.I}" type="hidden" id="prova_pergunta" value="{pergunta.PROVA_PERGUNTA}"/>
+
+					<table width="100%" class="tabela prova" border="0" cellspacing="0" cellpadding="0" align="center">
+						<thead>
+							<tr class='odd'>
+								<td width='5%' class='numero_pergunta'>#{pergunta.I}</td>
+								<td width='95%' colspan='4'><strong>{pergunta.TITULO_PERGUNTA}</strong></td>
+							</tr>
+						</thead>
+						<tbody class='detalhes_prova_pergunta'>
+							<tr>
+								<td width='5%'>&nbsp;</td>
+								<td width='30%'>Tipo: {pergunta.TIPO}</td>
+								<td width='35%'>Tópico: {pergunta.TOPICO}</td>
+								<td width='10%'>Peso: {pergunta.PESO}</td>
+								<td width='20%'>Correção: {pergunta.VALOR_CORRIGIDO}</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr class='odd' id='prova_respostas'>
+								<td colspan='5'>
+
+									<!-- BEGIN dissertativa --> 
+										<table width="95%" border="0" cellspacing="0" cellpadding="5" align="left">
+											<tr>
+												<td width='80px'><label>Resposta:</label></td>
+												<td><i>{pergunta.dissertativa.ALUNO_RESPOSTA_TEXTO}</i></td>
+											</tr>
+										</table>
+
+									<!-- END dissertativa --> 
+
+									<!-- BEGIN multipla_escolha --> 
+										<table width="95%" border="0" cellspacing="0" cellpadding="5" align="left">
+											<tr>
+												<td width='5%'><label>&nbsp;</label></td>
+												<td width='60%'><label>&nbsp;</label></td>
+												<td width='25%'><label>&nbsp;</label></td>
+												<td width='10%' align='center'><label><b>Correção</b></label></td>
+											</tr>
+											<!-- BEGIN item --> 
+											<tr>
+												<td>
+													<label>{pergunta.multipla_escolha.item.NUMERO}) </label>
+												</td>
+												<td>
+													<!--<input name="multipla_escolha" type="text" value="{pergunta.multipla_escolha.item.RESPOSTA_TEXTO}" readonly='readonly' style="width:95%"/>-->
+													{pergunta.multipla_escolha.item.RESPOSTA_TEXTO}
+												</td>
+												<td>
+													<input name="multipla_escolha_resposta_correta_{pergunta.multipla_escolha.item.PROVA_PERGUNTA}" type="radio" value="{pergunta.multipla_escolha.item.PROVA_RESPOSTA}" rel='resposta' disabled {pergunta.multipla_escolha.item.ALUNO_RESPOSTA_TEXTO}/>
+												<td align='right'>{pergunta.multipla_escolha.item.RESPOSTA_CORRETA}</td>
+											</tr>
+											<!-- END item --> 
+										</table>
+
+									<!-- END multipla_escolha --> 
+
+									<!-- BEGIN verdadeiro_falso --> 
+										<table width="95%" border="0" cellspacing="0" cellpadding="5" align="left">
+											<tr>
+												<td width='5%'><label></label></td>
+												<td width='60%'><label></label></td>
+												<td width='25%'><label></label></td>
+												<td width='10%'><label><b>Correção</b></label></td>
+											</tr>
+											<!-- BEGIN item --> 
+											<tr>
+												<td><label>{pergunta.verdadeiro_falso.item.NUMERO})</label></td>
+												<td>
+												<!--<input name="verdadeiro_falso_resposta_{pergunta.verdadeiro_falso.item.I}" type="text" readonly='readonly' value="{pergunta.verdadeiro_falso.item.RESPOSTA_TEXTO}" style="width:95%"/>-->
+												{pergunta.verdadeiro_falso.item.RESPOSTA_TEXTO}</td>
+												<td><input type='checkbox' rel='resposta' name='verdadeiro_falso_resposta_correta_{pergunta.verdadeiro_falso.item.PROVA_PERGUNTA}[]'  value='{pergunta.verdadeiro_falso.item.PROVA_RESPOSTA}' disabled {pergunta.verdadeiro_falso.item.ALUNO_RESPOSTA_TEXTO}>
+												</td>
+												<td align='right'>{pergunta.verdadeiro_falso.item.RESPOSTA_CORRETA}</td>
+											</tr>
+											<!-- END item --> 
+										</table>
+									<!-- END verdadeiro_falso --> 
+
+
+									<!-- BEGIN complete --> 
+										<table width="95%" border="0" cellspacing="0" cellpadding="5" align="left">
+											<tr>
+												<td width='5%'>&nbsp;</td>
+												<td width='40%'><label>&nbsp;</label></td>
+												<td width='5%'>&nbsp;</td>
+												<td width='40%'><label>&nbsp;</label></td>
+												<td width='10%'><label><b>Correção</b></label></td>
+											</tr>
+											<!-- BEGIN item --> 
+											<tr>
+												<td><label>{pergunta.complete.item.NUMERO})</label></td>
+												<td><label>{pergunta.complete.item.RESPOSTA_TEXTO}</label></td>
+												<td><img src='imagens/seta.jpg'></td>
+												<td><acronym title='Resposta Correta: {pergunta.complete.item.RESPOSTA_TEXTO_FILHO_CORRETA}'>{pergunta.complete.item.RESPOSTA_TEXTO_FILHO}</acronym>
+												</td>
+												<td align='right'>{pergunta.complete.item.RESPOSTA_CORRETA}</td>
+											</tr>
+											<!-- END item --> 
+										</table>
+									<!-- END complete --> 
+
+									<!-- BEGIN lacuna --> 
+										<table width="95%" border="0" cellspacing="0" cellpadding="5" align="left">
+											<tr>
+												<td width='5%'>&nbsp;</td>
+												<td width='40%'><label>&nbsp;</label></td>
+												<td width='5%'>&nbsp;</td>
+												<td width='40%'><label>&nbsp;</label></td>
+												<td width='10%'><label><b>Correção</b></label></td>
+											</tr>
+											<!-- BEGIN item --> 
+											<tr>
+												<td><label>{pergunta.lacuna.item.NUMERO})</label></td>
+												<td><label>{pergunta.lacuna.item.RESPOSTA_TEXTO}</label></td>
+												<td>&nbsp;</td>
+												<td>{pergunta.lacuna.item.PROVA_RESPOSTA_COMBO}
+													{pergunta.lacuna.item.RESPOSTA_TEXTO_FILHO}
+												</td>
+												<td align='right'>{pergunta.lacuna.item.RESPOSTA_CORRETA}</td>
+											</tr>
+											<!-- END item --> 
+										</table>
+									<!-- END lacuna --> 
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+					<!-- END pergunta --> 
+					<input name="qtde_perguntas" id="qtde_perguntas" type="hidden" value="{QTDE_PERGUNTAS}" />
+				</fieldset>
+				<p></p>
+		</div>
+
+
+		<hr>
+		<input type='hidden' name="btn_acao" value=''>
+		<a href='prova.lista.aluno.php'><button value="gravar" class="submitBtn"  style='float:right'><span>Voltar</span></button></a>
+
+		</fieldset>
+
+		</form>
+</div>
+<br>
+<br>

@@ -1,0 +1,164 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<br />
+
+
+<script language='JavaScript'>
+
+	function criaCelula(texto) {
+		var celula = document.createElement('td');
+		celula.appendChild(document.createTextNode(texto));
+		return celula;
+	}
+
+	function removerTopico(iidd){
+		var tbl =document.getElementById('tbl_topico');
+	//	var lastRow = tbl.rows.length;
+	//	if (lastRow > 2){
+	//		tbl.deleteRow(iidd.title);
+	//		document.getElementById('qtde_mo').value--;
+	//	}
+	//	var current = window.event.srcElement;
+	//	while ( (current = current.parentElement)  && current.tagName !="TR");
+	//		current.parentElement.removeChild(current);
+
+		/* src refers to the input button that was clicked.	
+		   to get a reference to the containing <tr> element,
+		   get the parent of the parent (in this case case <tr>)
+		*/
+
+		var oRow = iidd.parentElement.parentElement;
+		tbl.deleteRow(oRow.rowIndex);
+	}
+
+	function adicionarTopico(topico_nome) {
+
+		var tbl = document.getElementById('tbl_topico');
+		var lastRow = tbl.rows.length;
+		var iteration = lastRow;
+
+		var linha = document.createElement('tr');
+		linha.style.cssText = 'color: #000000; text-align: left; font-size:12px';
+		if (iteration%2==0){
+			linha.className="";
+		}else{
+			linha.className="odd";
+		}
+
+		/* COLUNA 1 ------------------------------------------------------------*/
+		var celula = criaCelula(topico_nome);
+		celula.style.cssText = 'text-align: left; color: #000000;font-size:12px';
+
+		var el = document.createElement('input');
+		el.setAttribute('type', 'hidden');
+		el.setAttribute('name', 'topico_' + iteration);
+		el.setAttribute('value','');
+		celula.appendChild(el);
+
+		linha.appendChild(celula);
+
+		var el = document.createElement('input');
+		el.setAttribute('type', 'hidden');
+		el.setAttribute('name', 'descricao_' + iteration);
+		el.setAttribute('value',topico_nome);
+		celula.appendChild(el);
+
+		linha.appendChild(celula);
+
+		/* COLUNA 3 ------------------------------------------------------------*/
+		var celula = document.createElement('td');
+		celula.style.cssText = 'text-align: left; color: #000000;font-size:10px';
+
+		var el = document.createElement('input');
+		el.setAttribute('type', 'image');
+		el.setAttribute('value','Remover');
+		el.setAttribute('src','imagens/excluir.gif');
+		el.onclick = function(){removerTopico(this);};
+		celula.appendChild(el);
+		linha.appendChild(celula);
+
+		/* Finaliza linha da tabela */
+		var tbody = document.createElement('TBODY');
+		tbody.appendChild(linha);
+		/*linha.style.cssText = 'color: #404e2a;';*/
+		tbl.appendChild(tbody);
+
+	}
+
+</script>
+
+<div class="frm_cadastro">
+
+	<form name="frm_cadastro" id="frm_cadastro" action="{_NOME_PROGRAMA}" method="POST" >
+	<input name="disciplina" type="hidden" id="disciplina" value="{DISCIPLINA}"/>
+	
+	<fieldset class="cadastro">
+		<legend>Informações da Disciplina</legend>
+		
+		<table width="100%" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<td colspan='2'>
+				<label>Nome</label><br />
+				<input name="nome" type="text" id="nome" value="{NOME}" maxlength="100" style='width:96%'/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Curso</label><br />
+				<select name="curso"  id="curso">
+				{CURSO}
+				</select>
+			</td>
+			<td><img src="imagens/businessman_16.png" align='absmiddle' alt="Professor"> 
+				<label>Professor</label><br />
+				<select name="professor"  id="professor">
+				{PROFESSOR}
+				</select>
+			</td>
+		</tr>
+		</table>
+<!--
+		<div id="formCadastroText">
+				<fieldset class="cadastro">
+					<legend>Informações Gerais</legend>
+					.<br>					.<br>					.<br>					.<br>					.<br>
+				</fieldset>
+		</div>
+-->
+		<div id="formCadastroText">
+				<fieldset class="cadastro">
+					<legend>Tópicos</legend>
+					<p><a href='javascript: popupTopico()'> <img src="imagens/element_new_after.png" alt="" align='absmiddle'>  Adicionar Tópico</a></p>
+					<table width="100%" class="tabela" border="0" cellspacing="0" cellpadding="0" align="center" id='tbl_topico'>
+						<thead>
+								<tr>
+									<td>Nome</td>
+									<td>Ações</td>
+								</tr>
+						</thead>
+						<tbody>
+							<!-- BEGIN topico --> 
+							<tr {topico.CLASSE}>
+								<td align='left'><input name="topico_{topico.I}" type="hidden" id="topico_{topico.I}" value="{topico.TOPICO}"/>{topico.TOPICO_NOME}</td>
+								<td align='left'><input type='image' value='Remover' src='imagens/excluir.gif' onClick='removerTopico(this)'></td>
+							</tr>
+							<!-- END topico --> 
+						</tbody>
+					</table>
+				</fieldset>
+		</div>
+		
+		<br>
+		<br>
+
+		<hr>
+			<input type='hidden' name="btn_acao" value=''>
+			<button value="gravar" class="gravarBtn"  style='float:right;' onclick="javascript: if(this.form.btn_acao.value == '' ) {this.form.btn_acao.value='gravar'; this.form.submit() } else { alert ('Aguarde submissão') }"><span>{BTN_NOME}</span></button>
+			<button value="gravar" class="submitBtn"  onclick="javascript:history.go(-1)"><span>Cancelar</span></button>
+
+		</fieldset>
+
+		</form>
+</div>

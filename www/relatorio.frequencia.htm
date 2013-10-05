@@ -1,0 +1,40 @@
+{MSG}
+{MSG_ERRO}
+
+<table border="0" cellspacing="0" cellpadding="0" class="tabela" align="center">
+	<thead> 
+		<tr>
+			<td><img src="imagens/stopwatch_run.png" align='absmiddle' alt="Horário de início da prova"> Data</td>
+			<td>RA</td>
+			<td>Aluno</td>
+			<td>Acessos</td>
+		</tr>
+	</thead> 
+
+	<tbody>
+	<!-- BEGIN relatorio --> 
+	<tr {relatorio.CLASSE} >
+		<td>{relatorio.DATA}</td>
+		<td>{relatorio.RA}</td>
+		<td><a href='cadastro.aluno.php?aluno={relatorio.ALUNO}' target='_blank'>{relatorio.NOME_ALUNO}</a></td>
+		<td>{relatorio.COUNT}</td>
+	</tr>
+	<!-- END relatorio --> 
+	</tbody>		   
+	<!-- BEGIN naoencontrado --> 		   
+	<tbody>		
+	<tr >
+		<td colspan="6" class='naoencontrado'>
+		{naoencontrado.MSG}</td>
+	</tr>	
+	</tbody>		
+	<!-- END naoencontrado --> 	
+</table>
+<!-- BEGIN paginacao -->
+<hr>
+<p>{paginacao.CONTADOR}</p>
+<!-- END paginacao --> 
+<br />
+
+<br>
+<br>

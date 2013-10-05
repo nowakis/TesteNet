@@ -1,0 +1,105 @@
+<?php
+/******************************************************************
+Script .........: Controle de Gado e Fazendas
+Por ............: Fabio Nowaki
+Data ...........: 07/01/2008
+********************************************************************************************/
+
+##############################################################################
+## INCLUDES E CONEXÔES BANCO
+##############################################################################
+
+session_start();
+include_once "www/class.Template.inc.php";
+require_once('banco.inc.php');
+
+
+##############################################################################
+##############                      PAGINA                  	##############
+##############################################################################	
+
+if (isset($_POST["Acessar"])) {
+
+	$login	=	addslashes(trim($_POST["login"]));
+	$senha	=	addslashes(trim($_POST["senha"]));
+
+	$query = "SELECT	tbl_instituicao_professor.instituicao,
+						tbl_professor.professor,
+						tbl_professor.nome,
+						tbl_professor.login,
+						tbl_professor.email,
+						tbl_professor.ativo
+			FROM tbl_professor
+			JOIN tbl_instituicao_professor ON tbl_instituicao_professor.professor = tbl_professor.professor
+			WHERE tbl_professor.login = '$login' 
+			AND	  tbl_professor.senha = '$senha' ";
+
+	$rSet = $db->Query($query);
+	if ($db->NumRows($rSet) > 0 ){
+		$row = $db->FetchArray($rSet);
+		if ($row['ativo']){
+			$_SESSION["login_instituicao"]	= $row['instituicao'];
+			$_SESSION["login_professor"]	= $row['professor'];
+			$_SESSION["login_nome"]			= $row['nome'];
+			$_SESSION["login_login"]		= $row['login'];
+			$_SESSION["login_email"]		= $row['email'];
+			$_SESSION["login_data_logado"]	= date("d/m/Y H:i");
+			$_SESSION["login_md5"]			= md5($row['instituicao']."prova".$row['professor']);
+
+			echo "<script language='JavaScript'>";
+			echo "window.location = 'index.php'";
+			echo "</script>";
+			exit();
+		}else{
+			header("Location: ../index.php?msg_erro=404&login=".$login);
+			exit();
+		}
+	}else {
+		header("Location: ../index.php?msg_erro=402&login=".$login);
+		exit();
+	}
+}else{
+	header("Location: ../index.php");
+	exit();
+}
+exit;
+
+##############################################################################
+##############                INCLUDES : CABECALHO             	##############
+##############################################################################	
+
+$layout ="";
+$titulo ="Acesso ao Sistema";
+$sub_titulo = "Faça o Login";
+
+
+##############################################################################
+##############                INDEXA O TEMPLATE             	##############
+##############################################################################	
+
+$theme = ".";
+$model = new Template($theme);
+$model->set_filenames(array('login' => 'login.htm'));
+
+
+##############################################################################
+##############                       INICIO                   	##############
+##############################################################################	
+	
+	$msg_erro="";
+	if (isset($_GET['msg_erro'])){
+		$msg_erro=$_GET['msg_erro'];
+		$msg_erro = 'Nome de usuário ou senha incorretos!';
+	}
+	$msg="";
+
+				
+$model->pparse('login');
+
+##############################################################################
+##############                INCLUDES : RODAPE             	##############
+##############################################################################	
+
+?>
+
+

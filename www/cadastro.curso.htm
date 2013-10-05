@@ -1,0 +1,45 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<br />
+
+
+<div class="frm_cadastro">
+
+	<form name="frm_cadastro" id="frm_cadastro" action="{_NOME_PROGRAMA}" method="POST" >
+	<input name="curso" type="hidden" id="curso" value="{CURSO}"/>
+	
+	<fieldset class="cadastro">
+		<legend>Informações do Curso</legend>
+		
+		<table width="100%" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<td>
+				<label>Nome</label><br />
+				<input name="nome" type="text" id="nome" value="{NOME}" maxlength="100" style='width:96%'/>
+			</td>
+		</tr>
+		</table>
+<!--
+		<div id="formCadastroText">
+				<fieldset class="cadastro">
+					<legend>Informações Gerais</legend>
+				</fieldset>
+		</div>
+-->
+		<br>
+		<br>
+		<br>
+		<hr>
+		<input type='hidden' name="btn_acao" value=''>
+		<button value="gravar" class="gravarBtn" style='float:right' onclick="javascript: this.form.btn_acao.value='gravar'; this.disabled=true; this.form.submit();"><span>{BTN_NOME}</span></button>
+		<button value="gravar" class="submitBtn"  onclick="javascript: history.go(-1)"><span>Cancelar</span></button>
+
+
+		</fieldset>
+
+		</form>
+</div>
+<br>
+<br>

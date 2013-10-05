@@ -1,0 +1,104 @@
+Erro aconteceu no dia 01-02-2009 13:21:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 130.
+
+A mensagem do erro é Undefined variable: comunicado.
+-----------------------------------
+Erro aconteceu no dia 01-02-2009 13:21:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 145.
+
+A mensagem do erro é Undefined variable: comunicado.
+-----------------------------------
+Erro aconteceu no dia 01-02-2009 13:21:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 146.
+
+A mensagem do erro é Undefined variable: cursos.
+-----------------------------------
+Erro aconteceu no dia 01-02-2009 13:21:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 146.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 01-02-2009 13:21:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 147.
+
+A mensagem do erro é Undefined variable: titulo_comunicado.
+-----------------------------------
+Erro aconteceu no dia 01-02-2009 13:21:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 148.
+
+A mensagem do erro é Undefined variable: data.
+-----------------------------------
+Erro aconteceu no dia 01-02-2009 13:21:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 149.
+
+A mensagem do erro é Undefined variable: comentario.
+-----------------------------------
+Erro aconteceu no dia 01-02-2009 13:21:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 150.
+
+A mensagem do erro é Undefined variable: obrigatorio.
+-----------------------------------
+Erro aconteceu no dia 01-02-2009 13:21:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 151.
+
+A mensagem do erro é Undefined variable: obrigatorio.
+-----------------------------------
+Erro aconteceu no dia 01-02-2009 13:21:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 152.
+
+A mensagem do erro é Undefined variable: comunicado.
+-----------------------------------
+Erro aconteceu no dia 01-02-2009 13:22:25.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 146.
+
+A mensagem do erro é Undefined variable: cursos.
+-----------------------------------
+Erro aconteceu no dia 01-02-2009 13:22:44.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.lista.php.
+A linha que acontece o erro é 47.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 01-02-2009 13:22:44.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/class/class.Template.inc.php(120) : eval()'d code.
+A linha que acontece o erro é 32.
+
+A mensagem do erro é Undefined variable: _topico_i.
+-----------------------------------

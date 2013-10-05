@@ -1,0 +1,208 @@
+Erro aconteceu no dia 23-10-2008 08:44:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 153.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 154.
+
+A mensagem do erro é Undefined variable: titulo_prova.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 155.
+
+A mensagem do erro é Undefined variable: numero_perguntas.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 156.
+
+A mensagem do erro é Undefined variable: data_inicio.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 157.
+
+A mensagem do erro é Undefined variable: data_termino.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 158.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 159.
+
+A mensagem do erro é Undefined variable: disciplinas.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 159.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 160.
+
+A mensagem do erro é Undefined variable: cursos.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 160.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 161.
+
+A mensagem do erro é Undefined variable: professor.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 165.
+
+A mensagem do erro é Undefined variable: prov.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 171.
+
+A mensagem do erro é Undefined variable: disciplinas.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:23.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 214.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:23.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 215.
+
+A mensagem do erro é Undefined variable: titulo_prova.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:23.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 216.
+
+A mensagem do erro é Undefined variable: numero_perguntas.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:23.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 217.
+
+A mensagem do erro é Undefined variable: data_inicio.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:23.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 218.
+
+A mensagem do erro é Undefined variable: data_termino.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:23.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 219.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:23.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 220.
+
+A mensagem do erro é Undefined variable: disciplinas.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:23.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 220.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:23.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 221.
+
+A mensagem do erro é Undefined variable: cursos.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:23.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 221.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:23.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 222.
+
+A mensagem do erro é Undefined variable: professor.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:23.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 223.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 23-10-2008 08:44:23.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 226.
+
+A mensagem do erro é Undefined variable: prov.
+-----------------------------------

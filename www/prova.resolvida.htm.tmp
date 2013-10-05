@@ -1,0 +1,79 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<br />
+
+
+<div class="frm_cadastro">
+
+	<fieldset class="cadastro">
+		<table width="100%" class="tabela_press" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<th colspan='2'>Título da Prova</th>
+		</tr>
+		<tr>
+			<td colspan='2'>{TITULO_PROVA}</td>
+		</tr>
+		<tr>
+			<th>Curso</th>
+			<th>Disciplina</th>
+		</tr>
+		<tr>
+			<td>{CURSO}</td>
+			<td>{DISCIPLINA}</td>
+		</tr>
+		<tr>
+			<th><img src="imagens/stopwatch_run.png" align='absmiddle' alt="Horário de início da prova"> Início</th>
+			<th><img src="imagens/stopwatch_stop.png" align='absmiddle' alt="Horário de início da prova"> Término</th>
+		</tr>
+		<tr>
+			<td>{DATA_INICIO}</td>
+			<td>{DATA_TERMINO}</td>
+		</tr>
+		</table>
+
+
+		<div id="formCadastroText">
+				<fieldset class="cadastro">
+					<legend>Alunos</legend>
+					<table width="100%" class="tabela" border="0" cellspacing="0" cellpadding="0" align="center" id='tbl_pergunta'>
+						<thead>
+								<tr>
+									<td># RA</td>
+									<td><img src="imagens/user1_16.png" align='absmiddle' alt="Nome do Aluno">  Nome</td>
+									<td><img src="imagens/stopwatch_run.png" align='absmiddle' alt="Horário de início da prova"> Início</td>
+									<td><img src="imagens/stopwatch_stop.png" align='absmiddle' alt="Horário de início da prova"> Término</td>
+									<td>Nota</td>
+									<td></td>
+								</tr>
+						</thead>
+						<tbody>
+							<!-- BEGIN prova_aluno --> 
+							<tr {prova_aluno .CLASSE}>
+								<td align='left'>{prova_aluno.RA}</a> &nbsp;</td>
+								<td align='left'>{prova_aluno.NOME_ALUNO}</a> &nbsp;</td>
+								<td align='left'>{prova_aluno.DATA_INICIO}&nbsp;</td>
+								<td align='left'>{prova_aluno.DATA_TERMINO}&nbsp;</td>
+								<td align='left'>{prova_aluno.NOTA}&nbsp;</td>
+								<td align='left'><a href='prova.correcao.manual.php?prova={prova_aluno.PROVA}&aluno={prova_aluno.PROVA}' target='_blank'><img src='imagens/document_into_16.png'></a></td>
+							</tr>
+							<!-- END prova_aluno  --> 
+						</tbody>
+					</table>
+					<h2><a href='prova.correcao.php?prova={PROVA}'>Cliquei aqui para Corrigir as Provas (Perguntas Dissertativas)</h2>
+				</fieldset>
+				<p></p>
+				<p></p>
+				<p></p>
+		</div>
+
+		<hr>
+
+		<a href='prova.lista.php'><button value="gravar" class="submitBtn"  style='float:right'><span>Voltar</span></button></a>
+
+		</fieldset>
+
+</div>
+<br>
+<br>

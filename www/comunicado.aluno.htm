@@ -1,0 +1,49 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<br />
+
+
+<div class="frm_cadastro">
+	
+	<fieldset class="cadastro">
+		<legend>Comunicado</legend>
+		
+		<table width="100%" class="tabela_press" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<th colspan='3'>Título</th>
+		</tr>
+		<tr>
+			<td colspan='3'>{TITULO_COMUNICADO}</td>
+		</tr>
+		<tr>
+			<th>Data</th>
+			<th>Curso</th>
+			<th>Professor</th>
+		</tr>
+		<tr>
+			<td>{DATA}</td>
+			<td>{CURSO}</td>
+			<td>{PROFESSOR}</td>
+		</tr>
+		<tr>
+			<th colspan='3'>Comentário</th>
+		</tr>
+		<tr>
+			<td colspan='3'>
+				{COMENTARIO}
+			</td>
+		</tr>
+		</table>
+	</fieldset>
+</div>
+
+		<hr>
+		<input type='hidden' name="btn_acao" value=''>
+		<button value="gravar" class="gravarBtn" style='float:right' onclick="javascript: window.location='{_NOME_PROGRAMA}?comunicado={COMUNICADO}&leitura=true'"><span>{BTN_NOME}</span></button>
+		<button value="gravar" class="submitBtn"  onclick="javascript:window.location='comunicado.lista.aluno.php'"><span>Voltar</span></button>
+
+
+<br>
+<br>

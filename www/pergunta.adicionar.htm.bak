@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Prova! - {TITULO}</title>
+
+	<link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
+	<SCRIPT language=javascript src="funcoes.js"></SCRIPT>
+	<script src="js/jquery-1.2.1.pack.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<script language='JavaScript'>
+	function checkCurso(campo){
+		$('input[@rel='+campo.value+']:checkbox').attr("checked",campo.checked);
+	}
+
+	function adicionarPerguntas(){
+		$("input[@type=checkbox]").each(function(){
+			if (this.checked){
+				var alti = ($(this).attr("alt")).split("|");
+				var pergunta        = alti[0];
+				var titulo_pergunta = alti[1];
+				var topico_nome     = alti[2];
+				var tipo_pergunta   = alti[3];
+				var dificuldade     = alti[4];
+				opener.adicionarPergunta(pergunta,titulo_pergunta,topico_nome,tipo_pergunta,dificuldade);
+			}
+		});
+		this.close();
+		opener.focus();
+	}
+
+	function fecharJanela(){
+		this.close();
+	}
+</script>
+
+<div>
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<br />
+
+	<form name="frm_cadastro" id="frm_cadastro" action="{_NOME_PROGRAMA}" method="POST" >
+
+		<div id="formCadastroText">
+				<fieldset class="cadastro">
+					<legend>Selecione as Perguntas</legend>
+					<table width="100%" class="tabela" border="0" cellspacing="0" cellpadding="0" align="center" id='tbl_pergunta'>
+						<thead>
+								<tr>
+									<td>#</td>
+									<td>Título</td>
+									<td>Tópico</td>
+									<td>Tipo de Pergunta</td>
+									<td>Dificuldade</td>
+								</tr>
+						</thead>
+						<tbody>
+							<!-- BEGIN perguntas --> 
+							<tr {perguntas.CLASSE}>
+								<td align='left'>
+								<input type='checkbox' name="perguntas_{perguntas.I}" value='{perguntas.PERGUNTA}' alt='{perguntas.PERGUNTA}|{perguntas.TITULO_PERGUNTA}|{perguntas.TOPICO}|{perguntas.TIPO_PERGUNTA}|{perguntas.DIFICULDADE}'></td>
+								<td align='left' title='{perguntas.TITULO_PERGUNTA_C} Código da Pergunta: {perguntas.PERGUNTA}'>{perguntas.TITULO_PERGUNTA}</td>
+								<td align='left'>{perguntas.TOPICO}</td>
+								<td align='left'>{perguntas.TIPO_PERGUNTA}</td>
+								<td align='left'>{perguntas.DIFICULDADE}</td>
+							</tr>
+							<!-- END perguntas --> 
+						</tbody>
+					</table>
+				</fieldset>
+		</div>
+
+		<button value="Adicionar" class="submitBtn"  onclick="javascript: fecharJanela();"><span>Cancelar</span></button> &nbsp;&nbsp;
+		<button value="Adicionar" class="submitBtn"  onclick="javascript: adicionarPerguntas()"><span>Adicionar</span></button>
+	</form>
+
+</div>
+<br>
+<br>

@@ -1,0 +1,47 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+
+<p><br><a href='cadastro.disciplina.php'><img src="imagens/data_add.png" alt="" align='absmiddle'> Cadastrar uma nova Disciplina</a></p>
+
+<table border="0" cellspacing="0" cellpadding="0" class="tabela" align="center">
+	<thead> 
+		<tr>
+			<td>#</td>
+			<td>Nome</td>
+			<td>Curso</td>
+			<td><img src="imagens/businessman_16.png" align='absmiddle' alt="Informações do Professor"> Professor</td>
+			<td>Ações</td>
+		</tr>
+	</thead> 
+
+	<tbody>
+	<!-- BEGIN disciplina --> 
+	<tr {disciplina.CLASSE} >
+		<td>{disciplina.DISCIPLINA}</td>
+		<td><a href="cadastro.disciplina.php?disciplina={disciplina.DISCIPLINA}">{disciplina.NOME}</a></td>
+		<td>{disciplina.CURSO}</td>
+		<td>{disciplina.PROFESSOR}</td>
+		<td>
+			<a href="cadastro.disciplina.php?disciplina={disciplina.DISCIPLINA}"><img src="imagens/alterar.gif" width="18" height="18" border="0" /></a>
+			<a href="cadastro.disciplina.lista.php?excluir={disciplina.DISCIPLINA}">
+			<img src="imagens/excluir.gif" width="16" height="16" border="0" onclick="if (perguntar('Deseja excluir?')) return true; else return false" />
+			</a>
+		</td>
+	</tr>
+	<!-- END disciplina --> 
+	</tbody>		   
+	<!-- BEGIN naoencontrado -->
+	<tbody>		
+	<tr >
+		<td colspan="5" class='naoencontrado'>
+		{naoencontrado.MSG}</td>
+	</tr>	
+	</tbody>		
+	<!-- END naoencontrado --> 	
+</table>
+<!-- BEGIN paginacao -->
+<hr>
+<p>{paginacao.CONTADOR}</p>
+<!-- END paginacao --> 
+<br />

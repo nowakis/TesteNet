@@ -1,0 +1,175 @@
+﻿<!-- BEGIN refresh_tela --> 
+	<script type="text/javascript">
+		window.location = 'index.php';
+	</script>
+<!-- END  refresh_tela --> 
+
+<!-- BEGIN inicio_professor --> 
+
+<div id="doc3" class="yui-t7">
+	<div id="hd">
+		<div class="aviso">
+			<h2><img src="imagens/businessmen_32.png" align='absmiddle' alt="Professor"> Ol&aacute; <span title='{inicio_professor.EMAIL_USUARIO}'>{inicio_professor.NOME_USUARIO}</span>, seja bem-vindo ao sistema TesteNet. <br></h2>
+			<p>Para alterar seus dados, <a href='cadastro.professor.php'>clique aqui.</a></p>
+		</div>
+	</div>
+	<div id="bd">
+		<div class="yui-b">
+
+			<!-- BEGIN aviso --> 
+			<div class="aviso">
+				<h2><img src="imagens/att_ico.gif" align='absmiddle' alt="Professor"> Cadastro - Aviso</h2>
+				<!-- BEGIN curso --> 
+				<p>N&atilde;o h&aacute; nenhum curso cadastrado. <a href='cadastro.curso.php'>Clique aqui e cadastre.</a></p>
+				<!-- END curso -->
+				<!-- BEGIN disciplina --> 
+				<p>N&atilde;o h&aacute; nenhuma disciplina cadastrada. <a href='cadastro.disciplina.php'>Clique aqui e cadastre.</a></p>
+				<!-- END disciplina --> 
+				<!-- BEGIN pergunta --> 
+				<p>N&atilde;o h&aacute; nenhuma pergunta cadastrada. <a href='cadastro.pergunta.php'>Clique aqui e cadastre.</a></p>
+				<!-- END pergunta --> 
+				<!-- BEGIN aluno --> 
+				<p>N&atilde;o h&aacute; nenhum aluno cadastrado. <a href='cadastro.aluno.php'>Clique aqui e cadastre.</a></p>
+				<!-- END aluno --> 
+			</div>
+			<!-- END aviso --> 
+
+		</div>
+		<div id="yui-main">
+			<div class="yui-b">
+				<div class="yui-g">
+					<div class="yui-u first" >
+						<div class="aviso">
+							<h2><img src="imagens/alvo.png" align='absmiddle' alt="Professor"> O que deseja fazer? </h2>
+							<p>
+							<a href='cadastro.instituicao.php'>Cadastrar uma Nova Institui&ccedil;&atilde;o </a><br>
+							<a href='cadastro.curso.php'>Cadastrar um novo Curso</a><br>
+							<a href='cadastro.disciplina.php'>Cadastrar uma nova Disciplina</a><br>
+							<a href='cadastro.pergunta.php'>Cadastrar uma nova Pergunta</a><br>
+							<a href='prova.criar.php'>Agendar uma prova</a><br>
+							<a href='prova.lista.php?filtro=correcao'>Verificar Corre&ccedil;&otilde;es</a><br>
+							<a href='comunicado.php'>Novo Comunicado</a></p>
+						</div>
+						<div class="aviso">
+							<h2><img src="imagens/top.gif" align='absmiddle' alt="Professor"> N&uacute;meros</h2>
+							<table>
+							<tr>
+								<td><b>Cursos:</b></td>
+								<td>{inicio_professor.RESUMO_QTDE_CURSOS}</td>
+							</tr>
+							<tr>
+								<td><b>Disciplinas:</b></td>
+								<td>{inicio_professor.RESUMO_QTDE_DISCIPLINAS}</td>
+							</tr>
+							<tr>
+								<td><b>Alunos:</b></td>
+								<td>{inicio_professor.RESUMO_QTDE_ALUNOS}</td>
+							</tr>
+							<tr>
+								<td><b>Perguntas:</b></td>
+								<td>{inicio_professor.RESUMO_QTDE_PERGUNTAS}</td>
+							</tr>
+							<tr>
+								<td><b>Provas agendadas: </b></td>
+								<td>{inicio_professor.RESUMO_QTDE_PROVAS_AGENDADAS}</td>
+							</tr>
+							<tr>
+								<td><b>Provas realizadas: </b></td>
+								<td>{inicio_professor.RESUMO_QTDE_PROVAS_REALIZADAS}</td>
+							</tr>
+							</table>
+						</div>
+					</div>
+					<div class="yui-u">
+						<div class="aviso">
+							<h2><img src="imagens/document.png" align='absmiddle' alt="Professor"> Provas</h2>
+							<p>{inicio_professor.AVISO_PROVAS}</p>
+						</div>
+						<div class="aviso">
+							<h2><img src="imagens/document_into.png" align='absmiddle' alt="Professor"> Corre&ccedil;&atilde;o</h2>
+							<p>{inicio_professor.AVISO_CORRECAO}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="ft">
+
+
+
+	</div>
+</div>
+
+<!-- END inicio_professor --> 
+
+
+<!-- BEGIN inicio_aluno --> 
+
+<div id="doc3" class="yui-t7">
+	<div id="hd">
+		<div class="aviso">
+			<h2><img src="imagens/users3.png" align='absmiddle' alt="Professor"> Ol&aacute; <span title='{inicio_aluno.EMAIL_USUARIO}'>{inicio_aluno.NOME_USUARIO}</span>, seja bem-vindo ao sistema TesteNet. <br></h2>
+			
+			<p><img src="imagens/key-yellow.png" align='absmiddle' alt="Professor"> Altere sua senha frequentemente. Para alterar, <a href='aluno.senha.php'>clique aqui.</a></p>
+		</div>
+	</div>
+	<div id="bd">
+		<div class="yui-b">
+
+			<!-- BEGIN aviso --> 
+			<div class="aviso">
+				<h2><img src="imagens/att_ico.gif" align='absmiddle' alt="Professor"> Cadastro - Aviso</h2>
+				<!-- BEGIN curso --> 
+				<p>N&atilde;o h&aacute; nenhum curso cadastrado. <a href='cadastro.curso.php'>Clique aqui e cadastre.</a></p>
+				<!-- END curso -->
+				<!-- BEGIN disciplina --> 
+				<p>N&atilde;o h&aacute; nenhum disciplina cadastrada. <a href='cadastro.disciplina.php'>Clique aqui e cadastre.</a></p>
+				<!-- END disciplina --> 
+				<!-- BEGIN pergunta --> 
+				<p>N&atilde;o h&aacute; nenhum pergunta cadastrada. <a href='cadastro.pergunta.php'>Clique aqui e cadastre.</a></p>
+				<!-- END pergunta --> 
+				<!-- BEGIN aluno --> 
+				<p>N&atilde;o h&aacute; nenhum aluno cadastrado. <a href='cadastro.aluno.php'>Clique aqui e cadastre.</a></p>
+				<!-- END aluno --> 
+			</div>
+			<!-- END aviso --> 
+
+		</div>
+		<div id="yui-main">
+			<div class="yui-b">
+				<div class="yui-g">
+					<div class="yui-u first" >
+						<div class="aviso">
+							<h2><img src="imagens/alvo.png" align='absmiddle' alt="Professor"> Comunicados </h2>
+								<!-- BEGIN comunicado --> 
+										<p>{inicio_aluno.comunicado.DATA} - <a href='comunicado.aluno.php?comunicado={inicio_aluno.comunicado.COMUNICADO}'>{inicio_aluno.comunicado.TITULO_COMUNICADO}</a></p>
+								<!-- END comunicado --> 
+								<!-- BEGIN comunicado_nao --> 
+										<p>N&atilde;o h&aacute; nenhum comunicado novo.<br />
+										<a href='comunicado.lista.aluno.php'>Leia os comunicados anteriores.</a></p>
+								<!-- END comunicado_nao --> 
+						</div>
+					</div>
+					<div class="yui-u">
+						<div class="aviso">
+							<h2><img src="imagens/document.png" align='absmiddle' alt="Professor"> Provas</h2>
+							<p>{inicio_aluno.AVISO_PROVAS}</p>
+						</div>
+						<div class="aviso">
+							<h2><img src="imagens/document_into.png" align='absmiddle' alt="Professor"> Corre&ccedil;&atilde;o</h2>
+							<p>{inicio_aluno.AVISO_CORRECAO}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="ft">
+
+
+
+	</div>
+</div>
+
+<!-- END inicio_aluno --> 

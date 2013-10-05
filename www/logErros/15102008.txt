@@ -1,0 +1,1584 @@
+Erro aconteceu no dia 15-10-2008 00:02:11.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:18:25.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.aluno.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:18:28.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.disciplina.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:18:31.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.disciplina.php.
+A linha que acontece o erro é 156.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:18:31.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.disciplina.php.
+A linha que acontece o erro é 165.
+
+A mensagem do erro é Undefined variable: disc.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:18:31.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.disciplina.php.
+A linha que acontece o erro é 169.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:18:31.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.disciplina.php.
+A linha que acontece o erro é 170.
+
+A mensagem do erro é Undefined variable: nome.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:18:31.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.disciplina.php.
+A linha que acontece o erro é 171.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:18:31.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.disciplina.php.
+A linha que acontece o erro é 173.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:18:31.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.disciplina.php.
+A linha que acontece o erro é 179.
+
+A mensagem do erro é Undefined variable: disc.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:26.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 303.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 319.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 320.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 321.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 322.
+
+A mensagem do erro é Undefined variable: topico.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 323.
+
+A mensagem do erro é Undefined variable: titulo_pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 324.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 325.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 326.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 327.
+
+A mensagem do erro é Undefined variable: tipo_pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 328.
+
+A mensagem do erro é Undefined variable: fonte.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 329.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 329.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 330.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 330.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 331.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 337.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 363.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 393.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 423.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:19:32.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 454.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 303.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 319.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 320.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 321.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 322.
+
+A mensagem do erro é Undefined variable: topico.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 323.
+
+A mensagem do erro é Undefined variable: titulo_pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 324.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 325.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 326.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 327.
+
+A mensagem do erro é Undefined variable: tipo_pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 328.
+
+A mensagem do erro é Undefined variable: fonte.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 329.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 329.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 330.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 330.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 331.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 337.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 363.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 393.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 423.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:22:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 454.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 303.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 319.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 320.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 321.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 322.
+
+A mensagem do erro é Undefined variable: topico.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 323.
+
+A mensagem do erro é Undefined variable: titulo_pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 324.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 325.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 326.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 327.
+
+A mensagem do erro é Undefined variable: tipo_pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 328.
+
+A mensagem do erro é Undefined variable: fonte.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 329.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 329.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 330.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 330.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 331.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 337.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 363.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 393.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 423.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:25:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 454.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:26:24.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.curso.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:26:28.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.disciplina.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:26:31.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:15.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.curso.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:24.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.aluno.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:27.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 303.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 319.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 320.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 321.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 322.
+
+A mensagem do erro é Undefined variable: topico.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 323.
+
+A mensagem do erro é Undefined variable: titulo_pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 324.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 325.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 326.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 327.
+
+A mensagem do erro é Undefined variable: tipo_pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 328.
+
+A mensagem do erro é Undefined variable: fonte.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 329.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 329.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 330.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 330.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 331.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 337.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 363.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 393.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 423.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:27:50.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 454.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:39.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 303.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 319.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 320.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 321.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 322.
+
+A mensagem do erro é Undefined variable: topico.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 323.
+
+A mensagem do erro é Undefined variable: titulo_pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 324.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 325.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 326.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 327.
+
+A mensagem do erro é Undefined variable: tipo_pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 328.
+
+A mensagem do erro é Undefined variable: fonte.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 329.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 329.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 330.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 330.
+
+A mensagem do erro é Undefined variable: ativa.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 331.
+
+A mensagem do erro é Undefined variable: pergunta.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 337.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 363.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 393.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 423.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:30:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.php.
+A linha que acontece o erro é 454.
+
+A mensagem do erro é Undefined variable: perg.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:31:29.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:41:42.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 153.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 154.
+
+A mensagem do erro é Undefined variable: titulo_prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 155.
+
+A mensagem do erro é Undefined variable: numero_perguntas.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 156.
+
+A mensagem do erro é Undefined variable: data_inicio.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 157.
+
+A mensagem do erro é Undefined variable: data_termino.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 158.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 159.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 160.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 161.
+
+A mensagem do erro é Undefined variable: professor.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:13.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 165.
+
+A mensagem do erro é Undefined variable: prov.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:17.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 214.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:17.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 215.
+
+A mensagem do erro é Undefined variable: titulo_prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:17.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 216.
+
+A mensagem do erro é Undefined variable: numero_perguntas.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:17.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 217.
+
+A mensagem do erro é Undefined variable: data_inicio.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:17.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 218.
+
+A mensagem do erro é Undefined variable: data_termino.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:17.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 219.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:17.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 220.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:17.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 221.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:17.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 222.
+
+A mensagem do erro é Undefined variable: professor.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:17.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 223.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 00:44:17.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 226.
+
+A mensagem do erro é Undefined variable: prov.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:09:28.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 153.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:09:28.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 154.
+
+A mensagem do erro é Undefined variable: titulo_prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:09:28.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 155.
+
+A mensagem do erro é Undefined variable: numero_perguntas.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:09:28.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 156.
+
+A mensagem do erro é Undefined variable: data_inicio.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:09:28.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 157.
+
+A mensagem do erro é Undefined variable: data_termino.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:09:28.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 158.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:09:28.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 159.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:09:28.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 160.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:09:28.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 161.
+
+A mensagem do erro é Undefined variable: professor.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:09:28.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.php.
+A linha que acontece o erro é 165.
+
+A mensagem do erro é Undefined variable: prov.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:12:58.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 214.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:12:58.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 215.
+
+A mensagem do erro é Undefined variable: titulo_prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:12:58.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 216.
+
+A mensagem do erro é Undefined variable: numero_perguntas.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:12:58.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 217.
+
+A mensagem do erro é Undefined variable: data_inicio.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:12:58.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 218.
+
+A mensagem do erro é Undefined variable: data_termino.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:12:58.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 219.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:12:58.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 220.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:12:58.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 221.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:12:58.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 222.
+
+A mensagem do erro é Undefined variable: professor.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:12:58.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 223.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:12:58.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.manual.php.
+A linha que acontece o erro é 226.
+
+A mensagem do erro é Undefined variable: prov.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:13:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 179.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:13:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 183.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:13:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 184.
+
+A mensagem do erro é Undefined variable: titulo_prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:13:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 185.
+
+A mensagem do erro é Undefined variable: numero_perguntas.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:13:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 186.
+
+A mensagem do erro é Undefined variable: data_inicio.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:13:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 187.
+
+A mensagem do erro é Undefined variable: data_termino.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:13:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 191.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:13:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 192.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:13:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 193.
+
+A mensagem do erro é Undefined variable: professor.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:13:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 194.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 22:13:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 198.
+
+A mensagem do erro é Undefined variable: prov.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:02:57.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 179.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:02:57.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 183.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:02:57.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 184.
+
+A mensagem do erro é Undefined variable: titulo_prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:02:57.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 185.
+
+A mensagem do erro é Undefined variable: numero_perguntas.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:02:57.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 186.
+
+A mensagem do erro é Undefined variable: data_inicio.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:02:57.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 187.
+
+A mensagem do erro é Undefined variable: data_termino.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:02:57.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 191.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:02:57.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 192.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:02:57.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 193.
+
+A mensagem do erro é Undefined variable: professor.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:02:57.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 194.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:02:57.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.criar.automatica.php.
+A linha que acontece o erro é 198.
+
+A mensagem do erro é Undefined variable: prov.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:59:51.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 130.
+
+A mensagem do erro é Undefined variable: comunicado.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:59:51.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 145.
+
+A mensagem do erro é Undefined variable: comunicado.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:59:51.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 146.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:59:51.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 147.
+
+A mensagem do erro é Undefined variable: titulo_comunicado.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:59:51.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 148.
+
+A mensagem do erro é Undefined variable: data.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:59:51.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 149.
+
+A mensagem do erro é Undefined variable: comentario.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:59:51.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 150.
+
+A mensagem do erro é Undefined variable: obrigatorio.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:59:51.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 151.
+
+A mensagem do erro é Undefined variable: obrigatorio.
+-----------------------------------
+Erro aconteceu no dia 15-10-2008 23:59:51.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.php.
+A linha que acontece o erro é 152.
+
+A mensagem do erro é Undefined variable: comunicado.
+-----------------------------------

@@ -1,0 +1,216 @@
+Erro aconteceu no dia 03-10-2008 19:35:43.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\relatorio.frequencia.php.
+A linha que acontece o erro é 47.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:35:43.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\class\class.relatorio.DAO.php.
+A linha que acontece o erro é 28.
+
+A mensagem do erro é Undefined variable: sql_data.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:35:43.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\relatorio.frequencia.php.
+A linha que acontece o erro é 80.
+
+A mensagem do erro é Undefined variable: msg_ok.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:35:44.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\relatorio.provas.php.
+A linha que acontece o erro é 47.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:35:44.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\class\class.relatorio.DAO.php.
+A linha que acontece o erro é 75.
+
+A mensagem do erro é Undefined variable: sql_data.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:35:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\relatorio.provas.php.
+A linha que acontece o erro é 83.
+
+A mensagem do erro é Undefined variable: msg_ok.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.php.
+A linha que acontece o erro é 153.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.php.
+A linha que acontece o erro é 154.
+
+A mensagem do erro é Undefined variable: titulo_prova.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.php.
+A linha que acontece o erro é 155.
+
+A mensagem do erro é Undefined variable: numero_perguntas.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.php.
+A linha que acontece o erro é 156.
+
+A mensagem do erro é Undefined variable: data_inicio.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.php.
+A linha que acontece o erro é 157.
+
+A mensagem do erro é Undefined variable: data_termino.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.php.
+A linha que acontece o erro é 158.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.php.
+A linha que acontece o erro é 159.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.php.
+A linha que acontece o erro é 160.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.php.
+A linha que acontece o erro é 161.
+
+A mensagem do erro é Undefined variable: professor.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:05.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.php.
+A linha que acontece o erro é 165.
+
+A mensagem do erro é Undefined variable: prov.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.manual.php.
+A linha que acontece o erro é 214.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.manual.php.
+A linha que acontece o erro é 215.
+
+A mensagem do erro é Undefined variable: titulo_prova.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.manual.php.
+A linha que acontece o erro é 216.
+
+A mensagem do erro é Undefined variable: numero_perguntas.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.manual.php.
+A linha que acontece o erro é 217.
+
+A mensagem do erro é Undefined variable: data_inicio.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.manual.php.
+A linha que acontece o erro é 218.
+
+A mensagem do erro é Undefined variable: data_termino.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.manual.php.
+A linha que acontece o erro é 219.
+
+A mensagem do erro é Undefined variable: dificuldade.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.manual.php.
+A linha que acontece o erro é 220.
+
+A mensagem do erro é Undefined variable: disciplina.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.manual.php.
+A linha que acontece o erro é 221.
+
+A mensagem do erro é Undefined variable: curso.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.manual.php.
+A linha que acontece o erro é 222.
+
+A mensagem do erro é Undefined variable: professor.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.manual.php.
+A linha que acontece o erro é 223.
+
+A mensagem do erro é Undefined variable: prova.
+-----------------------------------
+Erro aconteceu no dia 03-10-2008 19:36:07.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é H:\Servidor\www\testenet\www\prova.criar.manual.php.
+A linha que acontece o erro é 226.
+
+A mensagem do erro é Undefined variable: prov.
+-----------------------------------

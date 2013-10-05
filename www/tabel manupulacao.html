@@ -1,0 +1,81 @@
+<script src="js/jquery-1.2.1.pack.js" type="text/javascript"></script>
+
+<script>
+
+function duplicateRow( strTableName ) 
+{ 
+        // First, lets create the new row using the last one as template... 
+        var clonedRow = $( "#" + strTableName + " tr:last" ).clone(); 
+        // Take the current identifier, some number in the first cell of the row 
+        intCurrentRowId = parseInt( $( "#numberIdentifier:last", clonedRow ).html() ); 
+        // Set the new ID 
+        intNewRowId = intCurrentRowId + 1; 
+        // Change the current identifier of the row to the new one 
+        $( "#numberIdentifier:last", clonedRow ).html( intNewRowId ); 
+
+        // Now let's create the Delete link using the ID of the new TR 
+        $( "#delete_link"+ intCurrentRowId , clonedRow ).attr( "onclick", "deleteRow( '"+ strTableName +"', 'detailsTr"+ intNewRowId +"' )" ); 
+        // Some link to populate the field with a javascript function 
+    $( "#show_popup"+ intCurrentRowId , clonedRow ).attr( "onclick", "populate( this );" ); 
+
+        $( "#style_number"+ intCurrentRowId , clonedRow ).attr( "onblur", "validate ( this, 'StyleNumberState" + intNewRowId + "' )" ); 
+        // Change the Id / Name or anything you want for the new attribs... here is where you need to add a lot of stuff to change the id of your variables 
+
+    // The following code works without problems on Firefox or IE7 
+        $( "#style_number"+ intCurrentRowId , clonedRow ).attr( { "id" : "style_number" + intNewRowId, "accesskey" : intNewRowId, "value" : "" } ); 
+        $( "#name"+ intCurrentRowId , clonedRow ).attr( { "id" : "name" + intNewRowId, "value" : "" } ); 
+        $( "#quantity"+ intCurrentRowId , clonedRow ).attr( { "id" : "quantity" + intNewRowId, "value" : "" } ); 
+        $( "#show_popup"+ intCurrentRowId , clonedRow ).attr( { "id" : "show_popup" + intNewRowId } ); 
+        $( "#delete_link"+ intCurrentRowId , clonedRow ).attr( { "id" : "delete_link" + intNewRowId } ); 
+        $( "#StyleNumberState"+ intCurrentRowId , clonedRow ).attr( { "id" : "StyleNumberState" + intNewRowId } ); 
+
+        // Add to the new row to the original table 
+        $( "#" + strTableName ).append( clonedRow ); 
+        // And finally change the ID of the last row to something we can delete later, not sure why can not be done before the append :S 
+        $( "#" + strTableName + " tr:last" ).attr( "id", "detailsTr" + intNewRowId ); 
+}
+
+
+function deleteRow( strTableName, strId ) 
+{ 
+    if ( $( "#" + strTableName + " .detailsTr" ).length > 1 ) 
+    { 
+        $( "#" + strTableName + " #" + strId ).remove(); 
+    } 
+    else 
+    { 
+        alert( 'You have to keep at least 1 row!' ); 
+    } 
+} 
+</script>
+
+The Table looks like this: 
+
+<table id="details_table" class="formTable" > 
+    <tr> 
+        <td colspan="5" align="center"><a href="javascript:;" 
+onclick="duplicateRow( 'details_table' )">Add row</a></td> 
+    </tr> 
+    <tr id="detailsTr1" class="detailsTr"> 
+        <td id="numberIdentifier" name="numberIdentifier">1</td> 
+        <td> 
+            <input name="style_number[]" id="style_number1" value="" 
+required="true" onblur="validate( this, 'StyleNumberState1' );" 
+accesskey="1" type="text"> 
+            <a id="show_popup1" href="javascript:;" 
+onclick="populate( this );"><img src="/images/add.png" 
+align="absmiddle" border="0"> <strong>Search</strong></a> 
+        </td> 
+        <td><div id="StyleNumberState1"></div></td> 
+        <td><input name="name[]" id="name1" value="" size="20" 
+readonly="yes" required="false" err_label="Name Required" 
+type="text"></td> 
+        <td><input name="quantity[]" id="quantity1" value="" 
+maxlength="10" size="5" class="alignRight" required="false" 
+err_label="Quantity Required" type="text"></td> 
+        <td><a id="delete_link1" href="javascript:;" 
+onclick="deleteRow( 'details_table', 'detailsTr1', 1 )"> [Delete] </ 
+a></td> 
+    </tr> 
+</table> 
+

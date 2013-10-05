@@ -1,0 +1,49 @@
+{MSG}
+{MSG_ERRO}
+
+<p><br><a href='cadastro.topico.php'><img src="imagens/element_new_after.png" alt="" align='absmiddle'> Cadastrar um novo Tópico</a></p>
+
+<table border="0" cellspacing="0" cellpadding="0" class="tabela" align="center">
+	<thead> 
+		<tr>
+			<td>#</td>
+			<td>Disciplina</td>
+			<td>Descrição</td>
+			<td>Ações</td>
+		</tr>
+	</thead> 
+
+	<tbody>
+	<!-- BEGIN topico --> 
+	<tr {topico.CLASSE} >
+		<td>{topico.TOPICO}</td>
+		<td>{topico.DISCIPLINA}</td>
+		<td>{topico.DESCRICAO}</td>
+		<td>
+			<a href="cadastro.topico.php?topico={topico.TOPICO}">
+			<img src="imagens/alterar.gif" width="18" height="18" border="0" />
+			</a>
+			<a href="cadastro.topico.lista.php?Excluir={topico.TOPICO}">
+			<img src="imagens/excluir.gif" width="16" height="16" border="0" onclick="if (perguntar('Deseja excluir?')) return true; else return false" />
+			</a>
+		</td>
+	</tr>
+	<!-- END topico --> 
+	</tbody>		   
+	<!-- BEGIN naoencontrado --> 		   
+	<tbody>		
+	<tr >
+		<td colspan="4" class='naoencontrado'>
+		{naoencontrado.MSG}</td>
+	</tr>	
+	</tbody>		
+	<!-- END naoencontrado --> 	
+</table>
+<!-- BEGIN paginacao -->
+<hr>
+<p>{paginacao.CONTADOR}</p>
+<!-- END paginacao --> 
+
+<br />
+<br>
+<br>

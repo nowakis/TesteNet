@@ -1,0 +1,1865 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Controle - by F&aacute;bio Nowaki</title>
+<link href="estilo.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="horizontal.css">
+<link href="CalendarControl.css" rel=stylesheet type=text/css>
+<SCRIPT language=javascript src="ajax.js"></SCRIPT>
+<SCRIPT language=javascript src="http://fabio.telemediajp.com/CalendarControl.js"></SCRIPT>
+<script type="text/JavaScript">
+<!--
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function FormataValor(campo,tammax,teclapres) 
+ {
+ 	//uso:
+	//<input type="Text" name="fat_vr_bruto" maxlength="17" onKeyDown="FormataValor(this,17,event)">
+
+	var tecla = teclapres.keyCode;
+	vr = campo.value;
+	vr = vr.replace( "/", "" );
+	vr = vr.replace( "/", "" );
+	vr = vr.replace( ",", "" );
+	vr = vr.replace( ".", "" );
+	vr = vr.replace( ".", "" );
+	vr = vr.replace( ".", "" );
+	vr = vr.replace( ".", "" );
+	tam = vr.length;
+
+	if (tam < tammax && tecla != 8){ tam = vr.length + 1 ; }
+
+	if (tecla == 8 ){	tam = tam - 1 ; }
+		
+	if ( tecla == 8 || tecla >= 48 && tecla <= 57 || tecla >= 96 && tecla <= 105 ){
+		if ( tam <= 2 ){ 
+	 		campo.value = vr ; }
+	 	if ( (tam > 2) && (tam <= 5) ){
+	 		campo.value = vr.substr( 0, tam - 2 ) + ',' + vr.substr( tam - 2, tam ) ; }
+	 	if ( (tam >= 6) && (tam <= 8) ){
+	 		campo.value = vr.substr( 0, tam - 5 ) + '.' + vr.substr( tam - 5, 3 ) + ',' + vr.substr( tam - 2, tam ) ; }
+	 	if ( (tam >= 9) && (tam <= 11) ){
+	 		campo.value = vr.substr( 0, tam - 8 ) + '.' + vr.substr( tam - 8, 3 ) + '.' + vr.substr( tam - 5, 3 ) + ',' + vr.substr( tam - 2, tam ) ; }
+	 	if ( (tam >= 12) && (tam <= 14) ){
+	 		campo.value = vr.substr( 0, tam - 11 ) + '.' + vr.substr( tam - 11, 3 ) + '.' + vr.substr( tam - 8, 3 ) + '.' + vr.substr( tam - 5, 3 ) + ',' + vr.substr( tam - 2, tam ) ; }
+	 	if ( (tam >= 15) && (tam <= 17) ){
+	 		campo.value = vr.substr( 0, tam - 14 ) + '.' + vr.substr( tam - 14, 3 ) + '.' + vr.substr( tam - 11, 3 ) + '.' + vr.substr( tam - 8, 3 ) + '.' + vr.substr( tam - 5, 3 ) + ',' + vr.substr( tam - 2, tam ) ;}
+	}			
+}
+
+function MostraEsconde(componente)
+{
+	if (document.getElementById)
+	{
+		// this is the way the standards work
+		var style2 = document.getElementById(componente).style;
+		style2.display = style2.display? "":"block";
+		
+	}
+}
+
+function perguntar(var1, var2)
+{
+	if(confirm(var1)){
+		document.location = var2;	
+	}
+}
+
+function testaFormVenda(form)
+{
+//    evt = (evt) ? evt : event;
+//    var charCode = (evt.charCode) ? evt.charCode :((evt.which) ? evt.which : evt.keyCode);
+//	
+//	if (charCode  == 13) { // preciona tecla enter
+//		alert (document.formVender.vender2);
+//		return false;
+//	}
+	if (document.formVender.txtpreco_venda.value==""){
+		alert ("Valor da venda não inserido.")
+		return false;
+	} 
+	else
+		 if (document.formVender.txtdata_venda.value==""){
+			 alert ("Por favor, informe a data!")
+		 	 return false;
+		    }
+ 		else {
+		     if (Cash(document.formVender.txtpreco_venda.value)){
+			 	mensagem = "Deseja vender estes animais?";
+				if (confirm(mensagem))	return true;
+				else return false;
+			 }
+			else {
+				alert ("Valor de venda incorreto!")
+				return false;
+			}
+		}
+}
+function testaFormCadastroAnimal(form){
+	if (!isNumeric(form.txtidade.value)){
+		alert ("Idade do animal incorreto!");
+		return false;
+	}
+	if (!isNumeric(form.txtnumeroA.value)){
+		alert ("Numero do animal incorreto!");
+		return false;
+	}
+	 if (!Cash(form.txtcompra.value)){
+	 	alert ("Preço informa está incorreto!");
+	 	return false;
+	 
+	 }
+	
+	if (confirm("Deseja cadastrar esse animal?"))
+		return true;
+	else return false;
+}
+function testaFormAlterarAnimal(form){
+	if (!isNumeric(form.txtidade.value)){
+		alert ("Idade do animal incorreto!");
+		return false;
+	}
+	if (!isNumeric(form.txtnumeroA.value)){
+		alert ("Numero do animal incorreto!");
+		return false;
+	}
+	 if (!Cash(form.txtcompra.value)){
+	 	alert ("Preço informa está incorreto!");
+	 	return false;
+	 
+	 }
+	
+	if (confirm("Tem certeza que deseja alterar os dados deste animal? \n\nAtenção: fazer alterações manualmente são em último caso e lembre-se que se algum dado for alterado(preenchido) incorretamente, o sistema pode ficar instável e o banco de dados incosistente!"))
+		return true;
+	else return false;
+}
+
+
+function setCheck(theCheckbox,mudarcor){
+    if (document.getElementById(theCheckbox)) {
+        document.getElementById(theCheckbox).checked = (document.getElementById(theCheckbox).checked ? false : true);
+    }
+    if (document.getElementById(mudarcor)) {
+        document.getElementById(mudarcor).style.backgroundColor  = (document.getElementById(theCheckbox).checked ? "#BCCBFE" : "white");
+    }	
+}
+
+// checkbox
+function CheckBox_selecionarTudo(form2){ 
+   for (i=0;i<form2.elements.length;i++) 
+      if(form2.elements[i].type == "checkbox") 
+         if (form2.elements[i].checked==1) 
+            form2.elements[i].checked=0;
+		else
+            form2.elements[i].checked=1;
+} 
+
+function moverAnimal(codigo,numero,marca){ 
+	telinha_Transparente.visibility="visible";
+	telinha_mover.visibility="visible";
+	document.formMoverUnico.animais.value = codigo;
+	document.formMoverUnico.txtnumero.value = numero;	
+	document.formMoverUnico.txtmarca.value = marca;		
+	document.formMoverUnico.fazenda_destino.focus();	
+} 
+
+function venderAnimal(codigo,numero,marca){ 
+	telinha_Transparente.visibility="visible";
+	telinha_vender.visibility="visible";
+	document.formVenderUnico.animais.value = codigo;
+	document.formVenderUnico.txtnumero.value = numero;	
+	document.formVenderUnico.txtmarca.value = marca;		
+	document.formVenderUnico.txtvalorVendaUnico.focus();	
+} 
+
+function fechar_moverAnimal(){ 
+	telinha_Transparente.visibility="hidden";
+	telinha_mover.visibility="hidden";
+} 
+
+function fechar_vendaAnimal(){ 
+	telinha_Transparente.visibility="hidden";
+	telinha_vender.visibility="hidden";
+} 
+
+function telinha_SelecionarFarm(){ 
+	telinha_Transparente.visibility="visible";
+	telinha_Fazenda.visibility="visible";
+} 
+
+function telinha_SelecionarFarm_Fechar(){ 
+	telinha_Transparente.visibility="hidden";
+	telinha_Fazenda.visibility="hidden";
+} 
+
+
+function testaMover(form){ 
+	if (form.txtdataT.value==""){
+		alert ("Por favor, informe a data.");
+		return false;
+	}
+	mensagem = "Deseja mover o animal "+form.txtnumero.value+" da marca "+form.txtmarca.value+" para a fazenda "+form.fazenda_destino.value+"?";
+	if (confirm(mensagem))
+		return true;
+	else 
+		return false;
+	fechar_moverAnimal();		
+}
+function testaVender(form){ 
+	if (form.txtdata_venda.value==""){
+		alert("Por favor, informe a data!");
+		return false;
+	}
+	if (!Cash(form.txtvalorVendaUnico.value)){
+		alert("Por favor, informe o valor!");
+		return false
+	}
+	mensagem = "Deseja vender o animal "+form.txtnumero.value+" da marca "+form.txtmarca.value+" por R$ "+form.txtvalorVendaUnico.value+" ?";
+	if (confirm(mensagem))
+			return true;
+	else {
+		return false;
+	}
+} 
+
+function testaFormHormonio(form){ 
+	if (form.txtdata.value){
+		mensagem = "Deseja aplicar hormônios a esses animais?";
+		if (confirm(mensagem))
+			return true;
+		else 
+			return false;
+	}
+	else {
+		alert("Data incorreta!");
+		return false
+		}
+} 
+
+function testaFormVacinas(form){ 
+
+	if (document.formVacinas.txtdataVacinas.value=="")
+	 {
+		alert("Data incorreta!");
+		return false;
+		}
+
+	else		{
+		mensagem = "Deseja aplicar vacinas a esses animais?";
+		if (confirm(mensagem))
+			return true;
+		else 
+			return false;
+	}
+} 
+
+function testaFormTransfer(form){ 
+
+	if (document.formTransferencia.txtdataTransferencia.value=="")
+	 {
+		alert("Data incorreta!");
+		return false;
+		}
+
+	else		{
+		mensagem = "Deseja continuar?";
+		if (confirm(mensagem))
+			return true;
+		else 
+			return false;
+	}
+} 
+
+function testaFormUltrasom(form){ 
+
+	if (document.formUltrasom.txtdataUltrasom.value=="")
+	 {
+		alert("Data incorreta!");
+		return false;
+		}
+
+	else		{
+		mensagem = "Deseja continuar?";
+		if (confirm(mensagem))
+			return true;
+		else 
+			return false;
+	}
+} 
+
+function testaFormCio(form){ 
+	if (form.txtdata.value){
+		mensagem = "Data do Cio: Deseja continuar?";
+		if (confirm(mensagem))
+			return true;
+		else 
+			return false;
+	}
+	else {
+		alert("Data incorreta!");
+		return false
+		}
+} 
+
+function testaTranferirLote(form){
+		if ((form.txtdataT.value.length==0) ||   (form.txtdataT.value==null))
+			{
+			alert("Por favor, infrome a data!");
+			return false;
+			}
+		else {
+			mensagem = "Transferir animais de fazenda: Deseja continuar?";
+			if (confirm(mensagem))
+				return true;
+			else return false;
+		
+		}
+}
+
+
+function habilitaAlterar(form){ 
+	form.txtproprietario.disabled = false;
+	form.txtdataentrada.readOnly = false;
+	form.txtdatasaida.readOnly = false;	
+	form.txtnumeroA.readOnly = false;
+	form.txtidade.readOnly = false;	
+	form.txtidade.readOnly = false;
+	form.txtcompra.readOnly = false;
+	form.txtvenda.readOnly = false;
+	form.txtvacinas.readOnly = false;
+	form.txttransfer.readOnly = false;
+	form.txthormonios.readOnly = false;									
+	form.txtcios.readOnly = false;									
+	form.txtultrasom.readOnly = false;										
+	form.txtobs.readOnly = false;	
+	form.gravar.disabled = false;	
+	
+	form.txtnumeroA.style.background="#D7E7FF";			
+	form.txtidade.style.background="#D7E7FF";			
+	form.txtcompra.style.background="#D7E7FF";					
+	form.txtvenda.style.background="#D7E7FF";		
+	form.txtvacinas.style.background="#D7E7FF";		
+	form.txttransfer.style.background="#D7E7FF";		
+	form.txthormonios.style.background="#D7E7FF";		
+	form.txtcios.style.background="#D7E7FF";							
+	form.txtultrasom.style.background="#D7E7FF";		
+	form.txtobs.style.background="#D7E7FF";				
+} 
+
+
+function isEmail(string) {
+	if (string.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) != -1)
+	return true;
+	else
+	return false;
+}
+
+function isEmail(string) {
+return (string.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) != -1);
+}
+
+
+function boot(foco){
+	if (foco!=""){
+	   if (document.getElementById(foco)) {
+    	   document.getElementById(foco).focus();
+	    }
+	}
+}
+function isNumeric(number){
+	return /[0-9]+/g.test(number);
+}
+function Cash(Curr) {
+  return /^\d{1,3}(.\d{3})*\,\d\d$|^\d+\,\d\d$/.test(Curr);
+ }
+ 
+ function procurarAnimal(form,teclapres) {
+  	var tecla = teclapres.keyCode;
+ 	if (tecla==13){
+	  document.location = "#"+form;
+	  teclapres.keyCode = false;
+	 }
+}
+
+function trocarSeta(img){
+	if (img.alt == "Mais") {
+ 		 img.src = "imagens/imagesMais4.gif";
+		 img.alt = "Menos";
+	}
+	else {
+		img.src = "imagens/imagesMais3.gif";
+		img.alt = "Mais";
+	}
+}
+
+function AtivarDesativaStar(dados,cod){
+	var retorno = loadXMLDocStar('?modulo=adm&menu=animais&sub=star&star='+dados+'&codigo='+cod);
+
+	if (retorno==0){	
+		if (document.getElementById('image_star'+cod).alt== "1"){
+				document.getElementById('image_star'+cod).alt = "0";
+				document.getElementById('image_star'+cod).src = "imagens/star_0_2.gif";
+				document.getElementById('image_star'+cod).title = "Marcar";
+		}
+		else{
+			document.getElementById('image_star'+cod).alt = "1";
+			document.getElementById('image_star'+cod).src = "imagens/star_1_2.gif";
+			document.getElementById('image_star'+cod).title = "Desmarcar";
+		}
+	} else alert("Erro: não foi possível marcar este animal. Tente novamente.");
+}
+
+
+//-->
+</script>
+<script language="JavaScript1.2">
+var highlightcolor="lightblue"
+var ns6=document.getElementById&&!document.all
+var previous=''
+var eventobj
+//Regular expression to highlight only form elements
+var intended=/INPUT|TEXTAREA/
+//Function to check whether element clicked is form element
+function checkel(which){
+	if (which.style&&intended.test(which.tagName)){
+		if (ns6&&eventobj.nodeType==3)
+			eventobj=eventobj.parentNode.parentNode
+		return true
+	}
+	else
+	return false
+}
+//Function to highlight form element
+function highlight(e){
+	eventobj=ns6? e.target : event.srcElement
+	if (previous!=''){
+		if (checkel(previous))
+			previous.style.backgroundColor=''
+		previous=eventobj
+		if (checkel(eventobj))
+			eventobj.style.backgroundColor=highlightcolor
+	}
+	else{
+		if (checkel(eventobj))
+			eventobj.style.backgroundColor=highlightcolor
+		previous=eventobj
+	}
+}
+</script>
+</head>
+
+<!-- INICIO DO BODYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY -->
+<body onload="javascript:boot('{BOOT}')">
+
+
+<!--  FUNCOES  -->
+
+<div id="fundoTransparente" class="fundoTransparente" ></div>
+
+<!-- INICIO Mover de Fazenda-->
+<div class="formExtra" id="moverFazenda">
+<div class="formAzul">
+<fieldset class="formJanela">
+<legend class="legendFormJanela">Mover de Fazenda</legend>
+ <form name="formMoverUnico" method="post" action="?modulo=adm&menu=animais&sub=acao" onsubmit="return testaMover(this)"  onKeyUp="highlight(event)" onClick="highlight(event)" >
+ 	<label>Data da Transação:</label> <input name="txtdataT" type="text" size="10" maxlength="10"  onfocus="showCalendarControl(this);" /><br /> 
+	<label for="txtinscricao">Fazenda Destino: </label>
+    <select name="fazenda_destino">
+	{FAZENDAS}
+    </select>
+	<input name="animais" type="hidden" value="" />
+	<input name="txtnumero" type="hidden" value="" />
+	<input name="txtmarca" type="hidden" value="" />		
+	<br />
+	<br />
+	<input name="cancelar" class="botao" type="button" value="Cancelar" onclick="javascript:fechar_moverAnimal();" />
+	<input name="MoverUnico" class="botao" id="MoverUnico" type="submit" value="Mover" />	
+</form>
+  </fieldset>
+ </div>
+</div>
+<!-- FIM Mover de Fazenda-->
+
+<!-- INICIO Venda do Animal -->
+<div class="formExtra" id="venderAnimal">
+<div class="formAzul">
+<fieldset class="formJanela">
+<legend class="legendFormJanela">Vender Animal</legend>
+ <form name="formVenderUnico" id="formVenderUnico" method="post" action="?modulo=adm&menu=animais&sub=acao" onsubmit="return testaVender(this)"  onKeyUp="highlight(event)" onClick="highlight(event)" >
+	<label>Data da Transação:</label> <input name="txtdata_venda" type="text" size="10" maxlength="10"  onfocus="showCalendarControl(this);" /><br /> 
+	<label for="txtinscricao">Informe o valor: </label>
+   <input name="txtvalorVendaUnico" type="text" id="txtvalorVendaUnico" value="" size="20" maxlength="12" onKeyDown="FormataValor(this,12,event);" />
+	<input name="animais" type="hidden" value="" />
+	<input name="txtnumero" type="hidden" value="" />
+	<input name="txtmarca" type="hidden" value="" />		
+	<br />
+	<br />
+	<input name="cancelar" type="button" class="botao" value="Cancelar" onclick="javascript:fechar_vendaAnimal();" />
+	<input name="VenderUnico" id="VenderUnico" class="botao" type="submit" value="Efetuar Venda" />	
+</form>
+  </fieldset>
+ </div>
+</div>
+<!-- FIM  Venda do Animal -->
+
+<!-- INICIO Selecionar Fazenda-->
+<div class="formExtra" id="selecionarFazenda">
+<div class="formAzul">
+<fieldset class="formJanela">
+<legend class="legendFormJanela">Trocar Fazenda</legend>
+ <form name="formSelecionarFazenda" method="post" action="?modulo=adm" >
+	<label for="fazenda">Selecione a Fazenda: </label>
+    <select name="fazendas">
+	{FAZENDAS}
+    </select>
+	<br />
+	<br />
+	<input name="cancelar" type="button" class="botao" value="Cancelar" onclick="javascript:telinha_SelecionarFarm_Fechar()" />
+	<input name="MudarFazenda" id="MudarFazenda" class="botao" type="submit" value="Trocar de Fazenda" />	
+</form>
+  </fieldset>
+ </div>
+</div>
+<!-- FIM Selecionar Fazenda-->
+
+<script type="text/JavaScript">
+<!--
+
+var old,skn,iex=(document.all),yyy=-1000;
+var ns4=document.layers;
+var ns6=document.getElementById&&!document.all;
+var ie4=document.all;
+
+if (ns4){
+	telinha_mover=document.moverFazenda;
+	telinha_vender=document.venderAnimal;	
+	telinha_Transparente=document.fundoTransparente;
+	telinha_Fazenda=document.selecionarFazenda;	
+}
+else 
+    if (ns6){
+		telinha_mover=document.getElementById("moverFazenda").style;
+		telinha_vender=document.getElementById("venderAnimal").style;		
+		telinha_Transparente=document.getElementById("fundoTransparente").style;		
+		telinha_Fazenda=document.getElementById("selecionarFazenda").style;				
+	}
+	else
+	   if (ie4){
+			telinha_mover=document.all.moverFazenda.style;
+			telinha_vender=document.all.venderAnimal.style;			
+			telinha_Transparente=document.all.fundoTransparente.style;			
+			telinha_Fazenda=document.all.selecionarFazenda.style;						
+		}
+	
+telinha_mover.left = "200";
+telinha_mover.top = "180";
+telinha_mover.visibility="hidden";
+
+telinha_vender.left = "200";
+telinha_vender.top = "180";
+telinha_vender.visibility="hidden";
+
+telinha_Fazenda.left = "200";
+telinha_Fazenda.top = "180";
+telinha_Fazenda.visibility="hidden";
+
+telinha_Transparente.left = "0";
+telinha_Transparente.top = "0";
+telinha_Transparente.visibility="hidden";
+
+
+//-->
+</script>
+
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+sfHover = function() {
+	var sfEls = document.getElementById("rollovermenu").getElementsByTagName("li");
+	for (var i=0; i<sfEls.length; i++) {
+		sfEls[i].onmouseover=function() {
+			this.className+=" sfhover";
+		}
+		sfEls[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+		}
+	}
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+
+//--><!]]></script>
+
+<div class="pagina">
+<div class="topo" ><table width="756"  height="100%" border="0" cellpadding="1" cellspacing="0">
+  <tr>
+    <td width="175"  style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#4B92D9', endColorStr='#CEDFF6', gradientType='1')" >&nbsp;</td>
+    <td width="581" style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#CEDFF6', endColorStr='#1E77D3', gradientType='1')" ><a href="javascript:telinha_SelecionarFarm()">&nbsp;&nbsp;Fazendas&nbsp;&nbsp;</a>&nbsp;|&nbsp;<a href="#">&nbsp;&nbsp;Sobre&nbsp;&nbsp;</a>&nbsp;|&nbsp;<a href="logout.php">&nbsp;&nbsp;Sair do Sistema ({LOGIN})&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr></table>
+</div>
+
+<div class="cabecalho" >
+<table width="756" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#0A6CCE', endColorStr='#FFFFFF', gradientType='1')"><DIV class=tudo>
+<DIV class=efeito1>&nbsp;&nbsp;&nbsp;<em>Controle</em></DIV>
+<DIV class=texto>&nbsp;&nbsp;&nbsp;<em>Controle</em></DIV>
+    </DIV>      </td>
+    <td class="textoTituloFazenda" >{NOMEFAZENDA}
+      </td>
+  </tr>
+</table>
+</div>
+<div class="subcabecalho"><a href="?modulo=inicio">Início</a> | <a href="?modulo=adm">Administração</a> | <a href="?modulo=sys">Sistema</a> | <a href="?modulo=ver">Visualização</a></div>
+<div id="lateralEsquerda">
+<ul id="menu">
+
+<!-- BEGIN menu_adm --> 
+<li><br />&nbsp;&nbsp;<strong>Administrador</strong></li> 
+<li><br /><a href="?modulo=adm&menu=animais&sub=visao">Animais</a></li>
+<li>	  <a href="?modulo=adm&menu=custos&sub=visao">Custo da Fazenda</a></li>
+<li>	  <a href="?modulo=adm&menu=financeiro&sub=visao">Financeiro</a></li>
+<!-- END menu_adm --> 
+
+<!-- BEGIN menu_sys --> 
+<li><br />&nbsp;&nbsp;<strong>Sistema</strong></li> 
+<li><br /><a href="?modulo=sys&menu=fazendas&sub=visao">Fazendas</a></li>
+<li>	  <a href="?modulo=sys&menu=marcas&sub=visao">Marcas</a></li>
+<li>	  <a href="?modulo=sys&menu=usuarios&sub=visao">Usuário</a></li>
+<!-- END menu_sys --> 
+
+<!-- BEGIN menu_ver --> 
+<li><br />&nbsp;&nbsp;<strong>Animais</strong></li> 
+<li><br /><a href="?modulo=ver&menu=animais&sub=visao">Animais</a></li>
+<li>	  <a href="?modulo=ver&menu=marcas">Marcas</a></li>
+<!-- END menu_ver --> 
+
+<!-- BEGIN menu_inicio --> 
+<li><br />&nbsp;&nbsp;<strong>Login:</strong></li> 
+<li><br />Código: {menu_inicio.CODIGO}</li>
+<li>      Nome: {menu_inicio.NOME}</li>
+<li>      E-mail: {menu_inicio.EMAIL}</li>
+<li>      Login: {menu_inicio.LOGIN}</li>
+<li><br />&nbsp;&nbsp;<strong>Sair do Sistema:</strong></li> 
+<li><br /><a href="logout.php">Logout</a></li>
+<!-- END menu_inicio --> 
+
+
+<br />
+
+</ul>
+</div>
+<div id="conteudo">
+
+<!-- BEGIN inicio --> 
+<p class="titulo">Seja Bem Vindo!! {inicio.TITULO}</p>
+<p align="center"><img src="imagens/survey_mode1.jpg" width="300px"/><br />
+
+
+</p>
+<p class="subtitulo">Selecione uma fazenda</p>
+<p class="texto">
+<div class="formulario">
+<form action="?modulo=adm" method="post" name="formFazendaSelect">
+    <select name="fazendas">
+	{inicio.FAZENDAS}
+    </select>
+	<input name="MudarFazenda" id="MudarFazenda" type="image" title="Transferir de Fazenda" value="Transferir de Fazenda" src="imagens/refresh.gif" align="absmiddle"/>
+</form>	
+</div>
+<br />
+</p>
+<!-- END inicio -->
+
+
+<!-- BEGIN inicioADM --> 
+<p class="titulo">Administração {inicioADM.TITULO}</p>
+<p align="center"><img src="imagens/catalog.gif" align="left"/><br /><br />
+
+</p>
+<br /><br /><br /><br /><br />
+<p class="subtitulo">Dados da Fazenda</p>
+<p class="texto">
+{inicioADM.DADOS}
+<br />
+</p>
+<!-- END inicioADM -->
+<!-- BEGIN inicioSYS --> 
+<p class="titulo">Sistema {inicioSYS.TITULO}</p>
+<p align="left">Parte integrada ao Controle para o gerenciamento do sistema em geral.<br /> Somente usuários com nível ADMINISTRADOR tem acesso à esse menu.</p>
+
+<p class="subtitulo">Resumo do Sistema</p>
+<p class="texto">
+{inicioSYS.DADOS}
+<br />
+</p>
+<!-- END inicioSYS -->
+
+<!-- BEGIN animais --> 
+
+<!-- BEGIN visao --> 
+<p class="titulo">Animais Cadastrados 
+<div class="menu_adm"><a href="?modulo=adm&menu=animais&sub=cadastrar">  <img src='imagens/add22.gif' width="16px" alt='Modos de Exibi&ccedil;&atilde;o'  align='absmiddle' /> Cadastrar</a> | <a href="?modulo=adm&menu=animais&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></div>
+</p>
+
+<!-- M E N U  -->
+<!-- M E N U  -->
+<!-- horizontal navbar -->
+<div id="rollovermenucontainer">
+	<ul id="rollovermenu">
+		<li id="invite">
+			<img src='imagens/modo_ver.gif' alt='Modos de Exibição'  align='absmiddle' /> Modo de Exibição
+			<ul style="margin-top:0px;padding-top:1px; margin-left:12px;">
+				<li ><a href="?modulo=adm&menu=animais&sub=visao&view=1" title="Mostra Dados Com Detalhes">Detalhado</a></li>
+				<li ><a href="?modulo=adm&menu=animais&sub=visao&view=2" title="Mostra Dados de Forma Compactada">Compacto</a></li>
+			</ul>		
+		</li>			
+		<li id="invite"><img src='imagens/funil.jpg' alt='Filtro'  align='absmiddle' /> Filtro
+		<ul style="margin-top:0px;padding-top:1px;margin-left:12px;">
+				<li ><strong>Ordenado por...</strong></li>				
+				<li ><a href="?modulo=adm&menu=animais&sub=visao{animais.visao.VIEW}&filtro=numero" title="Ordenado por Numeração">- Número</a></li>	
+				<li ><a href="?modulo=adm&menu=animais&sub=visao{animais.visao.VIEW}&filtro=marca" title="Ordenado por Marca">-  Marca</a></li>							
+				<li ><a href="?modulo=adm&menu=animais&sub=visao{animais.visao.VIEW}&filtro=idade" title="Ordenado por Idade">-  Idade</a></li>
+				<li ><a href="?modulo=adm&menu=animais&sub=visao{animais.visao.VIEW}&filtro=data" title="Ordenao por Data">- Data</a></li>
+				<li ><strong>Mostrar...</strong></li>						
+				<li ><a href="?modulo=adm&menu=animais&sub=visao{animais.visao.VIEW}&filtro=star" title="Cio">Marcados</a></li>
+				<li ><a href="?modulo=adm&menu=animais&sub=visao{animais.visao.VIEW}&filtro=cio" title="Cio">Cios</a></li>
+				<li ><a href="?modulo=adm&menu=animais&sub=visao{animais.visao.VIEW}&filtro=transferencia" title="Transferência">Transferências</a></li>
+				<li ><a href="?modulo=adm&menu=animais&sub=visao{animais.visao.VIEW}&filtro=hormonios" title="Apliacação de Hormônios">Hormônio</a></li>
+				<li ><a href="?modulo=adm&menu=animais&sub=visao{animais.visao.VIEW}&filtro=ultrason" title="Ordenao por Data do Ultrasom">Ultrasom</a></li>	
+				<li ><strong>Somente Marca...</strong></li>		
+				{animais.visao.MENU_MARCA}														
+			</ul>		
+		</li>	
+		<li id="invite">
+			<img src='imagens/lupa.gif' alt='Procurar' width="24px;"  align='absmiddle' />
+			Procurar
+			<ul style="margin-top:0px;padding-top:1px; margin-left:12px;">
+				<li>
+				<form action="?modulo=adm&menu=animais&sub=detalhes" method="post" name="Procurar" id="Procurar" >
+				<br />
+				&nbsp;&nbsp;Numero<br />
+				&nbsp;&nbsp;<input name="txtnumero" type="text" size="10" maxlength="10" /><br />
+				&nbsp;&nbsp;<br />
+				&nbsp;&nbsp;{animais.visao.MARCAS}<br /><br />
+				&nbsp;&nbsp;<input name="Procurar" id="Procurar" value="Procurar" type="submit" />
+				</form>	
+				</li>
+			</ul>
+			
+		</li>	
+		<li id="invite"><img src='imagens/alvo.gif' alt='Procurar' align='absmiddle' />
+			<input name="procurarA" type="text"  size="8" onkeypress="procurarAnimal(procurarA.value,event)"  onKeyUp="highlight(event)" onClick="highlight(event)" />
+		</li>					
+				
+	</ul>
+</div>
+<!-- M E N U  -->
+<!-- M E N U  -->
+<form action="?modulo=adm&menu=animais&sub=acao" method="post" name="envia_animais">
+<!-- BEGIN modo1 --> 
+
+<p class="subtitulo2">
+<table width="550px" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="12%"></td>
+    <td width="13%"><strong>Número</strong></td>
+    <td width="10%"><strong>Marca</strong></td>
+    <td width="8%"><strong>Idade </strong></td>	
+    <td width="15%"><strong>Data</strong></td>
+    <td width="20%"><strong>R$ Compra</strong></td>
+    <td width="22%"><strong>A&ccedil;&atilde;o</strong></td>
+  </tr>
+</table>
+<div class="tabela_animais">
+<table width="550px" border="0" cellpadding="0" cellspacing="0">
+  <tr height="0px">
+    <td width="12%"></td>
+    <td width="13%"></td>
+    <td width="10%"></td>
+    <td width="8%"></td>	
+    <td width="15%"></td>
+    <td width="20%"></td>
+    <td width="22%"></td>
+  </tr>
+<!-- BEGIN dados --> 
+  <tr {animais.visao.modo1.dados.COR} class="borda_tabela"  id="tr_{animais.visao.modo1.dados.CODIGO}"  onclick="setCheck('id_{animais.visao.modo1.dados.CODIGO}','tr_{animais.visao.modo1.dados.CODIGO}');">
+    <td><img src="imagens/imagesMais3.gif" alt="Mais" onClick="javascript:trocarSeta(this);MostraEsconde('dados_{animais.visao.modo1.dados.CODIGO}');setCheck('id_{animais.visao.modo1.dados.CODIGO}','tr_{animais.visao.modo1.dados.CODIGO}');" /> <img src="imagens/star_{animais.visao.modo1.dados.STAR}_2.gif" name="image_star{animais.visao.modo1.dados.CODIGO}" title="" id="image_star{animais.visao.modo1.dados.CODIGO}" alt="{animais.visao.modo1.dados.STAR}" onClick="javascript:AtivarDesativaStar('{animais.visao.modo1.dados.STAR}','{animais.visao.modo1.dados.CODIGO}');setCheck('id_{animais.visao.modo1.dados.CODIGO}','tr_{animais.visao.modo1.dados.CODIGO}');"/> <input name="{animais.visao.modo1.dados.NUMERO} {animais.visao.modo1.dados.MARCA}" type="hidden" /><input type="checkbox" name="animais[]" id="id_{animais.visao.modo1.dados.CODIGO}" value="{animais.visao.modo1.dados.CODIGO}" onclick="javascript:setCheck('id_{animais.visao.modo1.dados.CODIGO}','tr_{animais.visao.modo1.dados.CODIGO}');"/></td>
+    <td>{animais.visao.modo1.dados.NUMERO}</td>
+    <td><span style="font-weight:bold;color:{animais.visao.modo1.dados.CORMARCA}">{animais.visao.modo1.dados.MARCA}</span></td>	
+    <td>{animais.visao.modo1.dados.IDADE}</td>
+    <td>{animais.visao.modo1.dados.DATA}</td>
+    <td>{animais.visao.modo1.dados.COMPRA}</td>
+    <td><img src="imagens/dinheiro.gif" onClick="javascript:venderAnimal({animais.visao.modo1.dados.CODIGO},{animais.visao.modo1.dados.NUMERO},'{animais.visao.modo1.dados.MARCA}')" /> 
+<img src="imagens/truck2.gif"  onClick="javascript:moverAnimal({animais.visao.modo1.dados.CODIGO},{animais.visao.modo1.dados.NUMERO},'{animais.visao.modo1.dados.MARCA}')" /> <img src="imagens/icon_detalhes2.gif" onclick="javascript:document.location='?modulo=adm&menu=animais&sub=detalhes&codigo={animais.visao.modo1.dados.CODIGO}'" /></td>
+  </tr>
+  <tr>
+	<td colspan="7"><div id="dados_{animais.visao.modo1.dados.CODIGO}" class="animais_detalhes">
+<b>Cadastro:</b> {animais.visao.modo1.dados.DATA}<br />	
+<b>Entrada:</b> {animais.visao.modo1.dados.DATA_ENTRADA}<br />	
+<b>Hormônios:</b> {animais.visao.modo1.dados.HORMONIOS}<br />
+<b>Vacinas:</b> {animais.visao.modo1.dados.VACINAS}<br />
+<b>Transferências:</b> {animais.visao.modo1.dados.TRANSFERENCIAS}<br />
+<b>Ultrasons:</b> {animais.visao.modo1.dados.ULTRASOM}<br />
+<b>Cios:</b> {animais.visao.modo1.dados.CIOS}<br />
+<b>Observações:</b> {animais.visao.modo1.dados.OBS}
+</div></td>
+  </tr>  
+<!-- END dados -->  
+</table>
+</div> 
+<table width="550px" border="0" cellpadding="0" cellspacing="0" style="margin-left:20px;">
+  <tr bgcolor="#FAEEB4">
+    <td width="70" align="right"><input name="selecionar"  id="selecionar" type="image" title="Seleciona todos os Animais" value="Seleciona Todos" src="imagens/arrow_ltr.png" align="absmiddle" onclick="CheckBox_selecionarTudo(this.form);return false;"></td>
+    <td width="480" >Com sele&ccedil;&atilde;o:
+        <input name="mover"  id="mover" type="image" title="Mover de Fazenda" value="Mover de Fazenda" src="imagens/truck2.gif" align="absmiddle"> 
+<input name="vender" type="image" title="Vender" value="Vender" src="imagens/dinheiro.gif" align="absmiddle">
+<input name="hormonio" type="image" title="Aplicar Hormônio aos Animais Selecionados" value="Hormônio" src="imagens/icon_hormonio.gif" align="absmiddle"> <input name="vacina" type="image" title="Aplicar Vacina aos Animais Selecionados" value="Vacina" src="imagens/icon_vacina.gif" align="absmiddle">
+ <input name="transferencia" type="image" title="Transferências" value="Transferências" src="imagens/refresh.gif" align="absmiddle" /> <input name="cio" type="image" title="Cio" value="Cio" src="imagens/icon_cios.gif" align="absmiddle" /> <input name="ultrasom" type="image" title="Ultrasom" value="Ultrasom" src="imagens/icon_monitor_xp-icons.gif" align="absmiddle" /></td>
+    </tr>      
+</table>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resumo: {animais.visao.modo1.RESUMO}
+
+</p>
+<!-- END modo1 --> 
+
+<!-- BEGIN modo2 --> 
+<p class="subtitulo2">
+<strong>Selecione os Animais</strong><br />
+<br />
+<div class="visao_checkbox_complentar">
+<!-- BEGIN dados --> 
+<p class="visao_checkbox" title="{animais.visao.modo2.dados.DATA} - {animais.visao.modo2.dados.CODIGO} - {animais.visao.modo2.dados.MARCA}" id="check_{animais.visao.modo2.dados.CODIGO}" ondblclick="javascript:document.location='?modulo=adm&menu=animais&sub=detalhes&codigo={animais.visao.modo2.dados.CODIGO}'" onmousedown="setCheck('id_row_check_{animais.visao.modo2.dados.CODIGO}','check_{animais.visao.modo2.dados.CODIGO}');"><input type="checkbox" id="id_row_check_{animais.visao.modo2.dados.CODIGO}" name="animais[]" value="{animais.visao.modo2.dados.CODIGO}" onclick="setCheck('id_row_check_{animais.visao.modo2.dados.CODIGO}','check_{animais.visao.modo2.dados.CODIGO}');"/>
+     <span style="color:{animais.visao.modo2.dados.CORMARCA}">({animais.visao.modo2.dados.MARCA})</span><strong> {animais.visao.modo2.dados.NUMERO} </strong></p>
+<!-- END dados -->   
+</div>
+<br />
+<br />
+<br />
+<div class="visao_checkbox_complentar">
+<table>
+  <tr bgcolor="#FAEEB4">
+    <td><input name="selecionar"  id="selecionar" type="image" title="Seleciona todos os Animais" value="Selecionar Todos" src="imagens/arrow_ltr.png" align="absmiddle" onclick="CheckBox_selecionarTudo(this.form);return false;"></td>
+    <td colspan="6">Com sele&ccedil;&atilde;o: 
+        <input name="mover" type="image" title="Transferir de Fazenda" value="Transferir de Fazenda" src="imagens/truck2.gif" align="absmiddle"  />
+        <input name="vender" type="image" title="Vender" value="Vender" src="imagens/dinheiro.gif" align="absmiddle"  />
+        <input name="hormonio" type="image" title="Aplicar Horm&ocirc;nio aos Animais Selecionados" value="Horm&ocirc;nio" src="imagens/vacina2.gif" align="absmiddle" />
+		<input name="transferencia" type="image" title="Transfer&ecirc;ncias" value="Transfer&ecirc;ncias" src="imagens/refresh.gif" align="absmiddle" /></td>
+    </tr>     
+</table>
+</div>
+</p>
+	<a href="#777">Topo da P&aacute;gina</a>
+<!-- END modo2 --> 
+</form>
+
+<!-- END visao --> 
+
+<!-- BEGIN acao_mover --> 
+<p class="titulo">Gerenciamento de Animais - Mover 
+<div class="menu_adm"><a href="?modulo=adm&menu=animais&sub=cadastrar"> <img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Cadastrar</a> | <a href="?modulo=adm&menu=animais&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></div></p>
+<form action="?modulo=adm&menu=animais&sub=acao" method="post" name="envia_animais"  onKeyUp="highlight(event)" onClick="highlight(event)" >
+
+<div class="visao_checkbox_complentar">
+<a href="javascript:MostraEsconde('painel_selecionados')">{animais.acao_mover.MSG}</a>
+
+<!-- BEGIN selecionados --> 
+<p class="subtitulo2" id="painel_selecionados">
+<table width="550px" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="7%"></td>
+    <td width="10%"><strong>Numero </strong></td>
+    <td width="10%"><strong>Marca</strong></td>
+    <td width="8%"><strong>Idade</strong></td>	
+    <td width="15%"><strong>Data</strong></td>
+    <td width="20%"><strong>R$ Compra</strong></td>
+    <td width="30%"><strong></strong></td>
+  </tr>
+<!-- BEGIN dados --> 
+  <tr {animais.acao_mover.selecionados.dados.COR} class="borda_tabela" id="tr_{animais.acao_mover.selecionados.dados.CODIGO}" onmousedown="setCheck('id_{animais.acao_mover.selecionados.dados.CODIGO}','tr_{animais.acao_mover.selecionados.dados.CODIGO}');" style="background-color:#BCCBFE">
+    <td><input type="checkbox" name="animais[]" id="id_{animais.acao_mover.selecionados.dados.CODIGO}" value="{animais.acao_mover.selecionados.dados.CODIGO}" onclick="javascript:setCheck('id_{animais.acao_mover.selecionados.dados.CODIGO}','tr_{animais.acao_mover.selecionados.dados.CODIGO}');" checked="checked"/></td>
+    <td>{animais.acao_mover.selecionados.dados.NUMERO}</td>
+    <td>{animais.acao_mover.selecionados.dados.MARCA}</td>
+    <td>{animais.acao_mover.selecionados.dados.IDADE}</td>	
+    <td>{animais.acao_mover.selecionados.dados.DATA}</td>
+    <td>R$ {animais.acao_mover.selecionados.dados.COMPRA}</td>
+    <td></td>
+  </tr>
+  <tr>
+	<td colspan="6"><div id="dados_{animais.acao_mover.selecionados.dados.CODIGO}" class="animais_detalhes"> {animais.acao_mover.selecionados.dados.OBS}</div></td>
+  </tr>  
+<!-- END dados -->     
+</table>
+</p>
+<!-- END selecionados --> 
+</div>
+<br />
+<p class="subtitulo">Confirmação</p>
+<p class="texto">Fazenda destino dos animais: 
+    <select name="select_fazenda">
+	{animais.acao_mover.FAZENDAS}
+    </select> 
+Data:  <input name="txtdataT" type="text" size="10" maxlength="10"  onfocus="showCalendarControl(this);" />
+	<input name="mover2" type="image" title="Mover de Fazenda" value="Mover de Fazenda" src="imagens/truck2.gif" align="absmiddle" onclick="return testaTranferirLote(this.form)" />
+</p>
+</form>
+<!-- END acao_mover --> 
+
+<!-- BEGIN acao_vender --> 
+<p class="titulo">Gerenciamento de Animais - Venda<div class="menu_adm"><a href="?modulo=adm&menu=animais&sub=cadastrar"> <img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Cadastrar</a> | <a href="?modulo=adm&menu=animais&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></div></p>
+<form action="?modulo=adm&menu=animais&sub=acao" method="post" name="formVender" id="formVender" onsubmit="return testaFormVenda(this.form)"  onKeyUp="highlight(event)" onClick="highlight(event)" >
+
+<div class="visao_checkbox_complentar">
+<a href="javascript:MostraEsconde('painel_selecionados')">{animais.acao_vender.MSG}</a>
+
+<!-- BEGIN selecionados --> 
+<p class="subtitulo2" id="painel_selecionados">
+<table width="550px" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="7%"></td>
+    <td width="10%"><strong>Numero </strong></td>
+    <td width="10%"><strong>Marca</strong></td>
+    <td width="8%"><strong>Idade</strong></td>	
+    <td width="15%"><strong>Data</strong></td>
+    <td width="20%"><strong>R$ Compra</strong></td>
+    <td width="30%"><strong></strong></td>
+  </tr>
+<!-- BEGIN dados --> 
+  <tr {animais.acao_vender.selecionados.dados.COR} class="borda_tabela" id="tr_{animais.acao_vender.selecionados.dados.CODIGO}" onmousedown="setCheck('id_{animais.acao_vender.selecionados.dados.CODIGO}','tr_{animais.acao_vender.selecionados.dados.CODIGO}');" style="background-color:#BCCBFE">
+    <td><input type="checkbox" name="animais[]" id="id_{animais.acao_vender.selecionados.dados.CODIGO}" value="{animais.acao_vender.selecionados.dados.CODIGO}" onclick="javascript:setCheck('id_{animais.acao_vender.selecionados.dados.CODIGO}','tr_{animais.acao_vender.selecionados.dados.CODIGO}');" checked="checked"/></td>
+    <td>{animais.acao_vender.selecionados.dados.NUMERO}</td>
+    <td>{animais.acao_vender.selecionados.dados.MARCA}</td>
+    <td>{animais.acao_vender.selecionados.dados.IDADE}</td>	
+    <td>{animais.acao_vender.selecionados.dados.DATA}</td>
+    <td>R$ {animais.acao_vender.selecionados.dados.COMPRA}</td>
+    <td></td>
+  </tr>
+  <tr>
+	<td colspan="6"><div id="dados_{animais.acao_vender.selecionados.dados.CODIGO}" class="animais_detalhes"> {animais.acao_vender.selecionados.dados.OBS}</div></td>
+  </tr>  
+<!-- END dados -->     
+</table>
+</p>
+<!-- END selecionados --> 
+</div>
+<br />
+<p class="subtitulo">Confirmação</p>
+<p class="texto">
+<div class="formulario">
+<label>Data da Transação:</label> <input name="txtdata_venda" type="text" size="10" maxlength="10"  onfocus="showCalendarControl(this);" /><br />
+<label>Valor por animal: R$</label><input name="txtpreco_venda" type="text" size="15" maxlength="10" onKeyDown="FormataValor(this,12,event);"/> 
+<input type="Submit" name="vender2" value="Vender" src="imagens/vendido2.gif"  />
+</div>
+</p>
+</form>
+<!-- END acao_vender --> 
+
+
+<!-- BEGIN acao_hormonio --> 
+<p class="titulo">Gerenciamento de Animais - Hormônio<div class="menu_adm"><a href="?modulo=adm&menu=animais&sub=cadastrar"> <img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Cadastrar</a> | <a href="?modulo=adm&menu=animais&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></div></p>
+<form action="?modulo=adm&menu=animais&sub=acao" method="post" name="formHormonio" id="formHormonio" onsubmit="return testaFormHormonio(this.form)"  onKeyUp="highlight(event)" onClick="highlight(event)" >
+
+<div class="visao_checkbox_complentar">
+<a href="javascript:MostraEsconde('painel_selecionados')">{animais.acao_hormonio.MSG}</a>
+
+<!-- BEGIN selecionados --> 
+<p class="subtitulo2" id="painel_selecionados">
+<table width="550px" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="7%"></td>
+    <td width="10%"><strong>Numero </strong></td>
+    <td width="10%"><strong>Marca</strong></td>
+    <td width="8%"><strong>Idade</strong></td>	
+    <td width="15%"><strong>Data</strong></td>
+    <td width="20%"><strong>R$ Compra</strong></td>
+    <td width="30%"><strong></strong></td>
+  </tr>
+<!-- BEGIN dados --> 
+  <tr {animais.acao_hormonio.selecionados.dados.COR} class="borda_tabela" id="tr_{animais.acao_hormonio.selecionados.dados.CODIGO}" onmousedown="setCheck('id_{animais.acao_hormonio.selecionados.dados.CODIGO}','tr_{animais.acao_hormonio.selecionados.dados.CODIGO}');" style="background-color:#BCCBFE">
+    <td><input type="checkbox" name="animais[]" id="id_{animais.acao_hormonio.selecionados.dados.CODIGO}" value="{animais.acao_hormonio.selecionados.dados.CODIGO}" onclick="javascript:setCheck('id_{animais.acao_hormonio.selecionados.dados.CODIGO}','tr_{animais.acao_hormonio.selecionados.dados.CODIGO}');" checked="checked"/></td>
+    <td>{animais.acao_hormonio.selecionados.dados.NUMERO}</td>
+    <td>{animais.acao_hormonio.selecionados.dados.MARCA}</td>
+    <td>{animais.acao_hormonio.selecionados.dados.IDADE}</td>	
+    <td>{animais.acao_hormonio.selecionados.dados.DATA}</td>
+    <td>R$ {animais.acao_hormonio.selecionados.dados.COMPRA}</td>
+    <td></td>
+  </tr>
+  <tr>
+	<td colspan="6"><div id="dados_{animais.acao_hormonio.selecionados.dados.CODIGO}" class="animais_detalhes"> {animais.acao_hormonio.selecionados.dados.OBS}</div></td>
+  </tr>  
+<!-- END dados -->     
+</table>
+</p>
+<!-- END selecionados --> 
+</div>
+<br />
+<p class="subtitulo">Confirmação</p>
+<p class="texto">Por favor, informe o data da aplicação do hormônio:  <input name="txtdataHormonio" type="text" size="10" maxlength="10"  onfocus="showCalendarControl(this);" /> 
+<input type="Submit" name="hormonio" value="Aplicar Hormônio" />
+</p>
+</form>
+<!-- END acao_hormonio --> 
+
+
+<!-- BEGIN acao_vacinas --> 
+<p class="titulo">Gerenciamento de Animais - Vacinas<div class="menu_adm"><a href="?modulo=adm&menu=animais&sub=cadastrar"> <img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Cadastrar</a> | <a href="?modulo=adm&menu=animais&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></div></p>
+<form action="?modulo=adm&menu=animais&sub=acao" method="post" name="formVacinas" id="formVacinas" onsubmit="return testaFormVacinas(this.form)" onKeyUp="highlight(event)" onClick="highlight(event)" >
+
+<div class="visao_checkbox_complentar">
+<a href="javascript:MostraEsconde('painel_selecionados')">{animais.acao_vacinas.MSG}</a>
+
+<!-- BEGIN selecionados --> 
+<p class="subtitulo2" id="painel_selecionados">
+<table width="550px" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="7%"></td>
+    <td width="10%"><strong>Numero </strong></td>
+    <td width="10%"><strong>Marca</strong></td>
+    <td width="8%"><strong>Idade</strong></td>	
+    <td width="15%"><strong>Data</strong></td>
+    <td width="20%"><strong>R$ Compra</strong></td>
+    <td width="30%"><strong></strong></td>
+  </tr>
+<!-- BEGIN dados --> 
+  <tr {animais.acao_vacinas.selecionados.dados.COR} class="borda_tabela" id="tr_{animais.acao_vacinas.selecionados.dados.CODIGO}" onmousedown="setCheck('id_{animais.acao_vacinas.selecionados.dados.CODIGO}','tr_{animais.acao_vacinas.selecionados.dados.CODIGO}');" style="background-color:#BCCBFE">
+    <td><input type="checkbox" name="animais[]" id="id_{animais.acao_vacinas.selecionados.dados.CODIGO}" value="{animais.acao_vacinas.selecionados.dados.CODIGO}" onclick="javascript:setCheck('id_{animais.acao_vacinas.selecionados.dados.CODIGO}','tr_{animais.acao_vacinas.selecionados.dados.CODIGO}');" checked="checked"/></td>
+    <td>{animais.acao_vacinas.selecionados.dados.NUMERO}</td>
+    <td>{animais.acao_vacinas.selecionados.dados.MARCA}</td>
+    <td>{animais.acao_vacinas.selecionados.dados.IDADE}</td>	
+    <td>{animais.acao_vacinas.selecionados.dados.DATA}</td>
+    <td>R$ {animais.acao_vacinas.selecionados.dados.COMPRA}</td>
+    <td></td>
+  </tr>
+  <tr>
+	<td colspan="6"><div id="dados_{animais.acao_vacinas.selecionados.dados.CODIGO}" class="animais_detalhes"> {animais.acao_vacinas.selecionados.dados.OBS}</div></td>
+  </tr>  
+<!-- END dados -->     
+</table>
+</p>
+<!-- END selecionados --> 
+</div>
+<br />
+<p class="subtitulo">Confirmação</p>
+<p class="texto">Data da aplicação da  vacina:  <input name="txtdataVacinas" id="txtdataVacinas" type="text" size="10" maxlength="10"  onfocus="showCalendarControl(this);" /><select name="txtTipoVacinas"> <option value="A">Aftosa</option><option value="B">Brucelosa</option><option value="R">Raiva</option></select>
+<input type="Submit" name="vacina" value="Aplicar Vacina" />
+</p>
+</form>
+<!-- END acao_vacinas --> 
+
+<!-- BEGIN acao_transferencia --> 
+<p class="titulo">Gerenciamento de Animais - Transferência<div class="menu_adm"><a href="?modulo=adm&menu=animais&sub=cadastrar"> <img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Cadastrar</a> | <a href="?modulo=adm&menu=animais&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></div></p>
+<form action="?modulo=adm&menu=animais&sub=acao" method="post" name="formTransferencia" id="formTransferencia" onsubmit="return testaFormTransfer(this.form)">
+
+<div class="visao_checkbox_complentar">
+<a href="javascript:MostraEsconde('painel_selecionados')">{animais.acao_transferencia.MSG}</a>
+
+<!-- BEGIN selecionados --> 
+<p class="subtitulo2" id="painel_selecionados">
+<table width="550px" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="7%"></td>
+    <td width="10%"><strong>Numero </strong></td>
+    <td width="10%"><strong>Marca</strong></td>
+    <td width="8%"><strong>Idade</strong></td>	
+    <td width="15%"><strong>Data</strong></td>
+    <td width="20%"><strong>R$ Compra</strong></td>
+    <td width="30%"><strong></strong></td>
+  </tr>
+<!-- BEGIN dados --> 
+  <tr {animais.acao_transferencia.selecionados.dados.COR} class="borda_tabela" id="tr_{animais.acao_transferencia.selecionados.dados.CODIGO}" onmousedown="setCheck('id_{animais.acao_transferencia.selecionados.dados.CODIGO}','tr_{animais.acao_transferencia.selecionados.dados.CODIGO}');" style="background-color:#BCCBFE">
+    <td><input type="checkbox" name="animais[]" id="id_{animais.acao_transferencia.selecionados.dados.CODIGO}" value="{animais.acao_transferencia.selecionados.dados.CODIGO}" onclick="javascript:setCheck('id_{animais.acao_transferencia.selecionados.dados.CODIGO}','tr_{animais.acao_transferencia.selecionados.dados.CODIGO}');" checked="checked"/></td>
+    <td>{animais.acao_transferencia.selecionados.dados.NUMERO}</td>
+    <td>{animais.acao_transferencia.selecionados.dados.MARCA}</td>
+    <td>{animais.acao_transferencia.selecionados.dados.IDADE}</td>	
+    <td>{animais.acao_transferencia.selecionados.dados.DATA}</td>
+    <td>R$ {animais.acao_transferencia.selecionados.dados.COMPRA}</td>
+    <td></td>
+  </tr>
+  <tr>
+	<td colspan="6"><div id="dados_{animais.acao_transferencia.selecionados.dados.CODIGO}" class="acao_transferencia"> {animais.acao_transferencia.selecionados.dados.OBS}</div></td>
+  </tr>  
+<!-- END dados -->     
+</table>
+</p>
+<!-- END selecionados --> 
+</div>
+<br />
+<p class="subtitulo">Confirmação</p>
+<p class="texto">Por favor, informe o data da transferência:  <input name="txtdataTransferencia" type="text" size="10" maxlength="10"  onfocus="showCalendarControl(this);" /> 
+<input type="Submit" name="transferencia" value="Aplicar Transferência" />
+</p>
+</form>
+<!-- END acao_transferencia --> 
+
+<!-- BEGIN acao_cio --> 
+<p class="titulo">Gerenciamento de Animais - Cios<div class="menu_adm"><a href="?modulo=adm&menu=animais&sub=cadastrar"> <img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Cadastrar</a> | <a href="?modulo=adm&menu=animais&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></div></p>
+<form action="?modulo=adm&menu=animais&sub=acao" method="post" name="formCios" id="formCios" onsubmit="return testaFormCios(this.form)" onKeyUp="highlight(event)" onClick="highlight(event)" >
+
+<div class="visao_checkbox_complentar">
+<a href="javascript:MostraEsconde('painel_selecionados')">{animais.acao_cio.MSG}</a>
+
+<!-- BEGIN selecionados --> 
+<p class="subtitulo2" id="painel_selecionados">
+<table width="550px" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="7%"></td>
+    <td width="10%"><strong>Numero </strong></td>
+    <td width="10%"><strong>Marca</strong></td>
+    <td width="8%"><strong>Idade</strong></td>	
+    <td width="15%"><strong>Data</strong></td>
+    <td width="20%"><strong>R$ Compra</strong></td>
+    <td width="30%"><strong></strong></td>
+  </tr>
+<!-- BEGIN dados --> 
+  <tr {animais.acao_cio.selecionados.dados.COR} class="borda_tabela" id="tr_{animais.acao_cio.selecionados.dados.CODIGO}" onmousedown="setCheck('id_{animais.acao_cio.selecionados.dados.CODIGO}','tr_{animais.acao_cio.selecionados.dados.CODIGO}');" style="background-color:#BCCBFE">
+    <td><input type="checkbox" name="animais[]" id="id_{animais.acao_cio.selecionados.dados.CODIGO}" value="{animais.acao_cio.selecionados.dados.CODIGO}" onclick="javascript:setCheck('id_{animais.acao_cio.selecionados.dados.CODIGO}','tr_{animais.acao_cio.selecionados.dados.CODIGO}');" checked="checked"/></td>
+    <td>{animais.acao_cio.selecionados.dados.NUMERO}</td>
+    <td>{animais.acao_cio.selecionados.dados.MARCA}</td>
+    <td>{animais.acao_cio.selecionados.dados.IDADE}</td>	
+    <td>{animais.acao_cio.selecionados.dados.DATA}</td>
+    <td>R$ {animais.acao_cio.selecionados.dados.COMPRA}</td>
+    <td></td>
+  </tr>
+  <tr>
+	<td colspan="6"><div id="dados_{animais.acao_cio.selecionados.dados.CODIGO}" class="animais_detalhes"> {animais.acao_cio.selecionados.dados.OBS}</div></td>
+  </tr>  
+<!-- END dados -->     
+</table>
+</p>
+<!-- END selecionados --> 
+</div>
+<br />
+<p class="subtitulo">Confirmação</p>
+<p class="texto">Por favor, informe o data do cio:  <input name="txtdataCio" type="text" size="10" maxlength="10"  onfocus="showCalendarControl(this);" /> 
+<input type="Submit" name="btncios" value="Colocar data do Cio" />
+</p>
+</form>
+<!-- END acao_cio --> 
+
+<!-- BEGIN acao_ultrasom --> 
+<p class="titulo">Gerenciamento de Animais - Ultrasom<div class="menu_adm"><a href="?modulo=adm&menu=animais&sub=cadastrar"> <img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Cadastrar</a> | <a href="?modulo=adm&menu=animais&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></div></p>
+<form action="?modulo=adm&menu=animais&sub=acao" method="post" name="formUltrasom" id="formUltrasom" onsubmit="return testaFormUltrasom(this.form)" onKeyUp="highlight(event)" onClick="highlight(event)" >
+
+<div class="visao_checkbox_complentar">
+<a href="javascript:MostraEsconde('painel_selecionados')">{animais.acao_ultrasom.MSG}</a>
+
+<!-- BEGIN selecionados --> 
+<p class="subtitulo2" id="painel_selecionados">
+<table width="550px" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="7%"></td>
+    <td width="10%"><strong>Numero </strong></td>
+    <td width="10%"><strong>Marca</strong></td>
+    <td width="8%"><strong>Idade</strong></td>	
+    <td width="15%"><strong>Data</strong></td>
+    <td width="20%"><strong>R$ Compra</strong></td>
+    <td width="30%"><strong></strong></td>
+  </tr>
+<!-- BEGIN dados --> 
+  <tr {animais.acao_ultrasom.selecionados.dados.COR} class="borda_tabela" id="tr_{animais.acao_ultrasom.selecionados.dados.CODIGO}" onmousedown="setCheck('id_{animais.acao_ultrasom.selecionados.dados.CODIGO}','tr_{animais.acao_ultrasom.selecionados.dados.CODIGO}');" style="background-color:#BCCBFE">
+    <td><input type="checkbox" name="animais[]" id="id_{animais.acao_ultrasom.selecionados.dados.CODIGO}" value="{animais.acao_ultrasom.selecionados.dados.CODIGO}" onclick="javascript:setCheck('id_{animais.acao_ultrasom.selecionados.dados.CODIGO}','tr_{animais.acao_ultrasom.selecionados.dados.CODIGO}');" checked="checked"/></td>
+    <td>{animais.acao_ultrasom.selecionados.dados.NUMERO}</td>
+    <td>{animais.acao_ultrasom.selecionados.dados.MARCA}</td>
+    <td>{animais.acao_ultrasom.selecionados.dados.IDADE}</td>	
+    <td>{animais.acao_ultrasom.selecionados.dados.DATA}</td>
+    <td>R$ {animais.acao_ultrasom.selecionados.dados.COMPRA}</td>
+    <td></td>
+  </tr>
+  <tr>
+	<td colspan="6"><div id="dados_{animais.acao_ultrasom.selecionados.dados.CODIGO}" class="animais_detalhes"> {animais.acao_ultrasom.selecionados.dados.OBS}</div></td>
+  </tr>  
+<!-- END dados -->     
+</table>
+</p>
+<!-- END selecionados --> 
+</div>
+<br />
+<p class="subtitulo">Confirmação</p>
+<p class="texto">Data do Ultrasom/Sexagem:  <input name="txtdataUltrasom" type="text" size="10" maxlength="10"  onfocus="showCalendarControl(this);" /> <select name="txtSexoUltrasom"><option value="">Sexo Indefinido</option><option value="F">Fêmea</option><option value="M">Macho</option></select>
+<input type="Submit" name="btnultrasom" value="OK" />
+</p>
+</form>
+<!-- END acao_ultrasom --> 
+
+<!-- BEGIN acao_aviso --> 
+<p class="titulo">Gerenciamento de Animais {animais.acao_aviso.TITULO}<div class="menu_adm"><a href="?modulo=adm&menu=animais&sub=cadastrar"> <img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Cadastrar</a> | <a href="?modulo=adm&menu=animais&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></div></p>
+
+<p class="subtitulo">Concluído</p>
+<p class="texto">{animais.acao_aviso.MSG}<br />
+</p>
+<!-- END acao_aviso -->
+
+<!-- BEGIN cadastrar --> 
+<p class="titulo">Cadastro de Animais <div class="menu_adm"><a href="?modulo=adm&menu=animais&sub=cadastrar"> <img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Cadastrar</a> | <a href="?modulo=adm&menu=animais&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></div></p>
+{animais.cadastrar.MSG}
+<p class="subtitulo">Formulário</p>
+<p class="texto">
+<div class="formulario">
+	  <form action="?modulo=adm&menu=animais&sub=cadastrar" id="cadastrarAnimal" method="post" name="cadastrarAnimal" onsubmit="return testaFormCadastroAnimal(this)" onKeyUp="highlight(event)" onClick="highlight(event)" >	  
+	<label for="txtdataentrada">Data de Entrada</label>
+        <input name="txtdataentrada" type="text" id="txtdataentrada" value="{animais.cadastrar.DATAENTRADA}" size="16" maxlength="10" ondblclick="showCalendarControl(this);"/>
+        <input name="transferencia2" type="image" title="Data" value="Data" src="imagens/refresh.gif" align="absmiddle" onclick="javascript:form.txtdataentrada.ondblclick();return false;" />
+        <img src="imagens/b_edit.png" width="16" height="16" onclick="javascript:document.cadastrarAnimal.txtdataentrada.ondblclick();return false;"/><br />	  
+	<label for="txtnumero">Numero do Animal</label>
+        <input name="txtnumeroA" type="text" id="txtnumeroA" value="" size="16" maxlength="8" /><br />
+
+	<label for="txtproprietario">Proprietário</label>
+		  <select name="txtproprietario"  id="txtproprietario">
+			{animais.cadastrar.PROPRIETARIOS}			
+          </select><br />
+		  
+	<label for="txtidade">Idade</label>
+	        <input name="txtidade" type="text" id="txtidade" value="" size="8" maxlength="2" />
+	        <br />
+			
+	<label for="txtcompra">Preço de Compra</label>
+	        <input name="txtcompra" type="text" id="txtcompra" value="" size="16" maxlength="10" onKeyDown="FormataValor(this,12,event);"/><br />
+	<label for="txtobs">Observações Gerais</label>
+           <textarea name="txtobs" cols="40" rows="6" id="txtobs"></textarea><br />
+		   
+		   <input type="submit" name="Cadastrar" class="botao" id="Cadastrar" value="Cadastrar" />
+	  </form>
+	  
+		 </p>
+<!-- END cadastrar --> 
+		 
+<!-- BEGIN detalhes --> 
+<p class="titulo">Dados do Animal <div class="menu_adm"><a href="?modulo=adm&menu=animais&sub=cadastrar"> <img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Cadastrar</a> | <a href="?modulo=adm&menu=animais&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></div></p>
+{animais.detalhes.MSG}
+<p class="subtitulo">Detalhes<div class="menu_adm">Ações: <img src="imagens/dinheiro.gif" align="absmiddle" onClick="venderAnimal({animais.detalhes.CODIGO},{animais.detalhes.NUMERO},'{animais.detalhes.MARCA}')" /> 
+<img src="imagens/truck2.gif" align="absmiddle" onClick="moverAnimal({animais.detalhes.CODIGO},{animais.detalhes.NUMERO},'{animais.detalhes.MARCA}')" /></div></p>
+<p class="texto">
+<div class="formulario2">
+	  <form action="?modulo=adm&menu=animais&sub=detalhes" id="alterarAnimal" method="post" name="alterarAnimal" onsubmit="return testaFormAlterarAnimal(this)" onKeyUp="highlight(event)" onClick="highlight(event)" >	  
+	  <input name="txtcodigo" type="hidden" value="{animais.detalhes.CODIGO}" />
+
+           <table width="100%" border="0" cellpadding="0" cellspacing="0">
+               <tr>
+                   <td><label for="txtdataentrada">Data de Entrada</label>
+        <input name="txtdataentrada" type="text" id="txtdataentrada" value="{animais.detalhes.DATA_ENTRADA}" size="16" maxlength="10" onfocus="showCalendarControl(this);" disabled="disabled"/></td>
+                   <td><label for="txtdataentrada">Data de Saída</label>		
+ <input name="txtdatasaida" type="text" id="txtdatasaida" value="{animais.detalhes.DATA_SAIDA}" size="16" maxlength="10" onfocus="showCalendarControl(this);" disabled="disabled"/></td>
+               </tr>
+               <tr>
+                   <td><label for="txtnumero">Numero do Animal</label>
+        <input name="txtnumeroA" type="text" id="txtnumeroA" value="{animais.detalhes.NUMERO}" size="16" maxlength="8" readonly="true" /></td>
+                   <td><label for="txtproprietario">Marca</label>
+		  <select name="txtproprietario"  id="txtproprietario" disabled="disabled">
+			{animais.detalhes.PROPRIETARIOS}			
+          </select></td>
+               </tr>
+               <tr>
+                   <td><label for="txtidade">Idade (anos)</label>
+	        <input name="txtidade" type="text" id="txtidade" value="{animais.detalhes.IDADE}" size="16" maxlength="2" readonly="true" /></td>
+                   <td></td>
+               </tr>
+               <tr>
+                   <td><label for="txtcompra">Compra R$</label>
+	        <input name="txtcompra" type="text" id="txtcompra" value="{animais.detalhes.PRECO_COMPRA}" size="16" maxlength="10" onKeyDown="FormataValor(this,12,event);" readonly="true"/></td>
+                   <td><label for="txtcompra">Venda R$</label>
+	        <input name="txtvenda" type="text" id="txtvenda" value="{animais.detalhes.PRECO_VENDA}" size="16" maxlength="10" onKeyDown="FormataValor(this,12,event);" readonly="true"/></td>
+               </tr>
+               <tr>
+                   <td colspan="2" ><br />
+
+
+<table width="26%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="13%"><label for="label">Vacinas</label>
+            <textarea name="txtvacinas" cols="14" rows="6" readonly="true"  id="txtvacinas">{animais.detalhes.VACINAS}</textarea></td>
+        <td width="87%"><label for="label">Transferências</label>
+            <textarea name="txttransfer"  cols="11" rows="6" id="txttransfer" readonly="true">{animais.detalhes.TRANSFERENCIAS}</textarea></td>
+        <td width="87%"><label for="label">Hormônios</label>
+                       <textarea name="txthormonios"  cols="11" rows="6" id="txthormonios" readonly="true">{animais.detalhes.HORMONIOS}</textarea></td>
+        <td width="87%"><label for="txtobs">Cios</label>
+           <textarea name="txtcios" id="txtcios" cols="11" rows="6" readonly="true">{animais.detalhes.CIOS}</textarea></td>
+        <td width="87%"><label for="txtobs">Ultrasom/Sexagem</label>
+           <textarea name="txtultrasom" id="txtultrasom"  cols="14" rows="6"readonly="true">{animais.detalhes.ULTRASON}</textarea></td>
+    </tr>
+</table>
+</td>
+               </tr>
+               <tr>
+                   <td colspan="2"><label for="txtobs">Observações</label>
+           <textarea name="txtobs" cols="40" rows="3" id="txtobs" readonly="true">{animais.detalhes.OBS}</textarea></td>
+               </tr>
+        <tr>
+          <td colspan="2" align="center" valign="middle" bgcolor="#FAF2C1">
+                 <a href="?modulo=adm&menu=animais&sub=detalhes&codigo={animais.detalhes.ANTERIOR}">Anterior</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input name="btnAlterar" type="button" class="botao" value="Alterar" onclick="javascript: habilitaAlterar(this.form);"/>
+                  <input name="gravar" id="gravar" type="submit" class="botao" disabled="disabled" value="Salvar" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="?modulo=adm&menu=animais&sub=detalhes&codigo={animais.detalhes.PROXIMO}">Proximo</a> </td>
+        </tr>			   
+          </table>
+	
+	  </form>
+</div>
+		 </p>
+<!-- END detalhes --> 	
+
+<!-- BEGIN aviso --> 
+<p class="titulo">Aviso<div class="menu_adm"><a href="?modulo=adm&menu=animais&sub=cadastrar"> <img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Cadastrar</a> | <a href="?modulo=adm&menu=animais&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></div></p>
+<p class="subtitulo">Detalhes</p>
+<p class="texto">
+{animais.aviso.MSG}
+</p>
+<!-- END aviso --> 		
+		 
+<!-- END animais --> 
+
+
+<!-- BEGIN fazendas --> 
+
+<!-- BEGIN visao --> 
+<p class="titulo">Fazendas<p class="menu_adm"><a href="?modulo=sys&menu=fazendas&sub=cadastrar"><img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Inserir Fazendas</a> | <img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' /> <a href="?modulo=sys&menu=fazendas&sub=visao">Visualização</a></p></p>
+
+<p class="subtitulo2">
+<table width="562" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="12%"><strong>Código</strong></td>
+    <td width="40%"><strong>Nome </strong></td>
+    <td width="40%"><strong>Endere&ccedil;o</strong></td>
+    <td width="8%"><strong>A&ccedil;&atilde;o</strong></td>
+  </tr>
+<!-- BEGIN dados --> 
+  <tr {fazendas.visao.dados.COR} onclick="javascript:MostraEsconde('dados_{fazendas.visao.dados.CODIGO}');" class="borda_tabela">
+    <td>{fazendas.visao.dados.CODIGO}</td>
+    <td>{fazendas.visao.dados.NOME}</td>
+    <td>{fazendas.visao.dados.ENDERECO}</td>
+    <td><a href="?modulo=sys&menu=fazendas&sub=editar&codigo={fazendas.visao.dados.CODIGO}"><img src="imagens/b_edit.png" width="16" height="16"/></a></td>
+  </tr>
+  <tr>
+	<td {fazendas.visao.dados.COR} colspan="4"><div id="dados_{fazendas.visao.dados.CODIGO}" class="animais_detalhes"><strong>Inscrição Estadual : </strong>{fazendas.visao.dados.INSCRICAO}<br />
+<strong>Dados Gerais : </strong>{fazendas.visao.dados.DADOS}<br />
+<strong>Observações : </strong>{fazendas.visao.dados.OBS}<br />
+</div></td>
+  </tr>  
+<!-- END dados --> 
+  <tr bgcolor="#FAEEB4">
+    <td colspan="4"></td>
+    </tr>     
+</table>
+</p>
+
+<!-- END visao --> 
+
+<!-- BEGIN cadastrar --> 
+<p class="titulo">Cadastrar Fazenda<p class="menu_adm"><a href="?modulo=sys&menu=fazendas&sub=cadastrar"><img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Inserir Fazendas</a> | <img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' /> <a href="?modulo=sys&menu=fazendas&sub=visao">Visualização</a></p></p>
+{fazendas.cadastrar.MSG}
+<p class="subtitulo">
+Formulário</p>
+<p class="texto">
+<div class="formulario">
+	  <form action="?modulo=sys&menu=fazendas&sub=cadastrar" id="formfazendas" method="post" name="formfazendas" onKeyUp="highlight(event)" onClick="highlight(event)" >	  
+	<label for="txtnome">Nome da Fazenda  </label>
+        <input name="txtnome" type="text" id="txtnome" value="" size="50" maxlength="100" /><br />	  
+	<label for="txtendereco">Endere&ccedil;o</label>
+        <input name="txtendereco" type="text" id="txtendereco" value="" size="40" maxlength="100" />
+        <br />
+	<label for="txtinscricao">Inscri&ccedil;&atilde;o Estadual </label>
+        <input name="txtinscricao" type="text" id="txtinscricao" value="" size="30" maxlength="20" />
+        <br />		
+	<label for="txtdados">Dados Diversos</label>
+           <textarea name="txtdados" cols="40" rows="5" id="txtdados"></textarea><br />		
+	<label for="txtobs">Observações Gerais</label>
+           <textarea name="txtobs" cols="40" rows="5" id="txtobs"></textarea><br />
+		   
+		   <input type="submit" name="Cadastrar" class="botao" id="Cadastrar" value="Cadastrar" />
+	  </form>
+		 </p>
+<!-- END cadastrar --> 
+
+<!-- BEGIN editar --> 
+<p class="titulo">Editar Dados da Fazenda<p class="menu_adm"><a href="?modulo=sys&menu=fazendas&sub=cadastrar"><img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Inserir Fazendas</a> | <img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' /> <a href="?modulo=sys&menu=fazendas&sub=visao">Visualização</a></p></p>
+{fazendas.editar.MSG}
+<p class="subtitulo">Formulário</p>
+<p class="texto">
+<div class="formulario">
+	  <form action="?modulo=sys&menu=fazendas&sub=editar&codigo={fazendas.editar.CODIGO}" id="formfazendas" method="post" name="formfazendas" onKeyUp="highlight(event)" onClick="highlight(event)" >	  
+	<label for="txtnome">Nome da Fazenda  </label>
+        <input name="txtnome" type="text" id="txtnome" value="{fazendas.editar.NOME}" size="50" maxlength="100" /><br />	  
+	<label for="txtendereco">Endere&ccedil;o</label>
+        <input name="txtendereco" type="text" id="txtendereco" value="{fazendas.editar.ENDERECO}" size="40" maxlength="100" /><br />
+	<label for="txtinscricao">Inscri&ccedil;&atilde;o Estadual </label>
+        <input name="txtinscricao" type="text" id="txtinscricao" value="{fazendas.editar.INSCRICAO}" size="30" maxlength="20" /> <br />		
+	<label for="txtdados">Dados Diversos</label>
+           <textarea name="txtdados" cols="40" rows="5" id="txtdados">{fazendas.editar.DADOS}</textarea><br />		
+	<label for="txtobs">Observações Gerais</label>
+           <textarea name="txtobs" cols="40" rows="5" id="txtobs">{fazendas.editar.OBS}</textarea><br />
+		   
+		   <input type="submit" name="Gravar" class="botao" id="Gravar" value="Gravar" />
+	  </form>
+		 </p>
+<!-- END editar --> 
+
+
+<!-- END fazendas --> 
+
+
+<!-- BEGIN marcas --> 
+
+<!-- BEGIN visao --> 
+<p class="titulo">Marcas <p class="menu_adm"><a href="?modulo=sys&menu=marcas&sub=cadastrar"><img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Inserir Marca</a> | <a href="?modulo=sys&menu=marcas&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' /> Visualização</a></p></p>
+<p class="subtitulo2">
+<table width="550px" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="43%"><strong>Nome </strong></td>
+    <td width="43%"><strong>Marca</strong></td>
+    <td width="14%"><strong>A&ccedil;&atilde;o</strong></td>
+  </tr>
+<!-- BEGIN dados --> 
+  <tr {marcas.visao.dados.COR} onclick="javascript:MostraEsconde('dados_{marcas.visao.dados.CODIGO}');" class="borda_tabela">
+    <td>{marcas.visao.dados.NOME}</td>
+    <td><span style="font-weight:bold;color:{marcas.visao.dados.CORMARCA}">{marcas.visao.dados.MARCA}</span></td>
+    <td><a href="?modulo=sys&menu=marcas&sub=editar&codigo={marcas.visao.dados.CODIGO}"><img src="imagens/b_edit.png" width="16" height="16" /></a></td>
+  </tr>
+  <tr>
+	<td  {marcas.visao.dados.COR} colspan="3"><div id="dados_{marcas.visao.dados.CODIGO}" class="animais_detalhes"> {marcas.visao.dados.OBS}</div></td>
+  </tr>  
+<!-- END dados --> 
+  <tr bgcolor="#FAEEB4">
+    <td colspan="3"></td>
+    </tr>     
+</table>
+</p>
+<!-- END visao --> 
+
+<!-- BEGIN cadastrar --> 
+<p class="titulo">Cadastrar Marca<p class="menu_adm"><a href="?modulo=sys&menu=marcas&sub=cadastrar"><img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Inserir Marca</a> | <a href="?modulo=sys&menu=marcas&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' /> Visualização</a></p></p>
+{marcas.cadastrar.MSG}
+<p class="subtitulo">
+Formulário</p>
+<p class="texto">
+<div class="formulario">
+	  <form action="?modulo=sys&menu=marcas&sub=cadastrar" id="cadastrarmarcas" method="post" name="cadastrarmarcas" onKeyUp="highlight(event)" onClick="highlight(event)" >	  
+	<label for="txtnome">Nome do Propriet&aacute;rio </label>
+        <input name="txtnome" type="text" id="txtnome" value="" size="20" maxlength="50" /><br />	  
+	<label for="txtmarca">Marca</label>
+        <input name="txtmarca" type="text" id="txtmarca" value="" size="16" maxlength="10" /><br />
+	<label for="txtcor">Cor para Identificação</label>
+		  <select name="txtcor"  id="txtcor">
+		      <option value="#000000" selected="selected">Preto (Padrão)</option>		  
+		      <option value="#000099">Azul</option>
+		      <option value="#FF0000">Vermelho</option>
+		      <option value="#009900">Verde</option>
+		      <option value="#808080">Cinza</option>			  			  			  
+		      <option value="#20b2aa">Azul Agua</option>	
+		      <option value="#993366">Roxo</option>			  			  			  
+		      <option value="#D9D919">Ouro</option>	
+          </select><br /><br />
+	<label for="txtobs">Observações Gerais</label>
+           <textarea name="txtobs" cols="40" rows="6" id="txtobs"></textarea><br />
+		   
+		   <input type="submit" name="Cadastrar" class="botao" id="Cadastrar" value="Cadastrar" />
+	  </form>
+		 </p>
+<!-- END cadastrar --> 
+
+<!-- BEGIN editar --> 
+<p class="titulo">Cadastrar Marca<p class="menu_adm"><a href="?modulo=sys&menu=marcas&sub=cadastrar"><img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Inserir Marca</a> | <a href="?modulo=sys&menu=marcas&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' /> Visualização</a></p></p>
+{marcas.editar.MSG}
+<p class="subtitulo">
+Formulário</p>
+<p class="texto">
+<div class="formulario">
+	  <form action="?modulo=sys&menu=marcas&sub=editar&codigo={marcas.editar.CODIGO}" id="editarmarcas" method="post" name="editarmarcas" onKeyUp="highlight(event)" onClick="highlight(event)" >	  
+	<label for="txtnome">Nome do Propriet&aacute;rio </label>
+        <input name="txtnome" type="text" id="txtnome" value="{marcas.editar.NOME}" size="20" maxlength="50" /><br />	  
+	<label for="txtmarca">Marca</label>
+        <input name="txtmarca" type="text" id="txtmarca" value="{marcas.editar.MARCA}" size="16" maxlength="10" /><br />
+	<label for="txtcor">Cor para Identificação</label>
+		  <select name="txtcor"  id="txtcor">
+		      <option value="#000000" selected="selected">Preto (Padrão)</option>		  
+		      <option value="#000099">Azul</option>
+		      <option value="#FF0000">Vermelho</option>
+		      <option value="#009900">Verde</option>
+		      <option value="#808080">Cinza</option>			  			  			  
+		      <option value="#20b2aa">Azul Agua</option>	
+		      <option value="#993366">Roxo</option>			  			  			  
+		      <option value="#D9D919">Ouro</option>		
+          </select><br /><br />
+	<label for="txtobs">Observações Gerais</label>
+           <textarea name="txtobs" cols="40" rows="6" id="txtobs">{marcas.editar.OBS}</textarea><br />
+		   
+		   <input type="submit" name="Gravar" class="botao" id="Gravar" value="Gravar" />
+  
+	  </form>
+		 </p>
+<!-- END editar --> 
+
+<!-- END marcas --> 
+
+
+<!-- BEGIN custos --> 
+
+<!-- BEGIN visao --> 
+<p class="titulo">Controle de Custos
+<p class="menu_adm"><a href="?modulo=adm&menu=custos&sub=editar"><img src="imagens/b_edit.png" width="16" height="16" alt="Editar dados"  align='absmiddle'/> Editar Custos</a> | <a href="?modulo=adm&menu=custos&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibi&ccedil;&atilde;o' align='absmiddle' /> Ver Custos</a></p>
+</p>
+<p class="subtitulo">Relação dos Custos Mensais da Fazenda</p>
+<p class="textoCustosP">Funcion&aacute;rios: </p>
+R$  {custos.visao.FUNCIONARIOS}<br /><br />
+<p class="textoCustosP">Vacinas: </p>R$  {custos.visao.VACINAS}<br /><br />
+<p class="textoCustosP">Sal: </p> R$  {custos.visao.SAL}<br /><br />
+<p class="textoCustosP">Administração: </p> R$  {custos.visao.ADM}<br /><br />
+<p class="textoCustosP">Arrendamentos: </p> R$  {custos.visao.ARRENDAMENTOS}<br /><br />
+<p class="textoCustosP">Hormônios: </p> R$  {custos.visao.HORMONIOS}<br /><br />
+<p class="textoCustosP">Outros: </p> R$  {custos.visao.OUTROS}<br /><br />
+<p class="textoCustosP">Obs.: </p> {custos.visao.OBS}<br /><br /><br /><br />
+<p class="textoCustosP">Total de Gasto Por Animal: </p> R$  {custos.visao.TOTAL}<br /><br /><br />
+<!-- END visao --> 
+
+<!-- BEGIN editar --> 
+<p class="titulo">Editar Custos
+<p class="menu_adm"><a href="?modulo=adm&menu=custos&sub=editar"><img src="imagens/b_edit.png" width="16" height="16" alt="Editar dados"  align='absmiddle'/> Editar Custos</a> | <a href="?modulo=adm&menu=custos&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibi&ccedil;&atilde;o' align='absmiddle' /> Ver Custos</a></p></p>
+{custos.editar.MSG}
+<p class="subtitulo">
+Formulário</p>
+<p class="texto">
+<div class="formulario">
+	  <form action="?modulo=adm&menu=custos&sub=editar" id="cadastrarusuarios" method="post" name="cadastrarusuarios" onKeyUp="highlight(event)" onClick="highlight(event)" >	  
+	<label for="txtfazenda">Fazenda</label>
+        {custos.editar.NOMEFAZENDA}<br />	  <br />
+	<label for="txtfuncionarios">Funcionários</label>
+        <input name="txtfuncionarios" type="text" id="txtfuncionarios" value="{custos.editar.FUNCIONARIOS}" size="20" maxlength="20" onKeyDown="FormataValor(this,12,event);" /><br />
+	<label for="txtvacinas">Vacinas</label>
+        <input name="txtvacinas" type="text" id="txtvacinas" value="{custos.editar.VACINAS}" size="20" maxlength="20" onKeyDown="FormataValor(this,12,event);" /><br />
+	<label for="txtsal">Sal</label>
+ <input name="txtsal" type="text" id="txtsal" value="{custos.editar.SAL}" size="20" maxlength="20" onKeyDown="FormataValor(this,12,event);" /><br />
+	<label for="txtadm">Administração</label>
+        <input name="txtadm" type="text" id="txtadm" value="{custos.editar.ADM}" size="20" maxlength="20" onKeyDown="FormataValor(this,12,event);" /><br />
+	<label for="ttxtarrendamentos">Arrendamentos</label>
+        <input name="ttxtarrendamentos" type="text" id="ttxtarrendamentos" value="{custos.editar.ARRENDAMENTOS}" size="20" maxlength="20" onKeyDown="FormataValor(this,12,event);" /><br />		
+	<label for="txthormonios">Hormônios</label>
+        <input name="txthormonios" type="text" id="txthormonios" value="{custos.editar.HORMONIOS}" size="20" maxlength="20" onKeyDown="FormataValor(this,12,event);" /><br />						
+	<label for="txtoutros">Outros</label>
+        <input name="txtoutros" type="text" id="txtoutros" value="{custos.editar.OUTROS}" size="20" maxlength="20" onKeyDown="FormataValor(this,12,event);" /><br />		
+	<label for="txtobs">Observações</label>
+           <textarea name="txtobs" cols="40" rows="4" id="txtobs">{custos.editar.OBS}</textarea><br />
+		   		   
+		   <input type="submit" name="Gravar" class="botao" id="Gravar" value="Gravar" />
+	  </form>
+		 </p>
+<!-- END editar --> 
+
+<!-- END custos --> 
+
+<!-- BEGIN usuarios --> 
+
+<!-- BEGIN visao --> 
+<p class="titulo">Controle de Usuários
+<p class="menu_adm"><a href="?modulo=sys&menu=usuarios&sub=cadastrar"><img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Cadastrar Usuário</a> | <a href="?modulo=sys&menu=usuarios&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></p></p>
+
+<p class="subtitulo2">
+<table width="550px" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="43%"><strong>Nome </strong></td>
+    <td width="43%"><strong>E-Mail</strong></td>
+    <td width="14%"><strong>A&ccedil;&atilde;o</strong></td>
+  </tr>
+<!-- BEGIN dados --> 
+  <tr {usuarios.visao.dados.COR} onclick="javascript:MostraEsconde('dados_{usuarios.visao.dados.CODIGO}');" class="borda_tabela">
+    <td>{usuarios.visao.dados.NOME} ({usuarios.visao.dados.LOGIN})</td>
+    <td>{usuarios.visao.dados.EMAIL}</td>
+    <td><img src="imagens/b_edit.png" width="16" height="16" /></td>
+  </tr>
+  <tr>
+	<td  {usuarios.visao.dados.COR} colspan="3"><div id="dados_{usuarios.visao.dados.CODIGO}" class="animais_detalhes">
+	Usuário cadastrado em {usuarios.visao.dados.DATA} <br />
+	<strong>Nível:</strong> {usuarios.visao.dados.NIVEL} <br />	
+	<strong>Observações:</strong> {usuarios.visao.dados.OBS}<br />
+</div></td>
+  </tr>  
+<!-- END dados --> 
+  <tr bgcolor="#FAEEB4">
+    <td colspan="3"></td>
+    </tr>     
+</table>
+</p>
+<!-- END visao --> 
+
+<!-- BEGIN cadastrar --> 
+<p class="titulo">Cadastrar Usuário<p class="menu_adm"><a href="?modulo=sys&menu=usuarios&sub=cadastrar"><img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Cadastrar Usuário</a> | <a href="?modulo=sys&menu=usuarios&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></p></p>
+{usuarios.cadastrar.MSG}
+<p class="subtitulo">
+Formulário</p>
+<p class="texto">
+<div class="formulario">
+	  <form action="?modulo=sys&menu=usuarios&sub=cadastrar" id="cadastrarusuarios" method="post" name="cadastrarusuarios" onKeyUp="highlight(event)" onClick="highlight(event)" >	  
+	<label for="txtnome">Nome </label>
+        <input name="txtnome" type="text" id="txtnome" value="" size="30" maxlength="50" /><br />	  
+	<label for="txtlogin">Login</label>
+        <input name="txtlogin" type="text" id="txtlogin" value="" size="20" maxlength="20" /><br />
+	<label for="txtsenha">Senha</label>
+        <input name="txtsenha" type="text" id="txtsenha" value="" size="20" maxlength="20" /><br />		
+	<label for="txtnivel">Nível</label>
+		  <select name="txtnivel"  id="txtnivel">
+            <option value="100" selected>Administrador</option>
+            <option value="1">Visitante</option>
+          </select><br />
+	<label for="txtemail">e-Mail</label>
+        <input name="txtemail" type="text" id="txtemail" value="" size="30" maxlength="60" /><br />
+	<label for="txtobs">Observações</label>
+           <textarea name="txtobs" cols="40" rows="6" id="txtobs"></textarea><br />
+		   
+		   <input type="submit" name="Cadastrar" class="botao" id="Cadastrar" value="Cadastrar" />
+		   <input type="button" name="Cancelar" class="botao" id="Cancelar" value="Cancelar" />		   
+	  </form>
+		 </p>
+<!-- END cadastrar --> 
+
+<!-- END usuarios --> 
+
+
+<!-- BEGIN financeiro --> 
+
+<!-- BEGIN visao --> 
+<p class="titulo">Visualizar<p class="menu_adm"><a href="?modulo=adm&menu=financeiro&sub=processar"><img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Processar</a> | <a href="?modulo=adm&menu=financeiro&sub=configuracoes"><img src='imagens/preview5.gif' alt='Configurações'  align='absmiddle' /> Configurações</a> | <a href="?modulo=adm&menu=financeiro&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></p></p>
+<form name="formAno" id="formAno" method="post" action="?modulo=adm&menu=financeiro&sub=visao">
+    &nbsp;&nbsp;&nbsp;<label>Selecione o Ano</label> <select name="txtano" onchange="javascript:formAno.submit()">
+		{financeiro.visao.ANOS}
+    </select>
+</form>
+<p class="subtitulo2">
+<table width="562" border="0" cellpadding="0" cellspacing="0" class="textoFinanceiro">
+  <tr>
+    <td width="13%"><strong>Mês/Ano</strong></td>
+    <td width="20%"><strong>Gastos</strong></td>
+    <td width="20%"><strong>Vendas</strong></td>
+    <td width="20%"><strong>Compras</strong></td>		
+    <td width="7%"><strong>Qtde</strong></td>
+    <td width="12%"><strong>Custo</strong></td>	
+    <td width="8%"><strong>Status</strong></td>
+  </tr>
+<!-- BEGIN dados --> 
+  <tr {financeiro.visao.dados.COR} onclick="javascript:MostraEsconde('dados_{financeiro.visao.dados.CODIGO}');" class="borda_tabela">
+    <td>{financeiro.visao.dados.MES}/{financeiro.visao.dados.ANO}</td>
+    <td>{financeiro.visao.dados.VALOR}</td>
+    <td>{financeiro.visao.dados.VENDAS}</td>
+    <td>{financeiro.visao.dados.COMPRAS}</td>		
+    <td>{financeiro.visao.dados.ANIMAIS}</td>
+    <td>{financeiro.visao.dados.CUSTOS}</td>	
+    <td>{financeiro.visao.dados.STATUS}</td>
+  </tr>
+  <tr>
+	<td {financeiro.visao.dados.COR} colspan="7">
+	<div id="dados_{financeiro.visao.dados.CODIGO}" class="animais_detalhes">
+	Gastos no Mês: .......... <strong>{financeiro.visao.dados.VALOR}</strong><br />
+	Vendas de Animais: ...... <strong>{financeiro.visao.dados.VENDAS} ({financeiro.visao.dados.VENDIDOS} animais)</strong><br />
+	Compras de Animais: ..... <strong>{financeiro.visao.dados.COMPRAS} ({financeiro.visao.dados.COMPRADOS} animais)</strong><br />	
+	N° de Animais: .......... <strong>{financeiro.visao.dados.ANIMAIS}</strong><br />
+	Gastos por animal: ...... <strong>{financeiro.visao.dados.CUSTOS}</strong><br />
+	Gastos por Marcas: ...... <strong>{financeiro.visao.dados.MARCAS}</strong><br />	
+	Observações: ............ <strong>{financeiro.visao.dados.OBS}</strong><br />
+	Processado em: .......... <strong>{financeiro.visao.dados.DATA}</strong><br />
+	</div></td>
+  </tr>  
+<!-- END dados --> 
+  <tr bgcolor="#FAEEB4">
+    <td colspan="67"></td>
+    </tr>     
+</table>
+</p>
+
+<!-- END visao --> 
+
+<!-- BEGIN processar --> 
+<p class="titulo">Processar<p class="menu_adm"><a href="?modulo=adm&menu=financeiro&sub=processar"><img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Processar</a> | <a href="?modulo=adm&menu=financeiro&sub=configuracoes"><img src='imagens/preview5.gif' alt='Configurações'  align='absmiddle' /> Configurações</a> | <a href="?modulo=adm&menu=financeiro&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></p></p>
+<p class="subtitulo">Aviso</p>
+<p class="textoFinanceiro">
+{financeiro.processar.MSG}
+</p>
+<!-- END processar --> 
+
+
+<!-- BEGIN configuracoes --> 
+<p class="titulo">Configurações<p class="menu_adm"><a href="?modulo=adm&menu=financeiro&sub=processar"><img src='imagens/add22.gif' width="16px" alt='Modos de Exibição'  align='absmiddle' /> Processar</a> | <a href="?modulo=adm&menu=financeiro&sub=configuracoes"><img src='imagens/preview5.gif' alt='Configurações'  align='absmiddle' /> Configurações</a> | <a href="?modulo=adm&menu=financeiro&sub=visao"><img src='imagens/lupa22.gif' width="18px" alt='Modos de Exibição'  align='absmiddle' />  Visualização</a></p></p>
+{financeiro.configuracoes.MSG}
+<p class="subtitulo">Criar Ano</p>
+<p class="texto">Anos Criados: {financeiro.configuracoes.ANOS}<br /><br />
+</p>
+<!-- END configuracoes --> 
+
+<!-- END financeiro --> 
+
+
+
+
+<!-- ############################################## VER ######################################################## --> 
+<!-- ############################################## VER ######################################################## --> 
+<!-- ############################################## VER ######################################################## --> 
+
+
+<!-- BEGIN inicioVER --> 
+<p class="titulo">Animais - {inicioVER.TITULO}</p>
+<p align="center"></p>
+
+<p class="subtitulo">Dados da Fazenda</p>
+<p class="texto">
+<img src="imagens/catalog.gif" align="left"/> {inicioVER.DADOS}
+<br />
+</p>
+<!-- END inicioVER -->
+
+
+<!-- BEGIN ver --> 
+
+<!-- BEGIN visao --> 
+<p class="titulo">Animais Cadastrados 
+<div class="menu_adm"></div>
+</p>
+
+<div id="rollovermenucontainer">
+	<ul id="rollovermenu">
+		<li id="invite"><img src='imagens/funil.jpg' alt='Filtro'  align='absmiddle' /> Filtro
+		<ul style="margin-top:0px;padding-top:1px;margin-left:12px;">
+				<li ><strong>Ordenado por...</strong></li>				
+				<li ><a href="?modulo=ver&menu=animais&sub=visao{animais.visao.VIEW}&filtro=numero" title="Ordenado por Numeração">- Número</a></li>	
+				<li ><a href="?modulo=ver&menu=animais&sub=visao{animais.visao.VIEW}&filtro=marca" title="Ordenado por Marca">-  Marca</a></li>							
+				<li ><a href="?modulo=ver&menu=animais&sub=visao{animais.visao.VIEW}&filtro=idade" title="Ordenado por Idade">-  Idade</a></li>
+				<li ><a href="?modulo=ver&menu=animais&sub=visao{animais.visao.VIEW}&filtro=data" title="Ordenao por Data">- Data</a></li>
+				<li ><strong>Mostrar...</strong></li>						
+				<li ><a href="?modulo=ver&menu=animais&sub=visao{animais.visao.VIEW}&filtro=star" title="Cio">Marcados</a></li>
+				<li ><strong>Somente Marca...</strong></li>		
+				{animais.visao.MENU_MARCA}														
+			</ul>		
+		</li>	
+		<li id="invite">
+			<img src='imagens/lupa.gif' alt='Procurar' width="24px;"  align='absmiddle' />
+			Procurar
+			<ul style="margin-top:0px;padding-top:1px; margin-left:12px;">
+				<li>
+				<form action="?modulo=ver&menu=animais&sub=detalhes" method="post" name="Procurar" id="Procurar" >
+				<br />
+				&nbsp;&nbsp;Numero<br />
+				&nbsp;&nbsp;<input name="txtnumero" type="text" size="10" maxlength="10" /><br />
+				&nbsp;&nbsp;<br />
+				&nbsp;&nbsp;{animais.visao.MARCAS}<br /><br />
+				&nbsp;&nbsp;<input name="Procurar" id="Procurar" value="Procurar" type="submit" />
+				</form>	
+				</li>
+			</ul>
+			
+		</li>	
+		<li id="invite"><img src='imagens/alvo.gif' alt='Procurar' align='absmiddle' />
+			<input name="procurarA" type="text"  size="8" onkeypress="procurarAnimal(procurarA.value,event)"  onKeyUp="highlight(event)" onClick="highlight(event)" />
+		</li>					
+				
+	</ul>
+</div>
+<!-- M E N U  -->
+<!-- M E N U  -->
+<form action="?modulo=ver&menu=animais&sub=acao" method="post" name="envia_animais">
+<!-- BEGIN modo1 --> 
+
+<p class="subtitulo2">
+<table width="550px" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="12%"></td>
+    <td width="13%"><strong>Número</strong></td>
+    <td width="10%"><strong>Marca</strong></td>
+    <td width="8%"><strong>Idade </strong></td>	
+    <td width="15%"><strong>Data</strong></td>
+    <td width="20%"><strong>R$ Compra</strong></td>
+    <td width="22%"><strong>A&ccedil;&atilde;o</strong></td>
+  </tr>
+</table>
+<div class="tabela_animais">
+<table width="550px" border="0" cellpadding="0" cellspacing="0">
+  <tr height="0px">
+    <td width="12%"></td>
+    <td width="13%"></td>
+    <td width="10%"></td>
+    <td width="8%"></td>	
+    <td width="15%"></td>
+    <td width="20%"></td>
+    <td width="22%"></td>
+  </tr>
+<!-- BEGIN dados --> 
+  <tr {ver.visao.modo1.dados.COR} class="borda_tabela"  id="tr_{ver.visao.modo1.dados.CODIGO}"  onclick="setCheck('id_{ver.visao.modo1.dados.CODIGO}','tr_{ver.visao.modo1.dados.CODIGO}');">
+    <td><img src="imagens/imagesMais3.gif" alt="Mais" onClick="javascript:trocarSeta(this);MostraEsconde('dados_{ver.visao.modo1.dados.CODIGO}');setCheck('id_{ver.visao.modo1.dados.CODIGO}','tr_{ver.visao.modo1.dados.CODIGO}');" /> <img src="imagens/star_{ver.visao.modo1.dados.STAR}_2.gif" name="image_star{ver.visao.modo1.dados.CODIGO}" title="" id="image_star{ver.visao.modo1.dados.CODIGO}" alt="{animais.visao.modo1.dados.STAR}" onClick="javascript:AtivarDesativaStar('{ver.visao.modo1.dados.STAR}','{ver.visao.modo1.dados.CODIGO}');setCheck('id_{ver.visao.modo1.dados.CODIGO}','tr_{ver.visao.modo1.dados.CODIGO}');"/> <input name="{ver.visao.modo1.dados.NUMERO} {ver.visao.modo1.dados.MARCA}" type="hidden" /><input type="checkbox" name="animais[]" id="id_{ver.visao.modo1.dados.CODIGO}" value="{ver.visao.modo1.dados.CODIGO}" onclick="javascript:setCheck('id_{ver.visao.modo1.dados.CODIGO}','tr_{ver.visao.modo1.dados.CODIGO}');"/></td>
+    <td>{ver.visao.modo1.dados.NUMERO}</td>
+    <td><span style="font-weight:bold;color:{ver.visao.modo1.dados.CORMARCA}">{ver.visao.modo1.dados.MARCA}</span></td>	
+    <td>{ver.visao.modo1.dados.IDADE}</td>
+    <td>{ver.visao.modo1.dados.DATA}</td>
+    <td>{ver.visao.modo1.dados.COMPRA}</td>
+    <td><img src="imagens/dinheiro.gif" onClick="javascript:venderAnimal({ver.visao.modo1.dados.CODIGO},{ver.visao.modo1.dados.NUMERO},'{ver.visao.modo1.dados.MARCA}')" /> 
+<img src="imagens/truck2.gif"  onClick="javascript:moverAnimal({ver.visao.modo1.dados.CODIGO},{ver.visao.modo1.dados.NUMERO},'{ver.visao.modo1.dados.MARCA}')" /> <img src="imagens/icon_detalhes2.gif" onclick="javascript:document.location='?modulo=ver&menu=animais&sub=detalhes&codigo={ver.visao.modo1.dados.CODIGO}'" /></td>
+  </tr>
+  <tr>
+	<td colspan="7"><div id="dados_{ver.visao.modo1.dados.CODIGO}" class="animais_detalhes">
+<b>Cadastro:</b> {ver.visao.modo1.dados.DATA}<br />	
+<b>Entrada:</b> {ver.visao.modo1.dados.DATA_ENTRADA}<br />	
+<b>Hormônios:</b> {ver.visao.modo1.dados.HORMONIOS}<br />
+<b>Vacinas:</b> {ver.visao.modo1.dados.VACINAS}<br />
+<b>Transferências:</b> {ver.visao.modo1.dados.TRANSFERENCIAS}<br />
+<b>Ultrasons:</b> {ver.visao.modo1.dados.ULTRASOM}<br />
+<b>Cios:</b> {ver.visao.modo1.dados.CIOS}<br />
+<b>Observações:</b> {ver.visao.modo1.dados.OBS}
+</div></td>
+  </tr>  
+<!-- END dados -->  
+</table>
+</div> 
+<table width="550px" border="0" cellpadding="0" cellspacing="0" style="margin-left:20px;">
+  <tr bgcolor="#FAEEB4">
+    <td width="70" align="right">&nbsp;</td>
+    <td width="480" >&nbsp;</td>
+    </tr>      
+</table>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resumo: {ver.visao.modo1.RESUMO}
+
+</p>
+<!-- END modo1 --> 
+
+<!-- BEGIN modo2 --> 
+<p class="subtitulo2">
+<strong>Selecione os Animais</strong><br />
+<br />
+<div class="visao_checkbox_complentar">
+<!-- BEGIN dados --> 
+<p class="visao_checkbox" title="{ver.visao.modo2.dados.DATA} - {ver.visao.modo2.dados.CODIGO} - {ver.visao.modo2.dados.MARCA}" id="check_{ver.visao.modo2.dados.CODIGO}" ondblclick="javascript:document.location='?modulo=ver&menu=animais&sub=detalhes&codigo={ver.visao.modo2.dados.CODIGO}'" onmousedown="setCheck('id_row_check_{ver.visao.modo2.dados.CODIGO}','check_{ver.visao.modo2.dados.CODIGO}');"><input type="checkbox" id="id_row_check_{ver.visao.modo2.dados.CODIGO}" name="animais[]" value="{ver.visao.modo2.dados.CODIGO}" onclick="setCheck('id_row_check_{ver.visao.modo2.dados.CODIGO}','check_{ver.visao.modo2.dados.CODIGO}');"/>
+     <span style="color:{ver.visao.modo2.dados.CORMARCA}">({ver.visao.modo2.dados.MARCA})</span><strong> {ver.visao.modo2.dados.NUMERO} </strong></p>
+<!-- END dados -->   
+</div>
+<br />
+<br />
+<br />
+<div class="visao_checkbox_complentar">
+<table>
+  <tr bgcolor="#FAEEB4">
+    <td>&nbsp;</td>
+    <td colspan="6">&nbsp;</td>
+    </tr>     
+</table>
+</div>
+</p>
+	<a href="#777">Topo da P&aacute;gina</a>
+<!-- END modo2 --> 
+</form>
+
+<!-- END visao --> 
+<!-- END ver --> 
+
+
+</div>
+</div>
+	
+<div id="rodape">
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#3F8CDA', gradientType='1')">&copy;2006 - <a href="mailto:fabio.nowaki@gmail.com">Fabio Nowaki</a>. Todos os direitos reservados.</td>
+  </tr>
+</table>
+</div>
+
+
+
+
+</div>
+
+</body>
+</html>

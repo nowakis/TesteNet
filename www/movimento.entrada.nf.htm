@@ -1,0 +1,155 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<br />
+
+<script type="text/javascript">
+	jQuery(function($){
+		$("#emissao").mask("99/99/9999");
+		$("#nascimento").mask("99/99/9999");
+		$("#previsao_data_venda").mask("99/99/9999");
+		
+		//$("#nascimento").mask("99/99/9999",{placeholder:" "});
+		
+	});
+</script>
+
+<div class="frm_cadastro">
+
+	<form name="frm_cadastro" id="frm_cadastro" action="movimento.entrada.nf.php" method="POST" >
+	<input name="faturamento" type="hidden" id="faturamento" value="{FATURAMENTO}"/>
+	
+	<fieldset class="cadastro">
+		<legend>Dados da Nota Fiscal</legend>
+		
+		<table width="100%" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<td>
+				<label>Proprietário</label><br />
+				<select name="proprietario"  id="proprietario">
+				{PROPRIETARIO}
+				</select>
+			</td>
+			<td>
+				<label>Fornecedor</label><br />
+				<select name="fornecedor"  id="fornecedor">
+				{FORNECEDOR}
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Nº Nota Fiscal</label><br />
+				<input name="nota_fiscal" type="text" id="nota_fiscal" value="{NOTA_FISCAL}" maxlength="10" />
+			</td>
+			<td><label>Série</label><br />
+				<input name="serie" type="text" id="serie" value="{SERIE}" maxlength="10" /><br />
+			</td>
+			<td><label>CFOP</label><br />
+				<input name="cfop" type="text" id="cfop"  value="{CFOP}" maxlength="10" /><br />
+			</td>						
+			<td><label>Emissão</label><br />
+				<input name="emissao" type="text" id="emissao" value="{EMISSAO}" maxlength="10" /><br />
+			</td>
+		</tr>
+		<tr>
+			<td><label>Base ICMS</label><br />
+				<input name="base_icms" type="text" id="base_icms" value="{BASE_ICMS}" maxlength="20" />
+			</td>
+			<td><label>Valor ICMS</label><br />
+				<input name="valor_icms" type="text" id="valor_icms" value="{VALOR_ICMS}" maxlength="20" />
+			</td>
+			<td><label>Base IPI</label><br />
+				<input name="base_ipi" type="text" id="base_ipi" value="{BASE_IPI}" maxlength="20" />
+			</td>
+			<td><label>Valor IPI</label><br />
+			<input name="valor_ipi" type="text" id="valor_ipi" value="{VALOR_IPI}" maxlength="20" />
+			</td>
+		</tr>
+		<tr>
+			<td><label>Total da Nota</label><br />
+				<input name="total_nota" type="text" id="total_nota" value="{TOTAL_NOTA}" maxlength="20" />
+			</td>
+		</tr>
+		</table>
+
+		<div id="formCadastroText">
+				<fieldset class="cadastro">
+					<legend>Animais</legend>
+
+					<table width="50%" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="5" align="center">
+						<thead>
+								<tr>
+									<td>Espécie</td>
+									<td>Raça</td>
+									<td>Qtde</td>
+									<td>Valor</td>
+									<td>Total</td>
+								</tr>
+						</thead>
+					<tbody>
+						<!-- BEGIN item --> 
+						<tr>
+							<td>	<input name="faturamento_item_{item.I}" type="hidden" id="faturamento_item_{item.I}" value="{item.FATURAMENTO_ITEM}"/>
+									<select name="especie_{item.I}"  id="especie_{item.I}">
+									{item.ESPECIE}
+									</select>
+							</td>
+							<td>
+									<select name="raca_{item.I}"  id="raca_{item.I}">
+									{item.RACA}
+									</select>
+							</td>
+							<td>
+									<input name="qtde_{item.I}" type="text" id="qtde{item.I}" value="{item.QTDE}" size="4" maxlength="4" class='moeda' />
+							</td>
+							<td>
+								<input name="valor_{item.I}" type="text" id="valor_{item.I}" value="{item.VALOR}" size="16" maxlength="10" class='moeda' />
+							</td>
+							<td>
+								 <input name="total_{item.I}" type="text" id="total_{item.I}" value="{item.TOTAL}" size="16" maxlength="10" class='moeda' />
+							</td>
+						</tr>
+						<!-- END item --> 
+					</tbody>
+					</table>
+					
+				</fieldset>
+		</div>
+
+		<div id="formCadastro">
+			<table width="100%" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="5" align="center">
+			<tr>
+				<td colspan="4"><label>Observa&ccedil;&otilde;es Gerais</label><br />
+					<textarea name="observacao" rows="4" id="observacao" style='width:98%'>{OBSERVACAO}</textarea>
+				</td>
+			</tr>	
+			</table>
+		</div>
+
+
+		<table width="30%"  border="0" cellspacing="0" cellpadding="5" align="center">
+			<tr>
+				<td>
+					<!--<img src="imagens/btn_cancelar2.gif" id="bnt" width="134" height="25" onclick="javascript:window.location='cadastro.php'" style="cursor:pointer" />-->
+					<button value="gravar" class="submitBtn"  onclick="javascript:window.location='movimento.entrada.nf.php'"><span>Cancelar</span></button>
+				</td>
+				<td>
+					<input type='hidden' name="btn_acao" value=''>
+					<button value="gravar" class="submitBtn"  onclick="javascript: if(this.form.btn_acao.value == '' ) {this.form.btn_acao.value='gravar'; this.form.submit() } else { alert ('Aguarde submissão') }"><span>Gravar</span></button>
+					<!--
+					<input type="image" name="btn" src="imagens/btn_gravar3.gif" id="btn" value="" onclick="javascript: if(this.form.btn_acao.value == '' ) {this.form.btn_acao.value='gravar'; this.form.submit() } else { alert ('Aguarde submissão') }"/>
+					-->
+				</td>
+			</tr>
+			</table>
+
+		</fieldset>
+
+
+
+		</form>
+	</div>
+<br>
+<br>

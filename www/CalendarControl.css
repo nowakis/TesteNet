@@ -1,0 +1,72 @@
+#CalendarControlIFrame {
+	DISPLAY: none; Z-INDEX: 99; LEFT: 0px; WIDTH: 250px; POSITION: absolute; TOP: 0px; HEIGHT: 250px
+}
+#CalendarControl {
+	PADDING-RIGHT: 0px; DISPLAY: none; PADDING-LEFT: 0px; Z-INDEX: 100; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; POSITION: absolute; BACKGROUND-COLOR: #fff
+}
+#CalendarControl TABLE {
+	BORDER-RIGHT: #336 1px solid; FONT-SIZE: 8pt; BORDER-LEFT: #336 1px solid; FONT-FAMILY: arial, verdana, helvetica, sans-serif
+}
+#CalendarControl TH {
+	FONT-WEIGHT: normal
+}
+#CalendarControl TH A {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; FONT-WEIGHT: normal; PADDING-BOTTOM: 1px; COLOR: #fff; PADDING-TOP: 1px; TEXT-DECORATION: none
+}
+#CalendarControl TD {
+	TEXT-ALIGN: center
+}
+#CalendarControl .header {
+	BACKGROUND-COLOR: #336
+}
+#CalendarControl .weekday {
+	COLOR: #000; BACKGROUND-COLOR: #ddd
+}
+#CalendarControl .weekend {
+	COLOR: #000; BACKGROUND-COLOR: #ffc
+}
+#CalendarControl .current {
+	BORDER-RIGHT: #339 1px solid; BORDER-TOP: #339 1px solid; BORDER-LEFT: #339 1px solid; COLOR: #fff; BORDER-BOTTOM: #339 1px solid; BACKGROUND-COLOR: #336
+}
+#CalendarControl .weekday {
+	BORDER-RIGHT: #fff 1px solid; BORDER-TOP: #fff 1px solid; DISPLAY: block; BORDER-LEFT: #fff 1px solid; WIDTH: 2em; BORDER-BOTTOM: #fff 1px solid; TEXT-DECORATION: none
+}
+#CalendarControl .weekend {
+	BORDER-RIGHT: #fff 1px solid; BORDER-TOP: #fff 1px solid; DISPLAY: block; BORDER-LEFT: #fff 1px solid; WIDTH: 2em; BORDER-BOTTOM: #fff 1px solid; TEXT-DECORATION: none
+}
+#CalendarControl .current {
+	BORDER-RIGHT: #fff 1px solid; BORDER-TOP: #fff 1px solid; DISPLAY: block; BORDER-LEFT: #fff 1px solid; WIDTH: 2em; BORDER-BOTTOM: #fff 1px solid; TEXT-DECORATION: none
+}
+#CalendarControl .weekday:hover {
+	BORDER-RIGHT: #999 1px solid; BORDER-TOP: #999 1px solid; BORDER-LEFT: #999 1px solid; COLOR: #fff; BORDER-BOTTOM: #999 1px solid; BACKGROUND-COLOR: #336
+}
+#CalendarControl .weekend:hover {
+	BORDER-RIGHT: #999 1px solid; BORDER-TOP: #999 1px solid; BORDER-LEFT: #999 1px solid; COLOR: #fff; BORDER-BOTTOM: #999 1px solid; BACKGROUND-COLOR: #336
+}
+#CalendarControl .current:hover {
+	BORDER-RIGHT: #999 1px solid; BORDER-TOP: #999 1px solid; BORDER-LEFT: #999 1px solid; COLOR: #fff; BORDER-BOTTOM: #999 1px solid; BACKGROUND-COLOR: #336
+}
+#CalendarControl .previous {
+	TEXT-ALIGN: left
+}
+#CalendarControl .next {
+	TEXT-ALIGN: right
+}
+#CalendarControl .previous {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 1.4em; PADDING-BOTTOM: 1px; PADDING-TOP: 1px
+}
+#CalendarControl .next {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 1.4em; PADDING-BOTTOM: 1px; PADDING-TOP: 1px
+}
+#CalendarControl .previous A {
+	FONT-WEIGHT: bold; COLOR: #fff; TEXT-DECORATION: none
+}
+#CalendarControl .next A {
+	FONT-WEIGHT: bold; COLOR: #fff; TEXT-DECORATION: none
+}
+#CalendarControl .title {
+	FONT-WEIGHT: bold; COLOR: #fff; TEXT-ALIGN: center
+}
+#CalendarControl .empty {
+	BORDER-RIGHT: #fff 1px solid; BORDER-TOP: #fff 1px solid; BORDER-LEFT: #fff 1px solid; BORDER-BOTTOM: #fff 1px solid; BACKGROUND-COLOR: #ccc
+}

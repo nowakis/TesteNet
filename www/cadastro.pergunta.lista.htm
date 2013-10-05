@@ -1,0 +1,52 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+
+<p><br><a href='cadastro.pergunta.php'><img src="imagens/scroll_add.png" alt="" align='absmiddle'> Cadastrar uma nova Pergunta</a></p>
+
+<table border="0" cellspacing="0" cellpadding="0" class="tabela" align="center">
+	<thead> 
+		<tr>
+			<td align='center'>#</td>
+			<td>Título</td>
+			<td>Tópico</td>
+			<td>Tipo</td>
+			<td>Ações</td>
+		</tr>
+	</thead> 
+
+	<tbody>
+	<!-- BEGIN pergunta --> 
+	<tr {pergunta.CLASSE} title="Pergunta: {pergunta.TITULO_COMPLETO}">
+		<td align='center'><a href='javascript: abrePergunta({pergunta.PERGUNTA})'>{pergunta.PERGUNTA}</td>
+		<td><a href='javascript: abrePergunta({pergunta.PERGUNTA})'>{pergunta.TITULO}</a> <br> <span class='subtitulo_curso'>{pergunta.CURSO} / {pergunta.DISCIPLINA}</span></td>
+		<td>{pergunta.TOPICO}</td>
+		<td><img src="{pergunta.TIPO_IMAGEM}" align='absmiddle' alt="{pergunta.TIPO_PERGUNTA}"></td>
+		<td>
+			<a href="cadastro.pergunta.php?pergunta={pergunta.PERGUNTA}">
+			<img src="imagens/alterar.gif" width="18" height="18" border="0" />
+			</a>
+			<a href="cadastro.pergunta.lista.php?excluir={pergunta.PERGUNTA}">
+			<img src="imagens/excluir.gif" width="16" height="16" border="0" onclick="if (perguntar('Deseja excluir?')) return true; else return false" />
+			</a>
+		</td>
+	</tr>
+	<!-- END pergunta --> 
+	</tbody>		   
+	<!-- BEGIN naoencontrado --> 		   
+	<tbody>		
+	<tr >
+		<td colspan="6" class='naoencontrado'>
+		{naoencontrado.MSG}</td>
+	</tr>	
+	</tbody>
+	<!-- END naoencontrado --> 	
+</table>
+<!-- BEGIN paginacao -->
+<hr>
+<p>{paginacao.CONTADOR}</p>
+<!-- END paginacao --> 
+<br />
+
+<br>
+<br>

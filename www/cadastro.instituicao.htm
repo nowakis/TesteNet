@@ -1,0 +1,73 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<br />
+
+
+<div class="frm_cadastro">
+
+	<form name="frm_cadastro" id="frm_cadastro" action="{_NOME_PROGRAMA}" method="POST" >
+	<input name="instituicao" type="hidden" id="instituicao" value="{INSTITUICAO}"/>
+	
+	<fieldset class="cadastro">
+		<legend>Instituição</legend>
+		
+		<table width="100%" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<td>
+				<label>Nome</label><br />
+				<input name="nome" type="text" id="nome" value="{NOME}" maxlength="100" size='50' />
+			</td>
+		</tr>
+		</table>
+
+		<div id="formCadastroText">
+				<fieldset class="cadastro">
+					<legend><img src="imagens/information.png" align='absmiddle' alt="Informações Gerais">  Informações Gerais (CAMPOS OPCIONAIS)</legend>
+					<table width="100%" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="5" align="center">
+					<tr>
+						<td>
+							<label>Endereço</label><br />
+							<input name="endereco" type="text" id="endereco" value="{ENDERECO}" size="50" maxlength="100" />
+						</td>
+						<td>
+							<label>Número</label><br />
+							<input name="numero" type="text" id="numero" value="{NUMERO}" size="5" maxlength="7" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Bairro</label><br />
+							<input name="bairro" type="text" id="bairro" value="{BAIRRO}" size="30" maxlength="100" />
+						</td>
+						<td>
+							<label>Complemento</label><br />
+							<input name="complemento" type="text" id="complemento" value="{COMPLEMENTO}" size="30" maxlength="100" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Cidade</label><br />
+							<input name="cidade" type="text" id="cidade" value="{CIDADE}" size="40" maxlength="100" />
+						</td>
+						<td>
+							<label>Estado</label><br />
+							<input name="estado" type="text" id="estado" value="{ESTADO}" size="2" maxlength="2" />
+						</td>
+					</tr>
+					</table>
+				</fieldset>
+		</div>
+
+		<hr>
+		<input type='hidden' name="btn_acao" value=''>
+		<button value="gravar" class="gravarBtn" style='float:right' onclick="javascript: if(this.form.btn_acao.value == '' ) {this.form.btn_acao.value='gravar'; this.form.submit() } else { alert ('Aguarde submissão') }"><span>{BTN_NOME}</span></button>
+		<button value="gravar" class="submitBtn"  onclick="javascript: history.go(-1)"><span>Cancelar</span></button>
+
+		</fieldset>
+
+		</form>
+</div>
+<br>
+<br>

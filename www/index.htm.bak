@@ -1,0 +1,48 @@
+<!-- BEGIN refresh_tela --> 
+	<script type="text/javascript">
+		window.location = 'index.php';
+	</script>
+<!-- END  refresh_tela --> 
+
+<h1>Seja Bem Vindo!</h1>
+<h2>Menu Rápido</h2>
+<!-- MENU REDONDO -->
+<!--
+<div id="menwrap" >
+	<div id="ie_height_fix">
+		<h2 class="mail">LINK <span>Acesso Rápido</span></h2>
+		<ul id="menu">
+			<li><a href="#" id="home" class="menitem"><strong>Início</strong> <span>Página Inicial</span></a></li>
+			<li><a href="cadastro.pergunta.php" id="tutos" class="menitem"><strong>Perguntas</strong> <span>Cadastros de Perguntas</span></a></li>
+			<li><a href="#" id="files" class="menitem"><strong>Provas</strong> <span>Provas Marcadas</span></a></li>
+			<li><a href="#" id="search" class="menitem"><strong>Correções</strong> <span>Correções Pendentes.</span></a></li>
+			<li><a href="#" id="mail" class="menactive"><strong>Mail</strong> <span>Envie email para os Alunos</span></a></li>
+			<li><a href="#" id="id" class="menitem"><strong>Perfil</strong> <span>Verifique os perfis dos alunos.</span></a></li>
+			<li><a href="#" id="write" class="menitem"><strong>Relatórios</strong> <span>Relatórios de Desempenho</span></a></li>
+			<li><a href="#" id="logout" class="menitem"><strong>Sair</strong> <span>Sair do Sistema de Forma Segura</span></a></li>
+		</ul>
+	</div>
+</div>
+-->
+<!-- FIM MENU REDONDO -->
+<!--
+<div class="info">
+	<h2>O que é isto?</h2>
+	<p>Mensagem de informação</p>
+</div>
+
+<div class="attention">
+	<h2>Atenção</h2>
+	<p>Mensagem de Aviso</p>
+</div>
+
+
+<br>
+<h1>Últimas Atualizações</h1>
+<ul>
+	<li>Correção de prova</li>
+	<li>Testes</li>
+</ul>
+<h2>Em brave mais novidades.</h2>
+
+-->

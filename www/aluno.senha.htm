@@ -1,0 +1,51 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<br />
+
+<div class="frm_cadastro">
+
+	<form name="frm_cadastro" id="frm_cadastro" action="{_NOME_PROGRAMA}" method="POST" >
+	<input name="aluno" type="hidden" id="aluno" value="{ALUNO}"/>
+	
+	<fieldset class="cadastro">
+		<legend><img src="imagens/id_card2.png" align='absmiddle' alt="Informações do Aluno"> Altere sua senha</legend>
+		
+		<table width="100%" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<td>
+				<img src="imagens/key-yellow.png" align='absmiddle' alt="Senha">
+				<label>Digite sua senha Atual</label><br />
+				<input name="senha_atual" type="password" id="senha_atual" value="" maxlength="50" size="20" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan='2'><hr></td>
+		</tr>
+		<tr>
+			<td><img src="imagens/key-yellow.png" align='absmiddle' alt="Senha">
+				<label>Nova Senha</label><br />
+				<input name="senha1" type="password" id="senha1" value="" maxlength="50" size="20" />
+			</td>
+			<td>
+				<img src="imagens/key-yellow.png" align='absmiddle' alt="Senha">
+				<label>Repita a Nova Senha</label><br />
+				<input name="senha2" type="password" id="senha2" value="" maxlength="50" size="20" />
+			</td>
+		</tr>
+		</table>
+
+
+		<hr>
+		<input type='hidden' name="btn_acao" value=''>
+		<button value="gravar" class="gravarBtn" style='float:right' onclick="javascript: if(this.form.btn_acao.value == '' ) {this.form.btn_acao.value='gravar'; this.form.submit() } else { alert ('Aguarde submissão') }"><span>{BTN_NOME}</span></button>
+		<a href='index.php'>
+		<button value="gravar" class="submitBtn"><span>Cancelar</span></button>
+		</a>
+
+
+		</fieldset>
+
+		</form>
+</div>

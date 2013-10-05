@@ -1,0 +1,261 @@
+body {
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.unnamed1 {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	text-align: justify;
+	text-decoration: none;
+}
+a:link {
+	text-decoration: none;
+	color: #000000;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+a:active {
+	text-decoration: underline;
+	color: #000000;
+}
+.titulo_vendas {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+}
+.titulo_clientes {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.tabela_produtos {
+	font-family: "Courier New", Courier, mono;
+	font-size: 12px;
+	text-align:justify;
+	overflow: auto;
+	WIDTH: 500px;
+	HEIGHT: 200px;
+	background-color: #E4E2DE;
+	border-top: 1px solid #333333;
+	border-right: 1px solid #333333;
+	border-bottom: 1px solid #999999;
+	border-left: 1px solid #999999;
+	margin: 6px;
+	padding-top: 2px;
+	padding-right: 6px;
+	padding-bottom: 2px;
+	padding-left: 6px;
+}
+
+.lista_cheques {
+
+	font-size: 12px;
+	text-align:justify;
+	overflow: auto;
+	background-color: #E4E2DE;
+	border-top: 1px solid #333333;
+	border-right: 1px solid #333333;
+	border-bottom: 1px solid #333333;
+	border-left: 1px solid #333333;
+	HEIGHT: 50px;
+	width:167px;
+	padding-top: 2px;
+	padding-right: 1px;
+	padding-bottom: 2px;
+	padding-left: 1px;
+}
+.campo {
+width:150px;
+border:1px solid #036;
+padding:0; /* Eliminar espaamento no Firefox */
+		}
+.formulario{
+position:relative;
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#036;
+background-color:#d8fff0;
+	}	
+.formField {
+font-family: Arial, Helvetica, sans-serif;
+font-size:12px;
+padding:2px 5px;
+font-weight:bold;
+margin-top: 5px;
+margin-right: 1px;
+margin-left: 2px;
+margin-bottom: 5px;
+border:1px solid #000000;
+	}		
+.botao {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:2px 0 5px 5px;
+	text-align: center;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+	
+.textoForm{
+	font-family: "Courier New", Courier, mono;
+	color: #000000;
+	font-weight: bolder;
+	font-size: 16px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}	
+	
+.legendaForm {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#fff;
+	padding:2px 5px;
+	font-weight:bold;
+	letter-spacing:5px;
+	text-align:center;
+	background-color:#0d90d7;
+	border:1px solid #036;
+}
+
+.legendFormJanela {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#fff;
+	padding:2px 5px;
+	font-weight:bold;
+	letter-spacing:5px;
+	text-align:center;
+	background-color:#0d90d7;
+	border:1px solid #036;
+}
+
+.formJanela {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	padding:2px 5px;
+	font-weight:bold;
+	margin-top: 5px;
+	margin-right: 1px;
+	margin-left: 2px;
+	margin-bottom: 5px;
+	border:1px solid #000000;
+}
+
+
+
+
+img {border:0px;}
+
+body {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin:0;
+	padding:20px;	
+	background:#FFFFFF url("imagens/barraFundo.jpg") top left repeat-x fixed;
+}
+
+.formADDEXTRA {
+	background:#CAC5BD;
+	position:absolute;
+	visibility:hidden;
+	left: 200px;
+	width:350px;
+	top: 150px;
+}
+
+* html .formADDEXTRA{
+	margin-left: -50px;
+	margin-top: -90px;	
+	}
+	
+.formADDEXTRA2 {
+	background:#CAC5BD;
+	position:absolute;
+	visibility:hidden;
+	left: 250px;
+	width:250px;
+	top: 250px;
+}
+
+* html .formADDEXTRA2{
+	margin-left: 0px;
+	margin-top: 30px;	
+	}	
+	
+	
+.autocomplete {
+    font-family: Tahoma;
+    font-size: 8pt;
+    background-color: white;
+    border: 1px solid black;
+    position: absolute;
+    cursor: default;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.autocomplete_item {
+    padding: 1px;
+    padding-left: 5px;
+    color: black;
+    width: 100%;
+}
+
+.autocomplete_item_highlighted {
+    padding: 1px;
+    padding-left: 5px;
+    color: white;
+    background-color: #0A246A;
+}
+
+
+
+.lista_produtos
+	{
+	display:none;
+	margin: 10px 20px 0px 20px;
+	text-decoration: none;
+	padding: 5px;
+	}
+.lista_detalhes_clientes
+	{
+	display:none;
+	margin: 10px 20px 0px 20px;
+	text-decoration: none;
+	padding: 5px;
+	}
+.lista_vendas
+	{
+	display:none;
+	text-decoration: none;
+	}
+	
+.titulo_lista_data{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#fff;
+	font-weight:bold;
+	letter-spacing:2px;
+	text-align:center;
+	background-color:#0d90d7;
+	border:1px solid #036;
+}

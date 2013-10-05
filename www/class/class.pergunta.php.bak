@@ -1,0 +1,96 @@
+<?
+include_once "funcoes.php";
+
+class Pergunta {
+
+	private $pergunta				= "";
+	private $topico					= "";
+	private $titulo					= "";
+	private $tipo_pergunta			= "";
+	private $dificuldade			= "";
+	private $respostas				= array();
+
+	public $Xpergunta				= "";
+	public $Xtopico					= "";
+	public $Xtitulo					= "";
+	public $Xtipo_pergunta			= "";
+	public $Xdificuldade			= "";
+	public $Xrespostas				= "";
+
+	private $msg_erro				= array();
+	private $msg_ok					= array();
+	private $msg					= "";
+
+	public $_login_instituicao		= "";
+	public $_login_professor		= "";
+	public $_login_aluno			= "";
+
+	function Pergunta(){
+		global $_login_instituicao;
+		global $_login_professor;
+		global $_login_aluno;
+
+		$this->_login_instituicao	= $_login_instituicao;
+		$this->_login_professor		= $_login_professor;
+		$this->_login_aluno			= $_login_aluno;
+	}
+
+	function getId(){
+		return $this->pergunta;
+	}
+
+	function setId($pergunta){
+		$this->pergunta = $pergunta;
+	}
+
+	function getTopico(){
+		return $this->topico;
+	}
+
+	function setTopico($topico){
+		$this->topico = $topico;
+	}
+	
+	function getTitulo(){
+		return $this->titulo;
+	}
+
+	function setTitulo($titulo){
+		$this->titulo = $titulo;
+	}	
+
+	function getTituloReduzido($tamanho){
+		$extensao = (strlen(nl2br($this->titulo))>$tamanho)?"...":"";
+		return substr($this->titulo,0,$tamanho).$extensao;
+	}
+
+	function getTipoPergunta(){
+		return $this->tipo_pergunta;
+	}
+
+	function setTipoPergunta($tipo_pergunta){
+		$this->tipo_pergunta = $tipo_pergunta;
+	}
+		
+	function getDificuldade(){
+		return $this->dificuldade;
+	}
+
+	function setDificuldade($dificuldade){
+		$this->dificuldade = $dificuldade;
+	}
+
+	function addResposta($resposta){
+		array_push($this->respostas,$resposta);
+	}
+
+	function getQtdeResposta(){
+		return sizeof($this->respostas);
+	}
+
+	function getResposta($index){
+		return $this->respostas[$index];
+	}
+
+}
+?>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Prova! - {TITULO}</title>
+
+	<link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="estilo_popup.css" media="screen" />
+
+	<SCRIPT language=javascript src="funcoes.js"></SCRIPT>
+	<script src="js/jquery-1.2.1.pack.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<script language='JavaScript'>
+	function checkCurso(campo){
+		$('input[@rel='+campo.value+']:checkbox').attr("checked",campo.checked);
+	}
+
+	function adicionarDisciplinas(){
+		$("input[@type=checkbox]:not([rel=curso])").each(function(){
+			if (this.checked){
+				var alti = ($(this).attr("alt")).split("|");
+				var curso_nome      = alti[0];
+				var disciplina_nome = alti[1];
+
+				opener.adicionarDisciplina($(this).val(),curso_nome,disciplina_nome);
+			}
+		});
+		this.close();
+	}
+
+	function fecharJanela(){
+		this.close();
+	}
+</script>
+
+<div>
+
+	<form name="frm_cadastro" id="frm_cadastro" action="{_NOME_PROGRAMA}" method="POST" >
+
+	<fieldset class="cadastro" >
+		<legend>Disciplinas</legend>
+		<br>
+		<div class='lista_selecao'>
+		<!-- BEGIN curso --> 
+			<span><input type='checkbox' name='curso_{curso.CURSO}' value='curso_{curso.CURSO}' rel='curso' onClick='checkCurso(this)'>{curso.CURSO_NOME}</span>
+				<BLOCKQUOTE>
+				<!-- BEGIN disciplina --> 
+					<input type='checkbox' name='disciplina_{curso.disciplina.I}' rel='curso_{curso.disciplina.CURSO}' value='{curso.disciplina.DISCIPLINA}' alt='{curso.disciplina.CURSO_NOME}|{curso.disciplina.NOME}'> {curso.disciplina.NOME}<br />
+				<!-- END disciplina --> 
+				</BLOCKQUOTE>
+		<!-- END curso --> 
+		</div>
+
+		<button value="Adicionar" class="submitBtn"  onclick="javascript: fecharJanela();"><span>Cancelar</span></button> &nbsp;&nbsp;
+		<button value="Adicionar" class="submitBtn"  onclick="javascript: adicionarDisciplinas()"><span>Adicionar</span></button>
+	</fieldset>
+
+	</form>
+
+</div>
+<br>
+<br>

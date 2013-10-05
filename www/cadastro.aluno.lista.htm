@@ -1,0 +1,52 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<p><br><a href='cadastro.aluno.php'><img src="imagens/user1_add.png" alt="" align='absmiddle'> Cadastrar um novo Aluno</a></p>
+
+<table border="0" cellspacing="0" cellpadding="0" class="tabela" align="center">
+	<thead> 
+		<tr>
+			<td>#</td>
+			<td><img src="imagens/user1_16.png" align='absmiddle' alt="Nome do Aluno"> Nome</td>
+			<td>RA</td>
+			<td><img src="imagens/maileee.gif" align='absmiddle' alt="E-Mail"> E-mail</td>
+			<td>Ações</td>
+		</tr>
+	</thead> 
+
+	<tbody>
+	<!-- BEGIN aluno --> 
+	<tr {aluno.CLASSE} >
+		<td><a href="cadastro.aluno.php?aluno={aluno.ALUNO}">{aluno.ALUNO}</a></td>
+		<td><a href="cadastro.aluno.php?aluno={aluno.ALUNO}">{aluno.NOME}</a></td>
+		<td>{aluno.RA}</td>
+		<td>{aluno.EMAIL}</td>
+		<td>
+			<a href="cadastro.aluno.php?aluno={aluno.ALUNO}">
+			<img src="imagens/alterar.gif" width="18" height="18" border="0" />
+			</a>
+			<a href="cadastro.aluno.lista.php?excluir={aluno.ALUNO}">
+			<img src="imagens/excluir.gif" width="16" height="16" border="0" onclick="if (perguntar('Deseja excluir?')) return true; else return false" />
+			</a>
+		</td>
+	</tr>
+	<!-- END aluno --> 
+	</tbody>		   
+	<!-- BEGIN naoencontrado -->
+	<tbody>
+	<tr>
+		<td colspan="5" class='naoencontrado'>{naoencontrado.MSG}</td>
+	</tr>	
+	</tbody>
+	<!-- END naoencontrado --> 	
+</table>
+
+<!-- BEGIN paginacao -->
+<hr>
+<p>{paginacao.CONTADOR}</p>
+<!-- END paginacao --> 
+
+<br />
+<br>
+<br>

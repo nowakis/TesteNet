@@ -1,0 +1,261 @@
+body {
+	text-align:center;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000;
+	margin:0px 0px;
+	padding:0px; 
+	text-align:center;
+	background-color: white;
+	line-height: 1.2em;
+	margin: 0;
+	padding: 0;
+}
+
+
+#rodape2{
+	color: #FFFFFF;
+	font-size: 9px;
+	font-weight: bold;
+	background-image:url(imagens/laranja.gif);
+}
+#rodape {
+	font-size: 9px;
+	font-weight: bold;
+	COLOR: #FFFFFF; 	
+	CLEAR: both;
+	background-image:url(imagens/laranja.gif);	
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px; 
+	PADDING-BOTTOM: 3px; 
+	PADDING-TOP: 3px; 	
+	WIDTH: 100%; 
+	BOTTOM: 0px; 
+	RIGHT: 0px; 
+	POSITION: fixed; 
+	BORDER-TOP:#FFCC00 1px solid; 
+	BORDER-BOTTOM-STYLE: none; -moz-border-radius: 3px
+}
+
+a{
+	text-decoration:none;
+	color:#000000;
+}
+a:hover{
+	text-decoration:underline;
+}
+a:visited{
+	color:#000000;
+}
+
+#pagina{
+	width:750px;
+}
+
+img{
+	border:0px;
+}
+img a:link{
+	border:0px;
+}
+
+#topo{
+	height:30px;
+	font-size:12px;
+	background-image:url(imagens/top.jpg);
+	background-repeat:no-repeat;
+	text-align:left;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:4px;
+}
+
+#topo a:link, #topo a:visited, #topo a:active {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+#topo a:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+	border: 1px solid #D6E6F5;
+	background-color:#5095DA;
+	border-top:1px solid #D6E6F5;
+}
+
+#msg_sucesso{
+	width:80%;
+	font-weight:bold;
+	border:1px dashed #0000FF;
+	color:#0000FF;
+	padding:5px;		
+}
+
+#msg_erro{
+	width:80%;
+	border:1px dashed #990000;
+	background:#FFD9D9;
+	color:#990000;
+	padding:5px;
+}
+#msg_erro b{
+	font-size:12px;
+}	
+
+#msg_ok{
+	width:80%;
+	border:1px dashed #999;
+	background:#EDF2F8;
+	color:#000;
+	padding:5px;
+}
+#msg_ok b{
+	font-size:12px;
+}	
+	
+
+.classe_1{
+	background-color:#FFFFFF;
+	border-bottom:1px dashed #B2B6B9;
+}
+.classe_2{
+	background-color:#EDF2F8;
+	border-bottom:1px dashed #B2B6B9;
+}
+.classe_3{
+	background-color:#E3E6FD;
+	border-left:1px dashed #B2B6B9;
+	border-right:1px dashed #B2B6B9;	
+	border-top:1px dashed #B2B6B9;	
+	border-bottom:none;	
+}
+.div_detalhes{
+	background-color:#E3E6FD;
+	display:none;
+	margin:0 10px;
+	padding:5px 30px;
+	background-color:#E3E6FD;
+	border-left:1px dashed #B2B6B9;
+	border-right:1px dashed #B2B6B9;	
+	border-bottom:1px dashed #B2B6B9;	
+}
+
+
+
+/* PAGINAÇÂO - INICIO */
+.pages A {
+	BACKGROUND: #fff; 
+	PADDING: 0.2em 0.5em; 
+	MARGIN-RIGHT: 0.1em; 	
+	BORDER: #9aafe5 1px solid; 
+	TEXT-DECORATION: none;
+	color:#006699;
+}
+.pages A:hover {
+	COLOR: #1c5c9a; 
+	BACKGROUND: #ecf2f8; 
+	BORDER-COLOR: #6398cd;
+}
+.pages A.prev {
+	FONT-WEIGHT: bold;
+}
+.pages SPAN {
+	BACKGROUND: #fff; 
+	MARGIN-RIGHT: 0.1em; 
+	PADDING: 0.2em 0.5em; 
+	BORDER: #fff 1px solid; 
+}
+.pages SPAN.current {
+	BORDER: #2e6ab1 1px solid; 
+	FONT-WEIGHT: bold; 
+	BACKGROUND: #30659e; 
+	COLOR: #fff; 
+}
+.pages SPAN.next {
+	BORDER:1px solid #ddd; 
+	COLOR: #999; 	
+	COLOR: #666
+}
+/* PAGINAÇÂO - FIM */
+
+
+.tabela { 
+	font:12px Arial, Helvetica, sans-serif; 
+	width:90%; 
+	margin:0 0 10px 0; 
+}
+
+.tabela caption { 
+	background-color:#AD6D5A;
+	color:#FFF;
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:1.2em;
+	border:1px solid #000;
+ }
+.tabela thead th {
+	padding:2px;
+	text-transform:uppercase;
+	background-image:url(imagens/tabela_titulo_fundo.gif);
+	background-repeat:repeat-x;
+	/*border:1px solid #406EA1;*/
+	color:#FFF;
+	font-weight:bold;
+	text-align:center;
+ }
+
+.tabela thead th a:visited {
+	color:#FFF;
+ }
+
+.tabela tfoot th { 
+	background-image:url(imagens/tabela_titulo_fundo.gif);
+	background-repeat:repeat-x;
+	color:#FFFFFF;
+	text-transform:uppercase;
+	font-size:10px;
+ }
+.tabela TBODY TR {
+	BACKGROUND: #FFFFFF;
+	border-bottom:1px dashed #B2B6B9;
+}
+.tabela tbody td { 
+	color:#5A666E;
+	text-align:center;
+
+}
+.tabela tbody th {
+
+}
+
+.tabela TBODY TR.linhaSalto {
+	BACKGROUND:#C6E0FD;
+	border-bottom:1px dashed #B2B6B9;
+}
+
+.tabela TBODY TR.odd {
+	BACKGROUND: #EDF2F8;
+	border-bottom:1px dashed #B2B6B9;
+}
+.tabela tbody td a {  
+	color:#333333;
+	text-decoration:none;
+	font-weight:bold;
+ }
+.tabela tbody td a:hover { 
+	background-color:#469CE3;
+	color:#FFF;
+ }
+
+.tabela tbody tr:hover th, 
+.tabela tbody .odd:hover th, 
+.tabela tbody tr:hover td {
+	background-color:#FF9900; 
+	color:#1B486F; 
+}
+
+.tabela tr td {
+	border-bottom: 1px solid #DBDBDB; 
+	border-top: none; 
+	border-right: none; 
+	border-left: none; 
+}

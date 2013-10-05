@@ -1,0 +1,461 @@
+body {
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.pagina{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+width:756px;
+}
+img{
+border:0px;
+}
+img a:link{
+border:0px;
+}
+
+.topo{
+color:#FFFFFF;
+height:20px;
+font-size:10px;
+text-align:right;
+}
+.topo a:link, .topo a:visited, .topo a:active {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.topo a:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+	border: 1px solid #D6E6F5;
+	background-color:#5095DA;
+	border-top:1px solid #D6E6F5;
+}
+
+#lateralEsquerda {
+	float: left;
+	width: 151px;
+	background-color:#F1F1F1;
+	border: 1px solid #999999;
+	border-top: 0px;
+}
+#conteudo {
+	width: 600px;
+	background-color:#FFFFFF;
+}
+p.titulo{
+	background-image:url(imagens/titulo.jpg);
+	background-repeat:no-repeat;
+	padding-top:10px;
+	padding-bottom:2px;
+	padding-left:10px;
+	font-size:16px;
+	font-weight:bold;
+}
+p.subtitulo{
+	background-image:url(imagens/subtitulo.jpg);
+	background-repeat:no-repeat;
+	text-indent:10px;
+	margin-left:10px;
+	padding:2px;
+	font-weight:bold;
+}
+
+p.subtitulo2{
+	background-image:url(imagens/subtitulo.jpg);
+	background-repeat:no-repeat;
+	text-indent:10px;
+	margin-left:10px;
+	padding-top:6px;
+
+}
+
+div.animais_detalhes{
+	padding:8px;
+	color:  #555555;
+	display:none;
+}
+
+tr.borda_tabela{
+cursor:hand;
+	border-top:1px solid #FEE18B;	
+}
+
+
+p.texto {
+	padding-left:15px;
+	text-indent:25px;
+	text-align:justify;
+
+}
+
+
+a:link {
+	text-decoration: none;
+	color: #000000;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+a:active {
+	text-decoration: underline;
+	color: #000000;
+}
+
+.textoTituloFazenda {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight:bold;
+	color: #000000;
+	text-align:right;
+}
+.textoFinanceiro {
+	font-family:"Courier New", Courier, monospace;
+	font-size: 12px;
+	margin-left:10px;
+}
+
+
+
+.subcabecalho{
+background-color:#F1F1F1;
+padding: 4px;
+border:1px solid #999999;
+width:750px;
+font-size:11px;
+}
+
+.modo_visoes{
+margin-left:10px;
+padding:2px;
+}
+
+.modo_visoes a:hover{
+	background-color:#FAEEB4;
+	text-decoration:none;
+	border:1px solid #FF9900;
+}
+.modo_visoes2{
+font-size:10px;
+color:#666666;
+}
+.modo_visoes2 a:hover{
+text-decoration:underline;border:none;background:none;
+}
+.modo_visoes2 a:visited{
+color:#666666;
+}
+
+.menu_adm{
+	padding-top:10px;
+	padding-bottom:2px;
+	padding-right:20px;
+	margin-top:-28px;
+	text-align:right;
+}
+
+.menu_adm a:hover{
+	background-color:#FAEEB4;
+	text-decoration:none;
+	border:1px solid #FF9900;
+	margin:-1px;
+}
+
+p.visao_checkbox{
+width:70px;
+border:1px solid #CCCCCC;
+margin-left:-1px;
+margin-top:-1px;
+float:left;
+height:20px;
+overflow:hidden;
+cursor:pointer;
+}
+p.visao_checkbox input{
+visibility:hidden;
+width:1px;
+}
+
+div.visao_checkbox_complentar{
+margin-left:15px;
+}
+
+#painel_selecionados{
+	display:none;
+}
+
+
+div.tabela_animais{
+	text-indent:10px;
+	margin-left:20px;
+	height:250px;
+	overflow:auto;
+}
+
+#rodape {
+	border-top:1px solid #999999;
+	margin-top:40px;
+	text-align:left;
+	font-size: 11px;
+	padding-left:10px;
+	height:40px;
+	color: #000000;
+	width: 93%;
+}
+
+
+
+/*
+INICIO Janelas POP-UP
+*/
+
+.formJanela {
+	border:none;
+	margin:10px;
+	color:#000000;
+}
+.legendFormJanela {
+	color:#000000;
+}
+.formExtra {
+/*	background-color:#7ABAFA;*/
+
+	background-image:url(imagens/Janela.5.gif);
+	background-repeat:no-repeat;
+	position:absolute;
+	width:340px;
+	height:187px;
+}
+.fundoTransparente {
+	background-color:#000000;
+	FILTER: Alpha(Opacity=10, FinishOpacity=10, Style=3);	
+	filter:alpha(opacity=10);
+	-moz-opacity:.10;
+	opacity:.10;
+	position:absolute;
+	width:100%;
+	height:485px;
+}
+/*
+FIM Janelas POP-UP
+*/
+
+
+
+DIV.tudo {
+	WIDTH: 30em; POSITION: relative; HEIGHT: 50px;
+	
+}
+DIV.texto, DIV.efeito1 {
+	FONT: 35px "Arial black", Helvetica, sans-serif; 
+}
+
+DIV.texto {
+	LEFT: -3px; COLOR: #fff; POSITION: absolute; TOP: 0px;
+}
+DIV.efeito1 {
+	LEFT: 1px; COLOR: #000; POSITION: absolute; TOP: -1px;
+}
+
+ul#menu {
+margin:0;
+list-style-type:none;
+}
+
+ul#menu li a:link, ul#menu li a:visited {
+display:block;
+height:1%;
+text-decoration:none;
+padding:5px;
+}
+ul#menu li a:hover {
+background: #DADADA;
+border:1px solid #999999;
+padding:4px;
+} 
+
+
+
+ /******************************
+ 
+ Layout para os formularios
+ 
+ **************************/    
+        .formulario form{
+	        font-size: 10pt;
+			padding-left:30px;
+
+        }
+        
+        .formulario legend{
+	        font-weight: bold;
+	        color: #c03;
+	        font-size: 11pt;
+	        letter-spacing: 1px;
+        }
+       
+        /* HACK PARA CORRIGIR O MARGIN-BOTTOM*/
+        html>body .formulario legend{
+        	margin-bottom: 0px;
+        }
+        
+        .formulario input, .formulario textarea, .formulario text,  .formulario select{
+	        border-top: 1px solid #333;
+	        border-left: 1px solid #333;
+	        border-bottom: 1px solid #ccc;
+	        border-right: 1px solid #ccc;
+	        font-size: 13px;
+	        margin-bottom: 10px;
+	        color: #0E0659;
+        }
+        
+       .formulario label{
+	        display: block;
+	        width: 140px;
+	        float: left;
+	        color: #000;
+	        border-bottom: 1px solid #f1f1f1;
+			margin-left:10px;
+        }
+        
+        .formulario span{
+	        color: red;
+	        font-size: 12px;
+			text-align:center;
+}
+        
+        .formulario .botao{
+	        background: #f1f1f1;
+			border:1px solid #000000;
+			width:100px;
+        }
+		.formLogin{
+		margin-left:200px;
+		}
+
+
+
+ /******************************
+ 
+ Layout para os formularios
+ 
+ **************************/    
+        .formulario2 form{
+	        font-size: 10pt;
+			padding-left:10px;
+        }
+		.formulario2 td{
+			vertical-align:top;
+		}
+       
+        /* HACK PARA CORRIGIR O MARGIN-BOTTOM*/
+        html>body .formulario2 legend{
+        	margin-bottom: 0px;
+        }
+        
+        .formulario2 input, .formulario2 textarea, .formulario2 text,  .formulario2 select{
+			border:none;
+	        font-size: 14px;
+	        margin-bottom: 3px;
+	        color: #0E0659;
+			font-weight:bold;
+        }
+		.formulario2 textarea{
+			overflow:auto;
+		}
+        
+       .formulario2 label{
+	        display: block;
+			font-size:11px;
+	        width: 110px;
+	        float: left;
+	        color: #000;
+	        border-bottom: 1px solid #f1f1f1;
+			margin-top:4px;
+        }
+		
+       
+        .formulario2 span{
+	        color: red;
+	        font-size: 12px;
+			text-align:center;
+}
+        
+        .formulario2 .botao{
+	        background: #f1f1f1;
+			border:1px solid #000000;
+			width:100px;
+        }
+		
+ /******************************
+ 
+ Layout para os formularios
+ 
+ **************************/   		
+       .formAzul form{
+	        font-size: 12pt;
+			padding-left:30px;
+        }
+        
+        .formAzul legend{
+	        font-weight: bold;
+	        color:#000000;
+        }
+       
+        /* HACK PARA CORRIGIR O MARGIN-BOTTOM*/
+        html>body .formAzul legend{
+        	margin-bottom: 0px;
+        }
+        
+        .formAzul input, .formAzul textarea,  .formAzul select{
+	        border-top: 1px solid #333;
+	        border-left: 1px solid #333;
+	        border-bottom: 1px solid #ccc;
+	        border-right: 1px solid #ccc;
+	        font-size: 13px;
+	        margin-bottom: 10px;
+	        color: #0E0659;
+        }
+        
+       .formAzul label{
+	        display: block;
+			font-weight:bold;
+	        width: 140px;
+	        float: left;
+	        color: #000000;
+	        border-bottom: 1px solid #f1f1f1;
+        }
+        
+        
+        .formAzul .botao{
+	        background: #f1f1f1;
+			border:1px solid #000000;
+			width:100px;
+			overflow:visible;
+			padding-right:10px;
+			padding-left:10px;
+        }		
+		
+		
+/* MOSTRAR CUSTOS ORGANIZADOS*/		
+		.textoCustosP {
+	        display: block;
+	        float: left;
+			margin-left:20px;
+			width:190px;
+			font-weight:bold;
+	        border-bottom: 1px solid #f1f1f1;		
+		}
+        /* HACK PARA CORRIGIR O MARGIN-BOTTOM*/
+        html>body .textoCustos strong{
+        	margin-bottom: 0px;
+        }
+			
+    	        

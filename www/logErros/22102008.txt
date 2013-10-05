@@ -1,0 +1,16 @@
+Erro aconteceu no dia 22-10-2008 20:52:46.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.pergunta.lista.php.
+A linha que acontece o erro é 68.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 22-10-2008 20:52:46.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/class/class.pergunta.DAO.php.
+A linha que acontece o erro é 163.
+
+A mensagem do erro é Undefined variable: perguntas.
+-----------------------------------

@@ -1,0 +1,259 @@
+{MSG}
+{MSG_OK}
+{MSG_ERRO}
+{DATA1}
+<br />
+
+<script language='JavaScript'>
+
+	function criaCelula(texto) {
+		var celula = document.createElement('td');
+		celula.appendChild(document.createTextNode(texto));
+		return celula;
+	}
+
+	function criaCelulaLink(texto,pergunta) {
+		var celula = document.createElement('td');
+
+		pickLink=document.createElement('a');
+		pickLink.setAttribute('href',"#");
+		//pickLink.setAttribute('target','_blank');
+		pickLink.onclick=function(){abrePergunta(pergunta)};
+		pickLink.appendChild(document.createTextNode(texto));
+		celula.appendChild(pickLink);
+		return celula;
+	}
+
+
+	function removerPergunta(iidd){
+		var tbl = document.getElementById('tbl_pergunta');
+		var oRow = iidd.parentElement.parentElement;
+		tbl.deleteRow(oRow.rowIndex);
+		$('#qtde_perguntas').val( parseInt($('#qtde_perguntas').val()) - 1 );
+	}
+
+	function adicionarPergunta(pergunta,titulo_pergunta,topico_nome,tipo_pergunta,dificuldade) {
+
+		brecar = 0;
+
+		$("input[@rel='pergunta']").each(function() {
+			if ($(this).val() == pergunta){
+				brecar++;
+			}
+		});
+
+		if (brecar>0){
+			return true;
+		}
+
+		var tbl = document.getElementById('tbl_pergunta');
+		var lastRow = tbl.rows.length;
+		var iteration = lastRow;
+
+		var linha = document.createElement('tr');
+		linha.style.cssText = 'color: #000000; text-align: left; font-size:12px';
+		if (iteration%2==0){
+			linha.className="";
+		}else{
+			linha.className="odd";
+		}
+
+		/* COLUNA 1 ------------------------------------------------------------*/
+		var celula = criaCelula(pergunta);
+		celula.style.cssText = 'text-align: left; color: #000000;font-size:12px';
+
+		var el = document.createElement('input');
+		el.setAttribute('type', 'hidden');
+		el.setAttribute('rel', 'pergunta');
+		el.setAttribute('name', 'pergunta_' + iteration);
+		el.setAttribute('value',pergunta);
+		celula.appendChild(el);
+
+		linha.appendChild(celula);
+
+		var el = document.createElement('input');
+		el.setAttribute('type', 'hidden');
+		el.setAttribute('rel', 'pergunta');
+		el.setAttribute('name', 'prova_pergunta_' + iteration);
+		el.setAttribute('value','');
+		celula.appendChild(el);
+
+		linha.appendChild(celula);
+
+		/* COLUNA 2 ------------------------------------------------------------*/
+		var celula = criaCelulaLink(titulo_pergunta,pergunta);
+		celula.style.cssText = 'text-align: left; color: #000000;font-size:12px';
+		linha.appendChild(celula);
+
+		/* COLUNA 3 ------------------------------------------------------------*/
+		var celula = criaCelula(topico_nome);
+		celula.style.cssText = 'text-align: left; color: #000000;font-size:12px';
+		linha.appendChild(celula);
+
+		/* COLUNA 4 ------------------------------------------------------------*/
+		var celula = criaCelula(tipo_pergunta);
+		celula.style.cssText = 'text-align: left; color: #000000;font-size:12px';
+		linha.appendChild(celula);
+
+		/* COLUNA 5 ------------------------------------------------------------*/
+		var celula = criaCelula(dificuldade);
+		celula.style.cssText = 'text-align: left; color: #000000;font-size:12px';
+		linha.appendChild(celula);
+
+		/* COLUNA 6 ------------------------------------------------------------*/
+		var celula = document.createElement('td');
+		celula.style.cssText = 'text-align: left; color: #000000;font-size:10px';
+
+		var el = document.createElement('input');
+		el.setAttribute('type', 'text');
+		el.setAttribute('rel', 'pergunta');
+		el.setAttribute('size', '2');
+		el.setAttribute('maxlenght', '5');
+		el.setAttribute('name', 'peso_' + iteration);
+		el.setAttribute('value','');
+		el.setAttribute('rel','numero');
+		celula.appendChild(el);
+
+		linha.appendChild(celula);
+
+		/* COLUNA 7 ------------------------------------------------------------*/
+		var celula = document.createElement('td');
+		celula.style.cssText = 'text-align: left; color: #000000;font-size:10px';
+
+		var el = document.createElement('input');
+		el.setAttribute('type', 'image');
+		el.setAttribute('value','Remover');
+		el.setAttribute('src','imagens/excluir.gif');
+		el.onclick = function(){removerPergunta(this);};
+		celula.appendChild(el);
+		linha.appendChild(celula);
+
+		/* Finaliza linha da tabela */
+		var tbody = document.createElement('TBODY');
+		tbody.appendChild(linha);
+
+		/*linha.style.cssText = 'color: #404e2a;';*/
+		tbl.appendChild(tbody);
+
+		if ($('#qtde_perguntas').val()==''){
+			$('#qtde_perguntas').val(0);
+		}
+
+		$('#qtde_perguntas').val( parseInt($('#qtde_perguntas').val()) + 1 );
+
+	}
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("select[@name=curso]").change(function(){
+			$('select[@name=disciplina]').html('<option value="">Procurando :::::::</option>');
+			$.post('busca_disciplina.php', 
+				{ curso : $(this).val() }, 
+				function(resposta){
+					$('select[@name=disciplina]').html(resposta);
+				}
+				
+			);
+		});
+	});
+</script>
+
+<div class="frm_cadastro">
+
+	<form name="frm_cadastro" id="frm_cadastro" action="{_NOME_PROGRAMA}" method="POST" >
+	<input name="prova" type="hidden" id="prova" value="{PROVA}"/>
+
+	<input name="numero_perguntas" type="hidden" id="numero_perguntas" value="{NUMERO_PERGUNTAS}"/>
+	<input name="dificuldade" type="hidden" id="prova" value="{DIFICULDADE}"/>
+	
+	<fieldset class="cadastro">
+		<legend>Cadastro de Prova</legend>
+		
+		<table width="100%" class="tabela_cadastro" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<td colspan='2'>
+				<label>Título da Prova</label><br />
+				<input name="titulo_prova" type="text" id="titulo_prova" value="{TITULO_PROVA}" maxlength="100" style='width:96%'/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Curso</label><br />
+				<select name="curso"  id="curso">
+				{CURSO}
+				</select>
+			</td>
+			<td>
+				<label>Disciplina</label><br />
+				<select name="disciplina"  id="disciplina">
+				{DISCIPLINA}
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label><img src="imagens/stopwatch_run.png" align='absmiddle' alt="Horário de início da prova"> Início *</label><br />
+				<input name="data_inicio" type="text" id="data_inicio" rel='data_hora' value="{DATA_INICIO}" size="16" maxlength="16" />
+				<br>
+				<span style='color:#757575; font-size:12px;'>(*) Período que o aluno poderá responder a prova</span>
+			</td>
+			<td>
+				<label><img src="imagens/stopwatch_stop.png" align='absmiddle' alt="Horário de término da prova"> Término *</label><br />
+				<input name="data_termino" type="text" id="data_termino" rel='data_hora' value="{DATA_TERMINO}" size="16" maxlength="16" />
+				<br><br>
+			</td>
+		</tr>
+		</table>
+
+		<div id="formCadastroText">
+				<fieldset class="cadastro">
+					<legend>Perguntas</legend>
+					<table width="100%" class="tabela" border="0" cellspacing="0" cellpadding="0" align="center" id='tbl_pergunta'>
+						<thead>
+								<tr>
+									<td> # </td>
+									<td> Título </td>
+									<td> Tópico </td>
+									<td> Tipo </td>
+									<td align='center'><img src="imagens/top.gif" align='absmiddle' alt="Dificuldade da Pergunta"> </td>
+									<td align='center'> Peso </td>
+									<td> Remover </td>
+								</tr>
+						</thead>
+						<tbody>
+							<!-- BEGIN pergunta --> 
+							<tr {pergunta.CLASSE}>
+								<td align='left'>
+									<input name="pergunta_{pergunta.I}" type="hidden" id="prova_pergunta_{pergunta.I}" rel='pergunta' value="{pergunta.PERGUNTA}"/>
+									<input name="prova_pergunta_{pergunta.I}" type="hidden" id="prova_pergunta_{pergunta.I}" rel='prova_pergunta' value="{pergunta.PROVA_PERGUNTA}"/>
+									{pergunta.NUMERO}
+								</td>
+								<td align='left'><a href='javascript: abreProvaPergunta({pergunta.PROVA_PERGUNTA})'>{pergunta.TITULO_PERGUNTA}</a></td>
+								<td align='left'>{pergunta.TOPICO}</td>
+								<td align='left'><img src="{pergunta.TIPO_IMAGEM}" align='absmiddle' alt="{pergunta.TIPO}"></td>
+								<td align='left'>{pergunta.DIFICULDADE}</td>
+								<td align='left'><input name="peso_{pergunta.I}" type="text" id="peso_{pergunta.I}" value="{pergunta.PESO}" size='2' maxlength='5' rel='numero' /></td>
+								<td align='left'><input type='image' value='Remover' src='imagens/excluir.gif' onClick='javascript:removerPergunta(this)'></td>
+							</tr>
+							<!-- END pergunta --> 
+						</tbody>
+					</table>
+					<input name="qtde_perguntas" id="qtde_perguntas" type="hidden" value="{QTDE_PERGUNTAS}" />
+				</fieldset>
+				<p></p>
+				<p style='margin:0px auto;text-align:center'><a href='javascript: popupPergunta()'> <img src='imagens/imagesMais.gif' align='absmiddle'> Selecionar Pergunta</a></p>
+				<p></p>
+				<p></p>
+		</div>
+
+		<hr>
+		<input type='hidden' name="btn_acao" value=''>
+		<button value="gravar" class="gravarBtn" style='float:right;' onclick="javascript: if(this.form.btn_acao.value == '' ) {this.form.btn_acao.value='gravar'; this.form.submit() } else { alert ('Aguarde submissão') }"><span>{BTN_NOME}</span></button>
+		<button value="gravar" class="submitBtn"  onclick="javascript: history.go(-1)"><span>Voltar</span></button>
+
+		</fieldset>
+
+		</form>
+</div>

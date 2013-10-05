@@ -1,0 +1,152 @@
+Erro aconteceu no dia 23-09-2008 23:58:14.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/relatorio.provas.php.
+A linha que acontece o erro é 47.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:58:14.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/class/class.relatorio.DAO.php.
+A linha que acontece o erro é 76.
+
+A mensagem do erro é Undefined variable: sql_data.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:58:15.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/relatorio.provas.php.
+A linha que acontece o erro é 83.
+
+A mensagem do erro é Undefined variable: msg_ok.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:58:22.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/relatorio.frequencia.php.
+A linha que acontece o erro é 47.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:58:22.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/class/class.relatorio.DAO.php.
+A linha que acontece o erro é 28.
+
+A mensagem do erro é Undefined variable: sql_data.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:58:22.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/relatorio.frequencia.php.
+A linha que acontece o erro é 73.
+
+A mensagem do erro é Undefined variable: msg_aux.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:58:22.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/relatorio.frequencia.php.
+A linha que acontece o erro é 80.
+
+A mensagem do erro é Undefined variable: msg_ok.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:58:28.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/comunicado.lista.php.
+A linha que acontece o erro é 47.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:58:31.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.lista.php.
+A linha que acontece o erro é 57.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:58:31.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.lista.php.
+A linha que acontece o erro é 99.
+
+A mensagem do erro é Undefined variable: msg_ok.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:58:44.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.lista.php.
+A linha que acontece o erro é 57.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:58:44.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/prova.lista.php.
+A linha que acontece o erro é 99.
+
+A mensagem do erro é Undefined variable: msg_ok.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:58:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.aluno.lista.php.
+A linha que acontece o erro é 46.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:58:48.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.aluno.lista.php.
+A linha que acontece o erro é 73.
+
+A mensagem do erro é Undefined variable: msg_ok.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:59:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.aluno.lista.php.
+A linha que acontece o erro é 46.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:59:00.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.aluno.lista.php.
+A linha que acontece o erro é 73.
+
+A mensagem do erro é Undefined variable: msg_ok.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:59:06.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.disciplina.lista.php.
+A linha que acontece o erro é 46.
+
+A mensagem do erro é Undefined variable: msg_codigo.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:59:06.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/class/class.disciplina.DAO.php.
+A linha que acontece o erro é 112.
+
+A mensagem do erro é Undefined variable: sql_curso.
+-----------------------------------
+Erro aconteceu no dia 23-09-2008 23:59:06.
+O número do erro é 8.
+O Tipo do Erro é  Notice.
+O arquivo que acontece o erro é /home/nowakis/public_html/testenet/www/cadastro.disciplina.lista.php.
+A linha que acontece o erro é 73.
+
+A mensagem do erro é Undefined variable: msg_ok.
+-----------------------------------

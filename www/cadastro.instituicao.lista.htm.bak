@@ -1,0 +1,50 @@
+{MSG}
+
+<SCRIPT language=javascript src="ajax.js"></SCRIPT>
+<SCRIPT language=javascript src="funcoes.js"></SCRIPT>
+
+<form action="?" method="post" name="envia_animais">
+		<table border="0" cellspacing="0" cellpadding="0" class="tabela" align="center">
+			<thead> 
+				<tr>
+					<td>#</td>
+					<td>Nome</td>
+					<td>Ações</td>
+				</tr>
+			</thead> 
+
+			<tbody>
+			<!-- BEGIN instituicao --> 
+			<tr {instituicao.CLASSE} >
+				<td>{instituicao.INSTITUICAO}</td>
+				<td>{instituicao.NOME}</td>
+				<td>
+					<a href="cadastro.instituicao.php?instituicao={instituicao.INSTITUICAO}">
+					<img src="imagens/alterar.gif" width="18" height="18" border="0" onclick="if (perguntar('Deseja alterar as informações deste instituicao?')) return true; else return false"  />
+					</a>
+					<a href="cadastro.instituicao.lista.php?Excluir={instituicao.INSTITUICAO}">
+					<img src="imagens/excluir.gif" width="16" height="16" border="0" onclick="if (perguntar('Deseja excluir?')) return true; else return false" />
+					</a>
+				</td>
+			</tr>
+			<!-- END instituicao --> 
+			</tbody>		   
+			<!-- BEGIN naoecnontrado --> 		   
+			<tbody>		
+			<tr >
+				<td colspan="10" align="center" style='padding:5px 10px;background-color:#FAED8F'>
+				{naoecnontrado.MSG}</td>
+			</tr>	
+			</tbody>		
+			<!-- END naoecnontrado --> 	
+		</table>
+
+</form>
+		 <br />
+		 <div class="pages">
+		 {PAGINACAO}
+		 </div>
+<br />
+
+<br>
+<br>
